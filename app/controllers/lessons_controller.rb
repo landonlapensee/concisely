@@ -1,9 +1,11 @@
 class LessonsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index]
+
   def index
     @lessons = Lesson.all
 
-    if params[:category].present?
-      @lessons = Lesson.where(category: params[:category])
+    if params[:industry].present?
+      @lessons = Lesson.where(industry: params[:industry])
     end
   end
 

@@ -1,8 +1,8 @@
 class Lesson < ApplicationRecord
   belongs_to :user
-  validates :category, presence: true
+  validates :industry, presence: true
 
-  CATEGORIES = [
+  INDUSTRIES = [
     "engineering",
     "marketing",
     "banking & finance",

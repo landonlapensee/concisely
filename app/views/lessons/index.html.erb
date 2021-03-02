@@ -1,12 +1,19 @@
 <h1>Search Results</h1>
-<p>These are the coaches matching your search</p>
-
+<!-- <p>These are the coaches matching your search</p> -->
 <div class="container ">
   <div class="row">
-  <% Lesson::CATEGORIES.each do |category| %>
+  <% @lessons.each do |lesson| %>
     <div class="col-md-3 col-sm-6">
-      <div class="card-category">
-        <%= link_to category.titleize, lessons_path(category: category), class: "cards" %>
+      <div class="card-product">
+        <img style="border-radius:50%; height:100px; width:100px;" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-product-infos">
+          <h2><strong> <%= lesson.user.first_name %> <%= lesson.user.last_name %> </strong></h2>
+          <h3> <%= lesson.industry.capitalize %> </h3>
+          <p> <%= lesson.description %> </p>
+          <span>Rating</span>
+          <span>$<%= lesson.price %>/hr </span>
+        </div>
+        <%= link_to lessons_path(lesson), class: "cards" %>
       </div>
     </div>
   <% end %>
