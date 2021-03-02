@@ -21,4 +21,5 @@ class LessonsController < ApplicationController
 
   def destroy
   end
+
 end

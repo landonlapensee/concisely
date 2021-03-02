@@ -1,2 +1,14 @@
-<h1>Lessons#index</h1>
-<p>Find me in app/views/lessons/index.html.erb</p>
+<h1>Search Results</h1>
+<p>These are the coaches matching your search</p>
+
+<div class="container ">
+  <div class="row">
+  <% Lesson::CATEGORIES.each do |category| %>
+    <div class="col-md-3 col-sm-6">
+      <div class="card-category">
+        <%= link_to category.titleize, lessons_path(category: category), class: "cards" %>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
