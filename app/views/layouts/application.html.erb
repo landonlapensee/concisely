@@ -12,8 +12,54 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div id="page-container">
+      <div id="content-wrap">
+        <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+          <%= link_to root_path, class: "navbar-brand" do %>
+            <%= image_tag "https://images.squarespace-cdn.com/content/v1/54d51b68e4b02cae6a5eab7e/1444796187751-M9G37UPZTYZCRN88SVZH/ke17ZwdGBToddI8pDm48kPJXHKy2-mnvrsdpGQjlhod7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmihaE5rlzFBImxTetd_yW5btdZx37rH5fuWDtePBPDaHF5LxdCVHkNEqSYPsUQCdT/cfont.jpg" %>
+          <% end %>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <h1 class="company-name">Concisely</h1>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <% if user_signed_in? %>
+                <li class="nav-item">
+                  <%= link_to "My dashboard", my_dashboard_path, class: "nav-link" %>
+                </li>
+                  <li class="nav-item dropdown">
+                    <%= image_tag "https://i.pinimg.com/originals/f5/1d/08/f51d08be05919290355ac004cdd5c2d6.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                      <%= link_to "My profile", "#", class: "dropdown-item" %>
+                      <%#= link_to "Add a lesson", new_lesson_path, class: "dropdown-item" %>
+                      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                    </div>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+        </div>
+
+        <p class="notice description"><%= notice %></p>
+        <p class="alert description"><%= alert %></p>
+        <%= yield %>
+
+        <div class="footer">
+          <div class="footer-links">
+            
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+          <div class="footer-copyright">
+            This app has been created with <i class="fas fa-heart"></i> by Team Concisely
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
