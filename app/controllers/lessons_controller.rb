@@ -30,6 +30,6 @@ class LessonsController < ApplicationController
   private
 
   def lessons_params
-    params.require(:lesson).permit(:user_id, :description, :industry, :price) # is :user_id relevant ?
+    params.require(:lesson).permit(:description, :industry, :price) # is :user_id relevant ?
   end
 end
