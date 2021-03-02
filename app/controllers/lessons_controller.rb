@@ -1,5 +1,10 @@
 class LessonsController < ApplicationController
   def index
+    @lessons = Lesson.all
+
+    if params[:category].present?
+      @lessons = Lesson.where(category: params[:category])
+    end
   end
 
   def new
