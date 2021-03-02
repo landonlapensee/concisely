@@ -1,7 +1,7 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :lesson
-  belongs_to :review
-  belongs_to :payment
-  belongs_to :report
+  has_one :review
+  has_one :payment
+  has_one :report
 end
