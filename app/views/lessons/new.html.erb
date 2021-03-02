@@ -1,2 +1,16 @@
-<h1>Lessons#new</h1>
-<p>Find me in app/views/lessons/new.html.erb</p>
+<h1 class="titles">NEW LESSON</h1>
+
+  <div class="container">
+    <div class="row">
+      <div class="form">
+        <div class="wd-50">
+          <%= simple_form_for(@lesson) do |f| %>
+            <%= f.input :description, :placeholder => '-> describe your lesson' %>
+            <%= f.input :industry, :placeholder => '-> select an industry' %>
+            <%= f.input :price, :placeholder => '-> in $ per hour' %>
+            <%= f.submit %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
