@@ -19,9 +19,14 @@ class LessonsController < ApplicationController
   end
 
   def edit
+    @lesson = Lesson.find(params[:id])
   end
 
   def update
+    @lesson = Lesson.find(params[:id])
+    @lesson.update(lesson_params)
+
+    redirect_to @lesson, notice: "Your lesson has been edited"
   end
 
   def destroy
@@ -29,7 +34,7 @@ class LessonsController < ApplicationController
 
   private
 
-  def lessons_params
+  def lesson_params
     params.require(:lesson).permit(:description, :industry, :price)
   end
 end
