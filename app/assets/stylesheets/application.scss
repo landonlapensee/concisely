@@ -15,3 +15,32 @@
 @import "components/searchbar";
 @import "components/cards";
 @import "components/footer";
+@import "components/banner";
+@import "components/buttons";
+@import "components/alert";
+@import "components/avatar";
+@import "components/forms";
+
+body {
+  background-color: #FFFFFF;
+  text-align: center;
+}
+
+.titles {
+  padding: 30px;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 100px;
+}
+
+.description {
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+}
