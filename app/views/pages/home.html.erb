@@ -1,3 +1,16 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.resumescanada.ca/wp-content/uploads/2017/04/banner-coaching.jpg);">
+  <div class="container">
+    <h1>Book a lesson</h1>
+    <p>and nail your interview</p>
+    <% if user_signed_in? %>
+     <%= link_to "Browse Lessons", lessons_path, class: "btn btn-flat" %>
+    <% else %>
+      <%= link_to "Sign up", new_user_registration_path, class: "btn btn-flat" %>
+      <%= link_to "Log in", new_user_session_path, class: "btn btn-flat" %>
+    <% end %>
+  </div>
+</div>
+
 <div class="search">
   <input type="text" class="searchTerm" placeholder="What are you looking for?">
   <button type="submit" class="searchButton">
