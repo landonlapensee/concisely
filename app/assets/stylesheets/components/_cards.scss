@@ -19,6 +19,34 @@
   grid-gap: 16px;
 }
 
+.bookings-card {
+  border: solid 1px black;
+  border-radius: 4px;
+  width: 200px;
+  justify-content: center;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.reports-card {
+  border: solid 1px black;
+  border-radius: 4px;
+  width: 400px;
+  justify-content: center;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.report-card {
+  border: solid 1px black;
+  border-radius: 4px;
+  width: 200px;
+  justify-content: center;
+  margin: 10px auto;
+  padding: 10px;
+  background-color: white;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
