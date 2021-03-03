@@ -1,98 +1,84 @@
-  <div class="card-product">
-    <img style="border-radius:50%; height:100px; width:100px;" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-    <div class="card-product-infos">
-      <h2><strong> <%= lesson.user.first_name %> <%= lesson.user.last_name %> </strong></h2>
-      <h3> <%= lesson.industry.capitalize %> </h3>
-      <span>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-      </span>
-      <span>$<%= lesson.price %>/hr </span>
-    </div>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal<%= lesson.id %>">
-      View Profile
-    </button>
+<div class="card-product">
+  <img style="border-radius:50%; height:100px; width:100px;" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-product-infos">
+    <h2><strong> <%= lesson.user.first_name %> <%= lesson.user.last_name %> </strong></h2>
+    <h3> <%= lesson.industry.capitalize %> </h3>
+    <span>
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <i class="fa fa-star" aria-hidden="true"></i>
+    </span>
+    <span>$<%= lesson.price %>/hr </span>
   </div>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal<%= lesson.id %>">
+    View Profile
+  </button>
+</div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="myModal<%= lesson.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Coach's Profile</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+  <!-- Modal -->
+<div class="modal fade" id="myModal<%= lesson.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Coach's Profile</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img style="border-radius:50%; height:100px; width:100px;" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-product-infos mb-3">
+          <h2><strong> <%= lesson.user.first_name %> <%= lesson.user.last_name %> </strong></h2>
+          <h3> <%= lesson.industry.capitalize %> </h3>
+          <span>$<%= lesson.price %>/hr </span>
+        </div>
+        <div class="card-description mb-3">
+          <h2><strong>My Experience</strong></h2>
+          <p> <%= lesson.description %> </p>
+          <h2><strong>How It Works</strong></h2>
+          <p class="description">My lessons are 20 minutes which includes a 15 minute mock up interview and 5 minutes of feedback.</p>
+          <h2><strong>Lesson Packages</strong></h2>
+          <p>20 minutes for $45</p>
+          <p>40 minutes for $70</p>
+          <p>60 minutes for $100</p>
+          <h2><strong>Reviews</strong>(14)</h2>
+          <span>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star-half" aria-hidden="true"></i>
+          </span>
+          <p>My coach has helped me so much in nailing the interview and getting my dream job. Thanks, coach!</p>
+          <span>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+          </span>
+          <!-- <div id="star-rating">
+            <%# if not lesson.no_of_stars.blank? %>
+              Star rating: <%#= product.no_of_stars %>
+            <%# else %>
+              <%#= link_to 'Please add a Review',{ controller: 'reviews', action: 'new', id: product.id } %>
+            <%# end %>
+          </div> -->
+          <div class="booking">
+            <h2><strong>Book Lesson</strong></h2>
+            <label>From</label>
+            <input type="date" id="start" name="booking-start">
+            <label>To</label>
+            <input type="date" id="end" name="booking-end">
           </div>
-          <div class="modal-body">
-            <img style="border-radius:50%; height:100px; width:100px;" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-            <div class="card-product-infos">
-              <h2><strong> <%= lesson.user.first_name %> <%= lesson.user.last_name %> </strong></h2>
-              <h3> <%= lesson.industry.capitalize %> </h3>
-              <span>$<%= lesson.price %>/hr </span>
-            </div>
-            <br>
-            <div class="card-description">
-              <h2><strong>My Experience</strong></h2>
-              <hr>
-              <p> <%= lesson.description %> </p>
-              <br>
-              <h2><strong>How It Works</strong></h2>
-              <hr>
-              <p class="description">My lessons are 20 minutes which includes a 15 minute mock up interview and 5 minutes of feedback.</p>
-              <br>
-              <h2><strong>Lesson Packages</strong></h2>
-              <hr>
-              <p>20 minutes for $45</p>
-              <p>40 minutes for $70</p>
-              <p>60 minutes for $100</p>
-              <br>
-              <h2><strong>Reviews</strong>(14)</h2>
-              <span>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-half" aria-hidden="true"></i>
-              </span>
-              <hr>
-              <p>My coach has helped me so much in nailing the interview and getting my dream job. Thanks, coach!</p>
-              <span>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-              </span>
-              <!-- <div id="star-rating">
-                <%# if not lesson.no_of_stars.blank? %>
-                  Star rating: <%#= product.no_of_stars %>
-                <%# else %>
-                  <%#= link_to 'Please add a Review',{ controller: 'reviews', action: 'new', id: product.id } %>
-                <%# end %>
-              </div> -->
-              <br>
-              <div class="booking">
-                <h2><strong>Book Lesson</strong></h2>
-                <hr>
-                <label>From</label><br>
-                <input type="date" id="start" name="booking-start"><br>
-                <label>To</label><br>
-                <input type="date" id="end" name="booking-end">
-              </div>
-              <br>
-              <div id="contact">
-                <h3><strong>Contact Coach</strong></h3>
-                <input type="email" id="email" name="email" placeholder="Your email">
-              </div>
-            </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save Coach</button>
+          <div id="contact">
+            <h3><strong>Contact Coach</strong></h3>
+            <input type="email" id="email" name="email" placeholder="Your email">
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
