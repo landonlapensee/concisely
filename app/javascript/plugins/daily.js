@@ -3,7 +3,7 @@ const resetDailyVideoChatTriggering = (button) => {
   dailyVideoChatTriggering();
 };
 
-const showHideDailyVideoChat = () => {
+const showHideDailyVideoChat = (event) => {
   const button = event.currentTarget;
   button.removeEventListener('click', showHideDailyVideoChat);
   button.innerText = 'Stop Video Chat';
