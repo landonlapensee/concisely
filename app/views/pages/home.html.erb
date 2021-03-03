@@ -1,33 +1,34 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.resumescanada.ca/wp-content/uploads/2017/04/banner-coaching.jpg);">
-  <div class="container">
-    <h1>Book a lesson</h1>
-    <p>and nail your interview</p>
+
+
+<div class="artboard">
+ <div class="card">
+
+  <div class="card__side card__side--back">
+   <div class="card__cover">
+    <h4 class="card__heading">
+     <span class="card__heading-span">Book a lesson</span>
+    </h4>
+   </div>
+   <div class="card__details">
+    <ul>
+    <p><i>and nail your interview</i></p>
     <% if user_signed_in? %>
      <%= link_to "Browse Lessons", lessons_path, class: "btn btn-flat" %>
     <% else %>
       <%= link_to "Sign up", new_user_registration_path, class: "btn btn-flat" %>
       <%= link_to "Log in", new_user_session_path, class: "btn btn-flat" %>
     <% end %>
-  </div>
-</div>
-
-<div class="search">
-  <input type="text" class="searchTerm" placeholder="What are you looking for?">
-  <button type="submit" class="searchButton">
-    <i class="fa fa-search"></i>
-  </button>
-</div>
-
-<div class="cards">
-  <div class="card-category" style="background-color: black">
-    Teachers and students from around the world
+    </ul>
+   </div>
   </div>
 
-  <div class="card-category" style="background-color: orange">
-    Intuitive and user firendly
+  <div class="card__side card__side--front">
+   <div class="card__theme">
+    <div class="card__theme-box">
+     <p class="card__title">Welcome to Concisely</p>
+    </div>
+   </div>
   </div>
 
-  <div class="card-category" style="background-color: black">
-    Improve your communication skills
-  </div>
+ </div>
 </div>
