@@ -28,3 +28,47 @@ end
 
 #student
 student = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: "s@s.s", password: "123456")
+
+#booking
+booking1 = Booking.create!(
+  user: student,
+  start_time: DateTime.strptime("09/03/2021 17:00", "%d/%m/%Y %H:%M"),
+  end_time: DateTime.strptime("09/03/2021 18:00", "%d/%m/%Y %H:%M"), 
+  lesson: Lesson.all.sample
+)
+
+booking2 = Booking.create!(
+  user: student,
+  start_time: DateTime.strptime("16/03/2021 17:00", "%d/%m/%Y %H:%M"), 
+  end_time: DateTime.strptime("16/03/2021 18:00", "%d/%m/%Y %H:%M"), 
+  lesson: Lesson.all.sample
+)
+
+booking3 = Booking.create!(
+  user: student, 
+  start_time: DateTime.strptime("23/03/2021 17:00", "%d/%m/%Y %H:%M"), 
+  end_time: DateTime.strptime("23/03/2021 18:00", "%d/%m/%Y %H:%M"), 
+  lesson: Lesson.all.sample
+)
+
+#report
+report1 = Report.create!(
+  date: DateTime.strptime("09/03/2021 20:00", "%d/%m/%Y %H:%M"),
+  booking: booking1,
+  description: "Very good job !",
+  rating: 5,
+)
+
+report1 = Report.create!(
+  date: DateTime.strptime("16/03/2021 20:00", "%d/%m/%Y %H:%M"),
+  booking: booking2,
+  description: "Very good job !",
+  rating: 5
+)
+
+report1 = Report.create!(
+  date: DateTime.strptime("23/03/2021 20:00", "%d/%m/%Y %H:%M"),
+  booking: booking3,
+  description: "Very good job !",
+  rating: 5
+)
