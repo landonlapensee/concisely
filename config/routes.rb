@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   namespace :my do 
     resource :dashboard, only: :show
+    resource :video, only: :show
     resources :lessons, only: :index
     resources :bookings, only: :index
     resources :reports, only: :index
