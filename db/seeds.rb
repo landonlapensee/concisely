@@ -56,7 +56,7 @@ report1 = Report.create!(
   date: DateTime.strptime("09/03/2021 20:00", "%d/%m/%Y %H:%M"),
   booking: booking1,
   description: "Very good job !",
-  rating: 5,
+  rating: 5
 )
 
 report1 = Report.create!(
