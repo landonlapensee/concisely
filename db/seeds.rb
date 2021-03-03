@@ -8,7 +8,7 @@ User.destroy_all
 coaches = []
 emails = ["a@a.a", "b@b.b", "c@c.c", "d@d.d", "e@e.e", "f@f.f", "g@g.g", "h@h.h", "i@i.i"]
 emails.each do |email|
-  User.create!(
+  coaches << User.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     email: email,
