@@ -22,7 +22,7 @@
 @import "components/forms";
 
 body {
-  background-color: #FFFFFF;
+  background-color: #f2f2f2;
   text-align: center;
 }
 
@@ -43,4 +43,8 @@ body {
   margin: 0 auto;
   width: 50%;
   text-align: center;
+}
+
+.title {
+  margin-top: 40px;
 }
