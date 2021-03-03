@@ -1,0 +1,4 @@
+<%= simple_form_for [ lesson, booking ] do |f| %>
+  <%= f.input :start_time, label: "Start Time", html5: true, wrapper_html: { class: "w-5 inline_field_wrapper start_date" } %>
+  <%= f.submit "Book", class: "btn btn-primary" %>
+<% end %>
