@@ -1,0 +1,86 @@
+  <div class="card-product">
+    <img style="border-radius:50%; height:100px; width:100px;" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-product-infos">
+      <h2><strong> <%= lesson.user.first_name %> <%= lesson.user.last_name %> </strong></h2>
+      <h3> <%= lesson.industry.capitalize %> </h3>
+      <span>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+      </span>
+      <span>$<%= lesson.price %>/hr </span>
+    </div>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#lesson">
+      View Profile
+    </button>
+  </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="lesson" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Coach's Profile</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img style="border-radius:50%; height:100px; width:100px;" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <div class="card-product-infos">
+              <h2><strong> <%= lesson.user.first_name %> <%= lesson.user.last_name %> </strong></h2>
+              <h3> <%= lesson.industry.capitalize %> </h3>
+              <span>$<%= lesson.price %>/hr </span>
+              <hr>
+            </div>
+            <br>
+            <div class="card-description">
+              <p> <%= lesson.description %> </p>
+              <hr>
+              <br>
+              <h2><strong>How It Works</strong></h2>
+              <hr>
+              <p class="description">My lessons are 20 minutes which includes a 15 minute mock up interview and 5 minutes of feedback.</p>
+              <br>
+              <h2><strong>Lesson Packages</strong></h2>
+              <hr>
+              <p>20 minutes for $45</p>
+              <p>40 minutes for $70</p>
+              <p>60 minutes for $100</p>
+              <br>
+              <h2><strong>Reviews</strong>(14)</h2>
+              <span>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-half" aria-hidden="true"></i>
+              </span>
+              <hr>
+              <br>
+              <p>My coach has helped me so much in nailing the interview and getting my dream job. Thanks, coach!</p>
+              <span>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+              </span>
+              <!-- <div id="star-rating">
+                <%# if not lesson.no_of_stars.blank? %>
+                  Star rating: <%#= product.no_of_stars %>
+                <%# else %>
+                  <%#= link_to 'Please add a Review',{ controller: 'reviews', action: 'new', id: product.id } %>
+                <%# end %>
+              </div> -->
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save Coach</button>
+          </div>
+        </div>
+      </div>
+    </div>
