@@ -1,44 +1,14 @@
 <h1>Search Results</h1>
-<!-- <p>These are the coaches matching your search</p> -->
+<!-- <p>These are the lessons matching your search</p> -->
 <div class="container ">
   <div class="row">
   <% @lessons.each do |lesson| %>
-    <div class="col-md-3 col-sm-6">
-      <div class="card-product">
-        <img style="border-radius:50%; height:100px; width:100px;" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-        <div class="card-product-infos">
-          <h2><strong> <%= lesson.user.first_name %> <%= lesson.user.last_name %> </strong></h2>
-          <h3> <%= lesson.industry.capitalize %> </h3>
-          <p> <%= lesson.description %> </p>
-          <span>Rating</span>
-          <span>$<%= lesson.price %>/hr </span>
-        </div>
+    <div class="col-sm-6 col-md-4 ">
+      <div class="card-product border">
+        <%= render partial: "coach-profile-modal", locals: { lesson: lesson } %>
       </div>
     </div>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-      Launch demo modal
-    </button>
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            Data to display
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <% end %>
-    </div>
+  <% end %>
+  </div>
 </div>
 
