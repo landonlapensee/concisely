@@ -26,4 +26,4 @@ coaches.each do |user|
 end
 
 #student
-student = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: "j@j.j", password: "123456")
+student = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: "s@s.s", password: "123456")
