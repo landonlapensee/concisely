@@ -2,6 +2,7 @@ require 'faker'
 
 puts "Cleaning database..."
 User.destroy_all
+Lesson.destroy_all
 
 
 #Coaches
