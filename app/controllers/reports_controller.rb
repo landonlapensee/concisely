@@ -4,7 +4,7 @@ class ReportsController < ApplicationController
   end 
 
   def new 
-    @booking = Booking.fin(params[:booking_id])
+    @booking = Booking.find(params[:booking_id])
     @report = Report.new
   end 
 
@@ -15,9 +15,8 @@ class ReportsController < ApplicationController
     @report.booking = @booking
     if @report.save
       redirect_to my_dashboard_path, notice: 'report was successfully submitted.'
-      else
-        render :new, notice: 'Error, Report was not created'
-      end
+    else
+      render :new, notice: 'Error, Report was not created'
     end
   end 
 
