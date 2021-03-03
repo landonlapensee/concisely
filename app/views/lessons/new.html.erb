@@ -1,9 +1,9 @@
-<h1 class="titles">NEW LESSON</h1>
+<h2 class="title">NEW LESSON</h2>
 
 <div class="container">
-  <div class="row">
-    <div class="form">
-      <div class="wd-50">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-4">
+      <div class="form-inputs"> 
         <%= simple_form_for(@lesson) do |f| %>
           <%= f.input :description, :placeholder => '-> describe your lesson' %>
           <%= f.input :industry, :placeholder => '-> select an industry' %>
