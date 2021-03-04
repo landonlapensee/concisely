@@ -12,14 +12,15 @@
   depending on if the user has booked a lesson or not
   LOGIC BELOW STILL NEEDS WORK -- IT ONLY SHOWS THE FIRST BOOKING OF CURRENT_USER, NEEDA TO SHOW NEXT BOOKING%>
     <% if current_user.has_made_a_booking? %>
-        <p><strong><%= current_user.bookings.first.lesson.user.first_name %>
-          <%= current_user.bookings.first.lesson.user.last_name %></strong></p>
-        <p><%= current_user.bookings.first.lesson.industry.capitalize %></p>
-        <p><%= current_user.bookings.first.start_time %></p>
+      <%= current_date = Time.now %>
+        <%# <p><strong><%= current_user.bookings.first.lesson.user.first_name %>
+          <%# <%= current_user.bookings.first.lesson.user.last_name </strong></p> %>
+        <%# <p><%= current_user.bookings.first.lesson.industry.capitalize </p> %>
+        <%# <p><%= current_user.bookings.first.start_time</p> %>
         
-        <div class="videocall">
-          <button><%= link_to "JOIN VIDEO", my_video_path  %></button>
-        </div>
+      <div class="videocall">
+        <button><%= link_to "JOIN VIDEO", my_video_path  %></button>
+      </div>
       <% else %>
         <p>You do not have any upcoming lessons</p>
     <% end %>
