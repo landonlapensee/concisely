@@ -1,5 +1,7 @@
 class Lesson < ApplicationRecord
   belongs_to :user
+  has_many :booking, dependent: :destroy
+
   validates :industry, presence: true
 
   INDUSTRIES = [
