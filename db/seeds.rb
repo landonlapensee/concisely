@@ -43,36 +43,42 @@ student = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Nam
 booking1 = Booking.create!(
   user: student,
   start_time: DateTime.strptime("09/03/2021 17:00", "%d/%m/%Y %H:%M"),
+  duration: 30,
   lesson: Lesson.all.sample
 )
 
 booking2 = Booking.create!(
   user: student,
   start_time: DateTime.strptime("16/03/2021 17:00", "%d/%m/%Y %H:%M"),
+  duration: 30,
   lesson: Lesson.all.sample
 )
 
 booking3 = Booking.create!(
   user: student,
   start_time: DateTime.strptime("23/03/2021 17:00", "%d/%m/%Y %H:%M"),
+  duration: 30,
   lesson: Lesson.all.sample
 )
 
 booking4 = Booking.create!(
   user: student,
   start_time: DateTime.strptime("09/01/2021 17:00", "%d/%m/%Y %H:%M"),
+  duration: 30,
   lesson: Lesson.all.sample
 )
 
 booking5 = Booking.create!(
   user: student,
   start_time: DateTime.strptime("16/01/2021 17:00", "%d/%m/%Y %H:%M"),
+  duration: 30,
   lesson: Lesson.all.sample
 )
 
 booking6 = Booking.create!(
   user: student,
   start_time: DateTime.strptime("23/01/2021 17:00", "%d/%m/%Y %H:%M"),
+  duration: 30,
   lesson: Lesson.all.sample
 )
 
