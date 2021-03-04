@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @lesson = Lesson.find(params[:lesson_id])
-    @booking.duration = 60
+    @booking.duration = @lesson.duration || 30
     @booking.lesson = @lesson
     @booking.price = @lesson.price
     @booking.user = current_user
@@ -25,6 +25,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_time)
+    params.require(:booking).permit(:start_time, :number_of_lessons)
   end
 end
