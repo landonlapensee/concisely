@@ -1,4 +1,5 @@
 class Booking < ApplicationRecord
+  attr_accessor :number_of_lessons
   belongs_to :user
   belongs_to :lesson
   # has_one :review, dependent: :destroy

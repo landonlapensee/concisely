@@ -1,6 +1,7 @@
 class ReportsController < ApplicationController
   def show
     @report = Report.find(params[:id])
+    @bookings = current_user.bookings
   end 
 
   def new 
@@ -23,6 +24,6 @@ class ReportsController < ApplicationController
   private
 
   def report_params
-    params.require(:reports).permit(:description, :rating, :date)
+    params.require(:report).permit(:description, :rating, :date)
   end
 end

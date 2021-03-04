@@ -19,7 +19,7 @@ class LessonsController < ApplicationController
     @lesson.save
 
     if @lesson.save
-      redirect_to @lesson, notice: "Your lesson has been created"
+      redirect_to my_dashboard_path, notice: "Your lesson has been created"
     else
       render :new
     end
