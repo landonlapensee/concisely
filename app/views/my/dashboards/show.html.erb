@@ -8,7 +8,9 @@
   <h2>Next Lesson</h3>
   
   <div class="booking">
-    <% if current_user.bookings.first %>
+  <%# if statement in block below controls what is displayed 
+  depending on if the user has booked a lesson or not %>
+    <% if current_user.bookings.first && Time.now < current_user.bookings.first.end_time %>
         <p><strong><%= current_user.bookings.first.lesson.user.first_name %>
           <%= current_user.bookings.first.lesson.user.last_name %></strong></p>
         <p><%= current_user.bookings.first.lesson.industry.capitalize %></p>
@@ -27,33 +29,30 @@
 
   <h3>Upcoming Lessons</h3>
   <% current_user.bookings.each do |booking| %>
-    <% if Time.now < booking.end_time %>  
-      <p><%= booking.lesson.industry %></p>
-      <p><%= booking.start_time %></p>
+    <% if Time.now < booking.end_time %>
+      <div class="booking-card">
+        <p><strong><%= booking.lesson.user.first_name %> <%= booking.lesson.user.last_name %></strong></p>
+        <p><%= booking.lesson.industry %></p>
+        <p><%= booking.start_time %></p>
+      </div>
     <% end %>
   <% end %>
   <h3>Past Lessons</h3>
   <% current_user.bookings.each do |booking| %>
-    <% if Time.now >= booking.end_time %> 
-      <p><%= booking.user.email %></p>
-      <p><%= booking.lesson.industry %></p>
-      <p><%= booking.start_time %></p>
-      <% if booking.report == nil %>
-        <button><%= link_to "Create Report", new_booking_report_path(booking) %></button>
-      <% else %>
-        <button><%= link_to "View Report", report_path(booking.report) %></button>
-      <% end %>
+    <% if Time.now >= booking.end_time %>
+      <div class="booking-card">
+        <p><%= booking.user.email %></p>
+        <p><%= booking.lesson.industry %></p>
+        <p><%= booking.start_time %></p>
+        <% if booking.report == nil %>
+          <button><%= link_to "Create Report", new_booking_report_path(booking) %></button>
+        <% else %>
+          <button><%= link_to "View Report", report_path(booking.report) %></button>
+        <% end %>
+      </div>
     <% end %>
   <% end %>
 </div>
-
-<% current_user.bookings.each do |booking| %>
-  <% if booking.report == nil %>
-    <p><%= booking.start_time %></p>
-    <button><%= link_to "Create Report", new_booking_report_path(booking) %></button>
-  <% end %>
-<% end %>
-
 
 <div class="reports-card">
   <h2>Reports</h2>
