@@ -34,7 +34,6 @@ coaches.each do |user|
   )
 end
 
-
 #Coaches
 # coaches = []
 # emails = ["a@a.a", "b@b.b", "c@c.c", "d@d.d", "e@e.e", "f@f.f", "g@g.g", "h@h.h", "i@i.i"]
@@ -47,7 +46,6 @@ end
 #     image: "https://randomuser.me/api/portraits/men/34.jpg"
 #   )
 # end 
-
 
 #student
 student = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: "s@s.s", password: "123456", image: "https://randomuser.me/api/portraits/men/34.jpg")
