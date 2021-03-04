@@ -1,9 +1,9 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :lesson
-  has_one :review
-  has_one :payment
-  has_one :report
+  # has_one :review, dependent: :destroy
+  # has_one :payment, dependent: :destroy
+  has_one :report, dependent: :destroy
   validates :user, presence: true
   validates :lesson, presence: true
   validates :start_time, presence: true
