@@ -12,6 +12,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @lesson = Lesson.find(params[:lesson_id])
     @booking.duration = @lesson.duration || 30
+    @booking.end_time = @booking.start_time.to_datetime + @lesson.duration.minutes
     @booking.lesson = @lesson
     @booking.price = @lesson.price
     @booking.user = current_user
