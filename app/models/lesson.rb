@@ -1,6 +1,6 @@
 class Lesson < ApplicationRecord
   belongs_to :user
-  has_many :booking, dependent: :destroy
+  has_many :bookings, dependent: :destroy
 
   validates :industry, presence: true
 
