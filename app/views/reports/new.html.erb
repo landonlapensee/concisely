@@ -2,7 +2,7 @@
 
 <%= simple_form_for [ @booking, @report ] do |f| %>
   <%= f.input :date, as: :date, html5: true %>
-  <%= f.input :description %>
+  <%= f.input :content, as: :rich_text_area %>
   <%= f.input :rating %>
   <%= f.submit "Create Report", class: "btn btn-primary" %>
 <% end %>

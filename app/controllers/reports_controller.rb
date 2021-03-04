@@ -6,7 +6,7 @@ class ReportsController < ApplicationController
 
   def new 
     @booking = Booking.find(params[:booking_id])
-    @report = Report.new
+    @report = Report.new(content: render_to_string(partial: "content_template"))
   end 
 
   def create
