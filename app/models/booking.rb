@@ -1,4 +1,5 @@
 class Booking < ApplicationRecord
+  attr_accessor :number_of_lessons
   belongs_to :user
   belongs_to :lesson
   # has_one :review, dependent: :destroy
@@ -12,7 +13,7 @@ class Booking < ApplicationRecord
   def duration=(minutes)
     return nil if start_time.nil?
 
-    self.end_time = start_time + minutes.to_i.minutes
+    self.end_time = start_time + (minutes.to_i.minutes * number_of_lessons.to_i)
   end
 
   def duration
