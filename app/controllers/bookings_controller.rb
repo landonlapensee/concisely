@@ -13,6 +13,7 @@ class BookingsController < ApplicationController
     @lesson = Lesson.find(params[:lesson_id])
     @booking.duration = 60
     @booking.lesson = @lesson
+    @booking.price = @lesson.price
     @booking.user = current_user
     if @booking.save
       redirect_to my_bookings_path
