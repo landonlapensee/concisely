@@ -13,7 +13,7 @@ class Booking < ApplicationRecord
   def duration=(minutes)
     return nil if start_time.nil?
 
-    self.end_time = start_time + (minutes.to_i.minutes * number_of_lessons.to_i)
+    self.end_time = start_time + minutes.to_i.minutes
   end
 
   def duration
