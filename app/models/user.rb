@@ -15,6 +15,7 @@ class User < ApplicationRecord
     end
 
     def is_a_coach?
+      # this will need to be changed eventually when we have a coach vetting system
       self.lessons.first
     end
 end
