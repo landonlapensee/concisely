@@ -1,34 +1,20 @@
-
-
-<div class="artboard">
- <div class="card">
-
-  <div class="card__side card__side--back">
-   <div class="card__cover">
-    <h4 class="card__heading">
-     <span class="card__heading-span">Book a lesson</span>
-    </h4>
-   </div>
-   <div class="card__details">
-    <ul>
-    <p><i>and nail your interview</i></p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://image.freepik.com/free-vector/online-job-interview_23-2148612926.jpg);">
+  <div class="container">
+    <h1>Book a lesson</h1>
+    <p>and nail your interview</p>
     <% if user_signed_in? %>
-     <%= link_to "Browse Lessons", lessons_path, class: "btn btn-flat" %>
+      <%= link_to "Browse all lessons", lessons_path, class: "btn btn-flat" %>
+      <div class="dropdown">
+        <button class="btn btn-flat">Browse by industry</button>
+        <div class="dropdown-content">
+          <% Lesson::INDUSTRIES.each do |industry| %>
+            <%= link_to industry.titleize, lessons_path(industry: industry) %>
+          <% end %>
+        </div>
+      </div>
     <% else %>
       <%= link_to "Sign up", new_user_registration_path, class: "btn btn-flat" %>
       <%= link_to "Log in", new_user_session_path, class: "btn btn-flat" %>
     <% end %>
-    </ul>
-   </div>
   </div>
-
-  <div class="card__side card__side--front">
-   <div class="card__theme">
-    <div class="card__theme-box">
-     <p class="card__title">Welcome to Concisely</p>
-    </div>
-   </div>
-  </div>
-
- </div>
 </div>
