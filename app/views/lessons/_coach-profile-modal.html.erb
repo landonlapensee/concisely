@@ -10,7 +10,8 @@
       <i class="fa fa-star" aria-hidden="true"></i>
       <i class="fa fa-star" aria-hidden="true"></i>
     </span>
-    <span>$<%= lesson.price %>/hr </span>
+    <span>$<%= lesson.price %>/lesson </span>
+    <span><%= lesson.duration %>min </span>
   </div>
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal<%= lesson.id %>">
     View Profile
@@ -32,7 +33,8 @@
         <div class="card-product-infos mb-3">
           <h2><strong> <%= lesson.user.first_name %> <%= lesson.user.last_name %> </strong></h2>
           <h3> <%= lesson.industry.capitalize %> </h3>
-          <span>$<%= lesson.price %>/hr </span>
+          <span>$<%= lesson.price %>/lesson </span>
+          <span><%= lesson.duration %>min </span>
         </div>
         <div class="card-description mb-3">
           <h2><strong>My Experience</strong></h2>
