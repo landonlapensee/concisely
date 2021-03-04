@@ -18,13 +18,14 @@ emails.each do |email|
     email: email,
     password: "123456"
   )
-end 
+end
 
 coaches.each do |user|
-  Lesson.create!( 
-    description: "Hi there I am enthusiastic professional with lots of interviewing experience. I can train you how to perform at your best under pressure! My lesson's are 20 minutes that includes a 15 minute mock up interview and 5 minutes of feedback.", 
-    user: user, 
-    price: 40.00, 
+  Lesson.create!(
+    description: "Hi there I am enthusiastic professional with lots of interviewing experience. I can train you how to perform at your best under pressure! My lesson's are 20 minutes that includes a 15 minute mock up interview and 5 minutes of feedback.",
+    user: user,
+    price: 40.00,
+    duration: 30,
     industry: "marketing"
   )
 end
@@ -36,42 +37,36 @@ student = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Nam
 booking1 = Booking.create!(
   user: student,
   start_time: DateTime.strptime("09/03/2021 17:00", "%d/%m/%Y %H:%M"),
-  end_time: DateTime.strptime("09/03/2021 18:00", "%d/%m/%Y %H:%M"), 
   lesson: Lesson.all.sample
 )
 
 booking2 = Booking.create!(
   user: student,
-  start_time: DateTime.strptime("16/03/2021 17:00", "%d/%m/%Y %H:%M"), 
-  end_time: DateTime.strptime("16/03/2021 18:00", "%d/%m/%Y %H:%M"), 
+  start_time: DateTime.strptime("16/03/2021 17:00", "%d/%m/%Y %H:%M"),
   lesson: Lesson.all.sample
 )
 
 booking3 = Booking.create!(
-  user: student, 
-  start_time: DateTime.strptime("23/03/2021 17:00", "%d/%m/%Y %H:%M"), 
-  end_time: DateTime.strptime("23/03/2021 18:00", "%d/%m/%Y %H:%M"), 
+  user: student,
+  start_time: DateTime.strptime("23/03/2021 17:00", "%d/%m/%Y %H:%M"),
   lesson: Lesson.all.sample
 )
 
 booking4 = Booking.create!(
   user: student,
   start_time: DateTime.strptime("09/01/2021 17:00", "%d/%m/%Y %H:%M"),
-  end_time: DateTime.strptime("09/01/2021 18:00", "%d/%m/%Y %H:%M"), 
   lesson: Lesson.all.sample
 )
 
 booking5 = Booking.create!(
   user: student,
-  start_time: DateTime.strptime("16/01/2021 17:00", "%d/%m/%Y %H:%M"), 
-  end_time: DateTime.strptime("16/01/2021 18:00", "%d/%m/%Y %H:%M"), 
+  start_time: DateTime.strptime("16/01/2021 17:00", "%d/%m/%Y %H:%M"),
   lesson: Lesson.all.sample
 )
 
 booking6 = Booking.create!(
-  user: student, 
-  start_time: DateTime.strptime("23/01/2021 17:00", "%d/%m/%Y %H:%M"), 
-  end_time: DateTime.strptime("23/01/2021 18:00", "%d/%m/%Y %H:%M"), 
+  user: student,
+  start_time: DateTime.strptime("23/01/2021 17:00", "%d/%m/%Y %H:%M"),
   lesson: Lesson.all.sample
 )
 
