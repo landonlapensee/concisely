@@ -15,7 +15,7 @@ class ReportsController < ApplicationController
     @report = Report.new(report_params)
     @report.booking = @booking
     if @report.save
-      redirect_to my_dashboard_path, notice: 'report was successfully submitted.'
+      redirect_to my_bookings_path, notice: 'Report was successfully submitted.'
     else
       render :new, notice: 'Error, Report was not created'
     end

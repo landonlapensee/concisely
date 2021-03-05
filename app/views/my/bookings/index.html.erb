@@ -7,7 +7,7 @@
   <h2>Next Lesson</h3>
   
   <div class="booking">
-    <% if current_user.has_made_a_booking? %>
+    <% if current_user.has_made_a_booking? && @upcoming_booking %>
       <p> <%= @upcoming_booking.user.first_name %> </p>
       <div class="videocall">
         <button><%= link_to "JOIN VIDEO", my_video_path  %></button>

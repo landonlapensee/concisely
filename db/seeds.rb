@@ -1,10 +1,10 @@
 require 'faker'
 
 puts "Cleaning database..."
+Report.destroy_all
+Booking.destroy_all
+Lesson.destroy_all
 User.destroy_all
-# Lesson.destroy_all
-# Booking.destroy_all
-# Report.destroy_all
 
 # scraping
 # users = 100.times.map { JSON.parse(HTTParty.get("https://randomuser.me/api/").body)["results"].first }
@@ -41,10 +41,10 @@ coaches.each do |user|
 end
 
 #demo student
-student = User.create!(first_name: "Laurier", last_name: "Tsu", email: "s@s.s", password: "123456", image: "https://randomuser.me/api/portraits/men/34.jpg")
+student = User.create!(first_name: "Laurier", last_name: "Tsu", email: "s@s.s", password: "123456", image: "https://www.ldatschool.ca/wp-content/uploads/2015/03/Young-student.jpg")
 
 #demo coach
-coach = User.create!(first_name: "Larry", last_name: "Lemon", email: "c@c.c", password: "123456", image: "https://randomuser.me/api/portraits/men/34.jpg")
+coach = User.create!(first_name: "Larry", last_name: "Lemon", email: "c@c.c", password: "123456", image: "https://www.pngitem.com/pimgs/m/176-1762843_professional-man-hd-png-download.png")
 
 #demo lesson
 lesson = Lesson.create!(
@@ -64,22 +64,22 @@ past_booking1 = Booking.create!(
   price: lesson.price
   )
 
-past_booking2 = Booking.create!(
-  user: student,
-  start_time: DateTime.strptime("03/03/2021 17:00", "%d/%m/%Y %H:%M"),
-  end_time: DateTime.strptime("03/03/2021 17:30", "%d/%m/%Y %H:%M"),
-  lesson: lesson,
-  price: lesson.price
-  )
+# past_booking2 = Booking.create!(
+#   user: student,
+#   start_time: DateTime.strptime("03/03/2021 17:00", "%d/%m/%Y %H:%M"),
+#   end_time: DateTime.strptime("03/03/2021 17:30", "%d/%m/%Y %H:%M"),
+#   lesson: lesson,
+#   price: lesson.price
+#   )
   
   #future bookings
-  future_booking = Booking.create!(
-    user: student,
-    start_time: DateTime.strptime("09/03/2021 17:00", "%d/%m/%Y %H:%M"),
-    end_time: DateTime.strptime("09/03/2021 17:30", "%d/%m/%Y %H:%M"),
-    lesson: lesson,
-    price: lesson.price 
-    )
+  # future_booking = Booking.create!(
+  #   user: student,
+  #   start_time: DateTime.strptime("09/03/2021 17:00", "%d/%m/%Y %H:%M"),
+  #   end_time: DateTime.strptime("09/03/2021 17:30", "%d/%m/%Y %H:%M"),
+  #   lesson: lesson,
+  #   price: lesson.price 
+    # )
     
   #reports
   report1 = Report.create!(
