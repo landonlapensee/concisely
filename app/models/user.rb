@@ -18,4 +18,12 @@ class User < ApplicationRecord
       # this will need to be changed eventually when we have a coach vetting system
       self.lessons.first
     end
+
+    def country_name
+      ISO3166::Country[country_code]&.name
+    end
+
+    def country_flag
+      country_code.tr('A-Z', "\u{1F1E6}-\u{1F1FF}")
+    end
 end

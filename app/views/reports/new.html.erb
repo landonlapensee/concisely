@@ -1,8 +1,10 @@
 <h1>New Report</h1>
 
-<%= simple_form_for [ @booking, @report ] do |f| %>
-  <%= f.input :date, as: :date, html5: true %>
-  <%= f.input :description %>
-  <%= f.input :rating %>
-  <%= f.submit "Create Report", class: "btn btn-primary" %>
-<% end %>
+<div class="container w-50">
+  <%= simple_form_for [ @booking, @report ] do |f| %>
+    <%= f.input :date, as: :date, html5: true, wrapper: :inline_form, :input_html => { :class => 'form-inline w-50' } %>
+    <%= f.input :rating, wrapper: :inline_form, :input_html => { :class => 'form-inline w-50' } %>
+    <%= f.input :content, as: :rich_text_area, :input_html => { :class => "h-50" } %>
+    <%= f.submit "Create Report", class: "btn btn-primary" %>
+  <% end %>
+</div>

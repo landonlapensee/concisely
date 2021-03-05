@@ -6,7 +6,7 @@ class ReportsController < ApplicationController
 
   def new 
     @booking = Booking.find(params[:booking_id])
-    @report = Report.new
+    @report = Report.new(content: render_to_string(partial: "content_template"))
   end 
 
   def create
@@ -24,6 +24,6 @@ class ReportsController < ApplicationController
   private
 
   def report_params
-    params.require(:report).permit(:description, :rating, :date)
+    params.require(:report).permit(:content, :rating, :date)
   end
 end
