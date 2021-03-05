@@ -13,16 +13,18 @@ User.destroy_all
 # user = users.first
 # user["email"]
 
-#Coaches
 coaches = []
-emails = ["a@a.a", "b@b.b", "c@c.c", "d@d.d", "e@e.e", "f@f.f", "g@g.g", "h@h.h", "i@i.i"]
-emails.each do |email|
+
+users.each do |userhash|
   coaches << User.create!(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    email: email,
+    first_name: userhash["name"]["first"],
+    last_name: userhash["name"]["last"],
+    email: userhash["email"],
+    country_code: "CA",
+    city: "Vancouver",
+    bio: "I am an experienced professional.",
     password: "123456",
-    image: "https://randomuser.me/api/portraits/men/34.jpg"
+    image: userhash["picture"]["large"]
   )
 end
 
@@ -36,14 +38,29 @@ coaches.each do |user|
   )
 end
 
+#Coaches
+# coaches = []
+# emails = ["a@a.a", "b@b.b", "c@c.c", "d@d.d", "e@e.e", "f@f.f", "g@g.g", "h@h.h", "i@i.i"]
+# emails.each do |email|
+#   coaches << User.create!(
+#     first_name: Faker::Name.first_name,
+#     last_name: Faker::Name.last_name,
+#     email: email,
+#     password: "123456",
+#     image: "https://randomuser.me/api/portraits/men/34.jpg"
+#   )
+# end 
+
 #student
 student = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: "s@s.s", password: "123456", image: "https://randomuser.me/api/portraits/men/34.jpg")
+coach = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: "c@c.c", password: "123456", image: "https://randomuser.me/api/portraits/men/34.jpg")
 
 #future bookings
 booking1 = Booking.create!(
   user: student,
   start_time: DateTime.strptime("09/03/2021 17:00", "%d/%m/%Y %H:%M"),
   duration: 30,
+  end_time: DateTime.strptime("09/03/2021 18:00", "%d/%m/%Y %H:%M"),
   lesson: Lesson.all.sample
 )
 
@@ -51,6 +68,7 @@ booking2 = Booking.create!(
   user: student,
   start_time: DateTime.strptime("16/03/2021 17:00", "%d/%m/%Y %H:%M"),
   duration: 30,
+  end_time: DateTime.strptime("16/03/2021 18:00", "%d/%m/%Y %H:%M"),
   lesson: Lesson.all.sample
 )
 
@@ -58,13 +76,16 @@ booking3 = Booking.create!(
   user: student,
   start_time: DateTime.strptime("23/03/2021 17:00", "%d/%m/%Y %H:%M"),
   duration: 30,
+  end_time: DateTime.strptime("23/03/2021 18:00", "%d/%m/%Y %H:%M"),
   lesson: Lesson.all.sample
 )
 
+#past bookings
 booking4 = Booking.create!(
   user: student,
   start_time: DateTime.strptime("09/01/2021 17:00", "%d/%m/%Y %H:%M"),
   duration: 30,
+  end_time: DateTime.strptime("09/01/2021 18:00", "%d/%m/%Y %H:%M"),
   lesson: Lesson.all.sample
 )
 
@@ -72,6 +93,7 @@ booking5 = Booking.create!(
   user: student,
   start_time: DateTime.strptime("16/01/2021 17:00", "%d/%m/%Y %H:%M"),
   duration: 30,
+  end_time: DateTime.strptime("16/01/2021 18:00", "%d/%m/%Y %H:%M"),
   lesson: Lesson.all.sample
 )
 
@@ -79,26 +101,27 @@ booking6 = Booking.create!(
   user: student,
   start_time: DateTime.strptime("23/01/2021 17:00", "%d/%m/%Y %H:%M"),
   duration: 30,
+  end_time: DateTime.strptime("23/01/2021 18:00", "%d/%m/%Y %H:%M"),
   lesson: Lesson.all.sample
 )
 
 #reports
 report1 = Report.create!(
-  date: DateTime.strptime("09/03/2021 20:00", "%d/%m/%Y %H:%M"),
+  date: DateTime.strptime("09/01/2021 20:00", "%d/%m/%Y %H:%M"),
   booking: booking1,
   description: "Very good job !",
   rating: 5
 )
 
 report2 = Report.create!(
-  date: DateTime.strptime("16/03/2021 20:00", "%d/%m/%Y %H:%M"),
+  date: DateTime.strptime("16/01/2021 20:00", "%d/%m/%Y %H:%M"),
   booking: booking2,
   description: "Very good job !",
   rating: 5
 )
 
 report3 = Report.create!(
-  date: DateTime.strptime("23/03/2021 20:00", "%d/%m/%Y %H:%M"),
+  date: DateTime.strptime("23/01/2021 20:00", "%d/%m/%Y %H:%M"),
   booking: booking3,
   description: "Very good job !",
   rating: 5
