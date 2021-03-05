@@ -22,6 +22,6 @@ class Lesson < ApplicationRecord
   ]
 
   def price_display
-    "$#{lesson.price}/#{lesson.duration} min"
+    "$#{self.price}/#{self.duration} min"
   end
 end

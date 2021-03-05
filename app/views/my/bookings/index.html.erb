@@ -7,7 +7,7 @@
   <h2>Next Lesson</h3>
   
   <div class="booking">
-    <% if current_user.has_made_a_booking? && @upcoming_booking %>
+    <% if current_user.has_made_a_booking? && ( @upcoming_booking = Booking.last ) %>
       <div class="upcoming-bookings-profiles d-flex justify-content-between">
         <div class="upcoming-booking-user">
           <img class="avatar" src=<%= @upcoming_booking.user.image %>>
