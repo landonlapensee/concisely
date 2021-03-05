@@ -6,10 +6,12 @@ User.destroy_all
 # Booking.destroy_all
 # Report.destroy_all
 
+# scraping
+# users = 100.times.map { JSON.parse(HTTParty.get("https://randomuser.me/api/").body)["results"].first }
 # storing
 # File.open("users.yml", "wb") { |file| file << users.to_yaml }
 # parsing
-# users = YAML.load_file('db/support/users.yml')
+users = YAML.load_file('db/support/users.yml')
 # user = users.first
 # user["email"]
 
