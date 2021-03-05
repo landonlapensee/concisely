@@ -64,7 +64,6 @@ past_booking1 = Booking.create!(
   price: lesson.price
   )
 
-<<<<<<< HEAD
 # past_booking2 = Booking.create!(
 #   user: student,
 #   start_time: DateTime.strptime("03/03/2021 17:00", "%d/%m/%Y %H:%M"),
@@ -82,25 +81,6 @@ past_booking1 = Booking.create!(
   #   price: lesson.price 
     # )
     
-=======
-past_booking2 = Booking.create!(
-  user: student,
-  start_time: DateTime.strptime("03/03/2021 17:00", "%d/%m/%Y %H:%M"),
-  end_time: DateTime.strptime("03/03/2021 17:30", "%d/%m/%Y %H:%M"),
-  lesson: lesson,
-  price: lesson.price
-  )
-
-  #future bookings
-  future_booking = Booking.create!(
-    user: student,
-    start_time: DateTime.strptime("09/03/2021 17:00", "%d/%m/%Y %H:%M"),
-    end_time: DateTime.strptime("09/03/2021 17:30", "%d/%m/%Y %H:%M"),
-    lesson: lesson,
-    price: lesson.price
-    )
-
->>>>>>> master
   #reports
   report1 = Report.create!(
     date: DateTime.strptime("03/02/2021 17:35", "%d/%m/%Y %H:%M"),
