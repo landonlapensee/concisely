@@ -85,7 +85,7 @@ past_booking2 = Booking.create!(
   report1 = Report.create!(
     date: DateTime.strptime("03/02/2021 17:35", "%d/%m/%Y %H:%M"),
     booking: past_booking1,
-    description: "Very good job !",
+    content: "<div>Things That Went Well:<br><br></div><ol><li>&nbsp;You did this well</li><li>&nbsp;You did this well</li><li>&nbsp;You did this well</li></ol><div><br></div><div>Things To Work On:<br><br></div><ol><li>&nbsp;Work on this</li><li>&nbsp;Work on this</li><li>&nbsp;Work on this</li></ol><div><br></div><div>Resources:<br><br></div><ul><li><a href=\"https://www.myinterviewpractice.com/\">https://www.myinterviewpractice.com/</a> -&gt; practice this</li></ul><div><br></div><div>Additional Comments:<br><br></div><ul><li>Lets meet again next week</li></ul><div><br></div>",
     rating: 5
     )
           

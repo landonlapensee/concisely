@@ -5,10 +5,12 @@
   <p><strong>Date: </strong><%= @report.date %></p>
   <p><strong>Rating: </strong><%= @report.rating %> / 10</p>
   <p><%= @report.content %></p>
-  <img style="border-radius:50%; height:100px; width:100px;" src="<%= @report.booking.lesson.user.image %>"/>
+  <img style="border-radius:50%; height:50px; width:50px;" src="<%= @report.booking.lesson.user.image %>"/>
 </div>
 
+<div class="container text-center">
 <button><%= link_to "Back to Dashboard", my_dashboard_path %></button>
+</div>
 
 <div class="reports-card">
 <h3>Other Reports</h3>
