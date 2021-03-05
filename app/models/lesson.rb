@@ -20,4 +20,8 @@ class Lesson < ApplicationRecord
     "manufacturing",
     "other"
   ]
+
+  def price_display
+    "$#{lesson.price}/#{lesson.duration} min"
+  end
 end
