@@ -59,6 +59,7 @@ coach = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.
 booking1 = Booking.create!(
   user: student,
   start_time: DateTime.strptime("09/03/2021 17:00", "%d/%m/%Y %H:%M"),
+  duration: 30,
   end_time: DateTime.strptime("09/03/2021 18:00", "%d/%m/%Y %H:%M"),
   lesson: Lesson.all.sample
 )
@@ -66,6 +67,7 @@ booking1 = Booking.create!(
 booking2 = Booking.create!(
   user: student,
   start_time: DateTime.strptime("16/03/2021 17:00", "%d/%m/%Y %H:%M"),
+  duration: 30,
   end_time: DateTime.strptime("16/03/2021 18:00", "%d/%m/%Y %H:%M"),
   lesson: Lesson.all.sample
 )
@@ -73,6 +75,7 @@ booking2 = Booking.create!(
 booking3 = Booking.create!(
   user: student,
   start_time: DateTime.strptime("23/03/2021 17:00", "%d/%m/%Y %H:%M"),
+  duration: 30,
   end_time: DateTime.strptime("23/03/2021 18:00", "%d/%m/%Y %H:%M"),
   lesson: Lesson.all.sample
 )
@@ -81,6 +84,7 @@ booking3 = Booking.create!(
 booking4 = Booking.create!(
   user: student,
   start_time: DateTime.strptime("09/01/2021 17:00", "%d/%m/%Y %H:%M"),
+  duration: 30,
   end_time: DateTime.strptime("09/01/2021 18:00", "%d/%m/%Y %H:%M"),
   lesson: Lesson.all.sample
 )
@@ -88,6 +92,7 @@ booking4 = Booking.create!(
 booking5 = Booking.create!(
   user: student,
   start_time: DateTime.strptime("16/01/2021 17:00", "%d/%m/%Y %H:%M"),
+  duration: 30,
   end_time: DateTime.strptime("16/01/2021 18:00", "%d/%m/%Y %H:%M"),
   lesson: Lesson.all.sample
 )
@@ -95,6 +100,7 @@ booking5 = Booking.create!(
 booking6 = Booking.create!(
   user: student,
   start_time: DateTime.strptime("23/01/2021 17:00", "%d/%m/%Y %H:%M"),
+  duration: 30,
   end_time: DateTime.strptime("23/01/2021 18:00", "%d/%m/%Y %H:%M"),
   lesson: Lesson.all.sample
 )
