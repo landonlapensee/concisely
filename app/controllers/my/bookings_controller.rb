@@ -9,6 +9,6 @@ class My::BookingsController < ApplicationController
       @my_bookings = current_user.bookings
     end
     sorted_bookings = @my_bookings.sort { |x| x.end_time }
-    @upcoming_booking = sorted_bookings.find { |b| b.end_time >= Time.now }
+    @upcoming_booking = sorted_bookings.find { |b| b.end_time >= Time.now } 
   end
 end
