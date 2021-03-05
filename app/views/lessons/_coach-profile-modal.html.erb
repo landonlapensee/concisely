@@ -1,8 +1,9 @@
 <div class="card-product">
-  <img style="border-radius:50%; height:100px; width:100px;" src="<%= lesson.user.image %>"/>
+  <img style="border-radius:50%; height:100px; width:100px;" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
   <div class="card-product-infos">
     <h2><strong> <%= lesson.user.first_name %> <%= lesson.user.last_name %> </strong></h2>
     <h3> <%= lesson.industry.capitalize %> </h3>
+    <p></p>
     <span>
       <i class="fa fa-star" aria-hidden="true"></i>
       <i class="fa fa-star" aria-hidden="true"></i>
@@ -10,8 +11,7 @@
       <i class="fa fa-star" aria-hidden="true"></i>
       <i class="fa fa-star" aria-hidden="true"></i>
     </span>
-    <span>$<%= lesson.price %>/lesson </span>
-    <span><%= lesson.duration %>min </span>
+    <span>$<%= lesson.price %>/lesson.duration %>min </span>
   </div>
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal<%= lesson.id %>">
     View Profile
@@ -29,12 +29,11 @@
         </button>
       </div>
       <div class="modal-body">
-        <img style="border-radius:50%; height:100px; width:100px;" src="<%= lesson.user.image %>" />
+        <img style="border-radius:50%; height:100px; width:100px;" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
         <div class="card-product-infos mb-3">
           <h2><strong> <%= lesson.user.first_name %> <%= lesson.user.last_name %> </strong></h2>
           <h3> <%= lesson.industry.capitalize %> </h3>
-          <span>$<%= lesson.price %>/lesson </span>
-          <span><%= lesson.duration %>min </span>
+          <span>$<%= lesson.price %>/ <%= lesson.duration %>min </span>
         </div>
         <div class="card-description mb-3">
           <h2><strong>My Experience</strong></h2>
