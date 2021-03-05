@@ -47,6 +47,33 @@
   background-color: white;
 }
 
+.upcoming-booking-info {
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.495);
+  padding: 4px;
+  border-radius: 10px;
+  margin-bottom: 4px;
+}
+
+.booking-card {
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.495);
+  padding: 4px;
+  border-radius: 10px;
+  margin-bottom: 4px;
+}
+
+.booking-card-coach {
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.495);
+  padding: 4px;
+  border-radius: 10px;
+  margin-bottom: 4px;
+}
+
+.coaching-indicator {
+  background-color: rgb(255, 153, 0);
+  padding: 4px 8px;
+  border-radius: 10px;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
