@@ -9,7 +9,7 @@ User.destroy_all
 # storing
 # File.open("users.yml", "wb") { |file| file << users.to_yaml }
 # parsing
-# users = YAML.load_file('db/support/users.yml')
+users = YAML.load_file('db/support/users.yml')
 # user = users.first
 # user["email"]
 
@@ -54,10 +54,18 @@ lesson = Lesson.create!(
   )
   
   #demo bookings
-past_booking = Booking.create!(
+past_booking1 = Booking.create!(
   user: student,
-  start_time: DateTime.strptime("09/02/2021 17:00", "%d/%m/%Y %H:%M"),
-  end_time: DateTime.strptime("09/02/2021 17:30", "%d/%m/%Y %H:%M"),
+  start_time: DateTime.strptime("03/02/2021 17:00", "%d/%m/%Y %H:%M"),
+  end_time: DateTime.strptime("03/02/2021 17:30", "%d/%m/%Y %H:%M"),
+  lesson: lesson,
+  price: lesson.price
+  )
+
+past_booking2 = Booking.create!(
+  user: student,
+  start_time: DateTime.strptime("03/03/2021 17:00", "%d/%m/%Y %H:%M"),
+  end_time: DateTime.strptime("03/03/2021 17:30", "%d/%m/%Y %H:%M"),
   lesson: lesson,
   price: lesson.price
   )
@@ -73,8 +81,8 @@ past_booking = Booking.create!(
     
   #reports
   report1 = Report.create!(
-    date: DateTime.strptime("09/02/2021 17:35", "%d/%m/%Y %H:%M"),
-    booking: past_booking,
+    date: DateTime.strptime("03/02/2021 17:35", "%d/%m/%Y %H:%M"),
+    booking: past_booking1,
     description: "Very good job !",
     rating: 5
     )
