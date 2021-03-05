@@ -40,6 +40,113 @@ coaches.each do |user|
   )
 end
 
+#demo student
+student = User.create!(first_name: "Laurier", last_name: "Tsu", email: "s@s.s", password: "123456", image: "https://randomuser.me/api/portraits/men/34.jpg")
+
+#demo coach
+coach = User.create!(first_name: "Larry", last_name: "Lemon", email: "c@c.c", password: "123456", image: "https://randomuser.me/api/portraits/men/34.jpg")
+
+#demo lesson
+lesson = Lesson.create!(
+  description: "Hi there I am enthusiastic professional with lots of interviewing experience. I can train you how to perform at your best under pressure! My lesson's are 20 minutes that includes a 15 minute mock up interview and 5 minutes of feedback.",
+  user: coach,
+  price: 40.00,
+  duration: 30,
+  industry: "marketing"
+  )
+  
+  #demo bookings
+past_booking1 = Booking.create!(
+  user: student,
+  start_time: DateTime.strptime("03/02/2021 17:00", "%d/%m/%Y %H:%M"),
+  end_time: DateTime.strptime("03/02/2021 17:30", "%d/%m/%Y %H:%M"),
+  lesson: lesson,
+  price: lesson.price
+  )
+
+past_booking2 = Booking.create!(
+  user: student,
+  start_time: DateTime.strptime("03/03/2021 17:00", "%d/%m/%Y %H:%M"),
+  end_time: DateTime.strptime("03/03/2021 17:30", "%d/%m/%Y %H:%M"),
+  lesson: lesson,
+  price: lesson.price
+  )
+  
+  #future bookings
+  future_booking = Booking.create!(
+    user: student,
+    start_time: DateTime.strptime("09/03/2021 17:00", "%d/%m/%Y %H:%M"),
+    end_time: DateTime.strptime("09/03/2021 17:30", "%d/%m/%Y %H:%M"),
+    lesson: lesson,
+    price: lesson.price 
+    )
+    
+  #reports
+  report1 = Report.create!(
+    date: DateTime.strptime("03/02/2021 17:35", "%d/%m/%Y %H:%M"),
+    booking: past_booking1,
+    description: "Very good job !",
+    rating: 5
+    )
+          
+  # report2 = Report.create!(
+  #   date: DateTime.strptime("16/01/2021 20:00", "%d/%m/%Y %H:%M"),
+  #   booking: booking2,
+  #   description: "Very good job !",
+  #   rating: 5
+  # )
+  
+  # report3 = Report.create!(
+  #   date: DateTime.strptime("23/01/2021 20:00", "%d/%m/%Y %H:%M"),
+  #   booking: booking3,
+  #   description: "Very good job !",
+  #   rating: 5
+  # )
+    
+#future bookings
+# booking1 = Booking.create!(
+#   user: student,
+#   start_time: DateTime.strptime("09/03/2021 17:00", "%d/%m/%Y %H:%M"),
+#   end_time: DateTime.strptime("09/03/2021 17:30", "%d/%m/%Y %H:%M"),
+#   lesson: Lesson.all.sample
+# )
+
+# booking2 = Booking.create!(
+#   user: student,
+#   start_time: DateTime.strptime("16/03/2021 17:00", "%d/%m/%Y %H:%M"),
+#   end_time: DateTime.strptime("16/03/2021 18:00", "%d/%m/%Y %H:%M"),
+#   lesson: Lesson.all.sample
+# )
+
+# booking3 = Booking.create!(
+#   user: student,
+#   start_time: DateTime.strptime("23/03/2021 17:00", "%d/%m/%Y %H:%M"),
+#   end_time: DateTime.strptime("23/03/2021 18:00", "%d/%m/%Y %H:%M"),
+#   lesson: Lesson.all.sample
+# )
+
+# #past bookings
+# booking4 = Booking.create!(
+#   user: student,
+#   start_time: DateTime.strptime("09/01/2021 17:00", "%d/%m/%Y %H:%M"),
+#   end_time: DateTime.strptime("09/01/2021 18:00", "%d/%m/%Y %H:%M"),
+#   lesson: Lesson.all.sample
+# )
+
+# booking5 = Booking.create!(
+#   user: student,
+#   start_time: DateTime.strptime("16/01/2021 17:00", "%d/%m/%Y %H:%M"),
+#   end_time: DateTime.strptime("16/01/2021 18:00", "%d/%m/%Y %H:%M"),
+#   lesson: Lesson.all.sample
+# )
+
+# booking6 = Booking.create!(
+#   user: student,
+#   start_time: DateTime.strptime("23/01/2021 17:00", "%d/%m/%Y %H:%M"),
+#   end_time: DateTime.strptime("23/01/2021 18:00", "%d/%m/%Y %H:%M"),
+#   lesson: Lesson.all.sample
+# )
+
 #Coaches
 # coaches = []
 # emails = ["a@a.a", "b@b.b", "c@c.c", "d@d.d", "e@e.e", "f@f.f", "g@g.g", "h@h.h", "i@i.i"]
@@ -52,79 +159,4 @@ end
 #     image: "https://randomuser.me/api/portraits/men/34.jpg"
 #   )
 # end 
-
-#student
-student = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: "s@s.s", password: "123456", image: "https://randomuser.me/api/portraits/men/34.jpg")
-coach = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: "c@c.c", password: "123456", image: "https://randomuser.me/api/portraits/men/34.jpg")
-
-#future bookings
-booking1 = Booking.create!(
-  user: student,
-  start_time: DateTime.strptime("09/03/2021 17:00", "%d/%m/%Y %H:%M"),
-  duration: 30,
-  end_time: DateTime.strptime("09/03/2021 18:00", "%d/%m/%Y %H:%M"),
-  lesson: Lesson.all.sample
-)
-
-booking2 = Booking.create!(
-  user: student,
-  start_time: DateTime.strptime("16/03/2021 17:00", "%d/%m/%Y %H:%M"),
-  duration: 30,
-  end_time: DateTime.strptime("16/03/2021 18:00", "%d/%m/%Y %H:%M"),
-  lesson: Lesson.all.sample
-)
-
-booking3 = Booking.create!(
-  user: student,
-  start_time: DateTime.strptime("23/03/2021 17:00", "%d/%m/%Y %H:%M"),
-  duration: 30,
-  end_time: DateTime.strptime("23/03/2021 18:00", "%d/%m/%Y %H:%M"),
-  lesson: Lesson.all.sample
-)
-
-#past bookings
-booking4 = Booking.create!(
-  user: student,
-  start_time: DateTime.strptime("09/01/2021 17:00", "%d/%m/%Y %H:%M"),
-  duration: 30,
-  end_time: DateTime.strptime("09/01/2021 18:00", "%d/%m/%Y %H:%M"),
-  lesson: Lesson.all.sample
-)
-
-booking5 = Booking.create!(
-  user: student,
-  start_time: DateTime.strptime("16/01/2021 17:00", "%d/%m/%Y %H:%M"),
-  duration: 30,
-  end_time: DateTime.strptime("16/01/2021 18:00", "%d/%m/%Y %H:%M"),
-  lesson: Lesson.all.sample
-)
-
-booking6 = Booking.create!(
-  user: student,
-  start_time: DateTime.strptime("23/01/2021 17:00", "%d/%m/%Y %H:%M"),
-  duration: 30,
-  end_time: DateTime.strptime("23/01/2021 18:00", "%d/%m/%Y %H:%M"),
-  lesson: Lesson.all.sample
-)
-
-#reports
-report1 = Report.create!(
-  date: DateTime.strptime("09/01/2021 20:00", "%d/%m/%Y %H:%M"),
-  booking: booking1,
-  description: "Very good job !",
-  rating: 5
-)
-
-report2 = Report.create!(
-  date: DateTime.strptime("16/01/2021 20:00", "%d/%m/%Y %H:%M"),
-  booking: booking2,
-  description: "Very good job !",
-  rating: 5
-)
-
-report3 = Report.create!(
-  date: DateTime.strptime("23/01/2021 20:00", "%d/%m/%Y %H:%M"),
-  booking: booking3,
-  description: "Very good job !",
-  rating: 5
-)
+      

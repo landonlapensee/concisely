@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
     @booking.price = @lesson.price
     @booking.user = current_user
     if @booking.save
-      redirect_to my_bookings_path
+      redirect_to my_dashboard_path
     else
       render :new
     end

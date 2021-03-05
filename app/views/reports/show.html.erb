@@ -4,7 +4,7 @@
   <p><strong>Coach: </strong><%= @report.booking.lesson.user.first_name  %> <%=  @report.booking.lesson.user.last_name  %></p>
   <p><strong>Date: </strong><%= @report.date %></p>
   <p><strong>Rating: </strong><%= @report.rating %> / 10</p>
-  <p><strong>Description: </strong><%= @report.description %></p>
+  <p><strong>Description: </strong><%= @report.content %></p>
 </div>
 
 <button><%= link_to "Back to Dashboard", my_dashboard_path %></button>
