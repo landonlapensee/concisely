@@ -6,7 +6,12 @@ User.destroy_all
 # Booking.destroy_all
 # Report.destroy_all
 
-
+# storing
+# File.open("users.yml", "wb") { |file| file << users.to_yaml }
+# parsing
+# users = YAML.load_file('db/support/users.yml')
+# user = users.first
+# user["email"]
 
 #Coaches
 coaches = []
@@ -19,7 +24,8 @@ emails.each do |email|
     city: "Vancouver",
     bio: "I am an experienced professional.",
     email: email,
-    password: "123456"
+    password: "123456",
+    image: "https://randomuser.me/api/portraits/men/34.jpg"
   )
 end
 
@@ -28,12 +34,13 @@ coaches.each do |user|
     description: "Hi there I am enthusiastic professional with lots of interviewing experience. I can train you how to perform at your best under pressure! My lesson's are 20 minutes that includes a 15 minute mock up interview and 5 minutes of feedback.",
     user: user,
     price: 40.00,
+    duration: 30,
     industry: "marketing"
   )
 end
 
 #student
-student = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: "s@s.s", password: "123456")
+student = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: "s@s.s", password: "123456", image: "https://randomuser.me/api/portraits/men/34.jpg")
 
 #future bookings
 booking1 = Booking.create!(

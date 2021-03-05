@@ -1,0 +1,406 @@
+# scraping
+# users = 9.times.map { JSON.parse(HTTParty.get("https://randomuser.me/api/").body)["results"].first }
+# storing
+# File.open("users.yml", "wb") { |file| file << users.to_yaml }
+# parsing
+# users = YAML.load_file('db/support/users.yml')
+# user = users.first
+# user["email"]
+
+---
+- gender: male
+  name:
+    title: Mr
+    first: Jordan
+    last: Walker
+  location:
+    street:
+      number: 4182
+      name: Spring Hill Rd
+    city: Adelaide
+    state: Australian Capital Territory
+    country: Australia
+    postcode: 5951
+    coordinates:
+      latitude: "-80.9633"
+      longitude: "-84.5219"
+    timezone:
+      offset: "+6:00"
+      description: Almaty, Dhaka, Colombo
+  email: jordan.walker@example.com
+  login:
+    uuid: 8ec6c002-67f8-427a-87e0-d8e5f6b4c4e5
+    username: tinybird836
+    password: idiot
+    salt: zE7HiEPX
+    md5: b946929d1918753130cd0317041fd9eb
+    sha1: fad8404765fe324d26537a3bfc8665fa252c4463
+    sha256: 7ca9c45dc6afdf12723b39dfb63ac4a725ae2d05248e9be8264acff42af27a7e
+  dob:
+    date: '1974-06-12T14:37:56.090Z'
+    age: 47
+  registered:
+    date: '2017-12-24T22:06:15.184Z'
+    age: 4
+  phone: '09-4728-2835'
+  cell: 0472-511-006
+  id:
+    name: TFN
+    value: '431104587'
+  picture:
+    large: https://randomuser.me/api/portraits/men/34.jpg
+    medium: https://randomuser.me/api/portraits/med/men/34.jpg
+    thumbnail: https://randomuser.me/api/portraits/thumb/men/34.jpg
+  nat: AU
+- gender: female
+  name:
+    title: Mrs
+    first: Jade
+    last: Lo
+  location:
+    street:
+      number: 8240
+      name: St. Catherine St
+    city: Summerside
+    state: Northwest Territories
+    country: Canada
+    postcode: Y3R 5R4
+    coordinates:
+      latitude: "-60.5474"
+      longitude: '11.9821'
+    timezone:
+      offset: "+7:00"
+      description: Bangkok, Hanoi, Jakarta
+  email: jade.lo@example.com
+  login:
+    uuid: 899dddd6-dd4f-4822-a542-ce5fdc236dbf
+    username: blackrabbit917
+    password: danni
+    salt: 1p7HjjPv
+    md5: 2cbd6fd3245b386918bc7237b886200b
+    sha1: 2c77a4a38d9dd1ec820151fe3587a3d89eb592a4
+    sha256: e8f49c273f7586e32149a70d1e2ffe03c422ef063bbed0d86add5246e9ac2019
+  dob:
+    date: '1962-01-07T04:48:43.270Z'
+    age: 59
+  registered:
+    date: '2019-04-06T00:31:51.838Z'
+    age: 2
+  phone: 712-487-9382
+  cell: 240-430-0651
+  id:
+    name: ''
+    value: 
+  picture:
+    large: https://randomuser.me/api/portraits/women/81.jpg
+    medium: https://randomuser.me/api/portraits/med/women/81.jpg
+    thumbnail: https://randomuser.me/api/portraits/thumb/women/81.jpg
+  nat: CA
+- gender: female
+  name:
+    title: Madame
+    first: Joëlle
+    last: Guerin
+  location:
+    street:
+      number: 8013
+      name: Rue de la Fontaine
+    city: Trüllikon
+    state: Neuchâtel
+    country: Switzerland
+    postcode: 1838
+    coordinates:
+      latitude: "-50.1344"
+      longitude: '37.5442'
+    timezone:
+      offset: "+7:00"
+      description: Bangkok, Hanoi, Jakarta
+  email: joelle.guerin@example.com
+  login:
+    uuid: 767ccae7-0eaa-4e30-bf54-a8f8791717a5
+    username: crazyostrich561
+    password: fredfred
+    salt: 6NQ3paR7
+    md5: 382617e4a8852253cb8124c95bc8e93e
+    sha1: a3817faf20261ca6c8413f568f470cd74e1ca5f3
+    sha256: 7c0fcd2a339076973f31c9a0262683e65c7fcd89b3ab496fad9eb50b6ba8d89c
+  dob:
+    date: '1997-04-04T13:49:52.432Z'
+    age: 24
+  registered:
+    date: '2012-01-08T16:53:31.271Z'
+    age: 9
+  phone: 077 146 30 52
+  cell: '079 459 68 23'
+  id:
+    name: AVS
+    value: 756.5847.4543.96
+  picture:
+    large: https://randomuser.me/api/portraits/women/47.jpg
+    medium: https://randomuser.me/api/portraits/med/women/47.jpg
+    thumbnail: https://randomuser.me/api/portraits/thumb/women/47.jpg
+  nat: CH
+- gender: female
+  name:
+    title: Ms
+    first: Olivia
+    last: Gutierrez
+  location:
+    street:
+      number: 2721
+      name: Green Rd
+    city: Hervey Bay
+    state: New South Wales
+    country: Australia
+    postcode: 5322
+    coordinates:
+      latitude: "-83.6905"
+      longitude: '146.6378'
+    timezone:
+      offset: "-1:00"
+      description: Azores, Cape Verde Islands
+  email: olivia.gutierrez@example.com
+  login:
+    uuid: b5f64572-a022-48b5-9edd-41635823d768
+    username: smallfrog174
+    password: sluggo
+    salt: cklGRw24
+    md5: 60380cf0e2c53445d73eac36f5f86d81
+    sha1: '097c818f3d5536eb916562574a2dd7ff67396e6d'
+    sha256: 00ce97c2a7962438288cefeca51fc24092bc9bd1dd97ba7fd3cc0bd9b3d9b146
+  dob:
+    date: '1967-02-15T09:51:26.423Z'
+    age: 54
+  registered:
+    date: '2006-01-02T02:46:27.371Z'
+    age: 15
+  phone: 05-1184-4502
+  cell: 0412-338-363
+  id:
+    name: TFN
+    value: '031068731'
+  picture:
+    large: https://randomuser.me/api/portraits/women/34.jpg
+    medium: https://randomuser.me/api/portraits/med/women/34.jpg
+    thumbnail: https://randomuser.me/api/portraits/thumb/women/34.jpg
+  nat: AU
+- gender: male
+  name:
+    title: Mr
+    first: Neóteles
+    last: das Neves
+  location:
+    street:
+      number: 2626
+      name: Rua Dezesseis de Maio
+    city: Santana
+    state: Sergipe
+    country: Brazil
+    postcode: 27708
+    coordinates:
+      latitude: "-69.0366"
+      longitude: "-73.6567"
+    timezone:
+      offset: "+10:00"
+      description: Eastern Australia, Guam, Vladivostok
+  email: neoteles.dasneves@example.com
+  login:
+    uuid: b5f44ce3-79a0-4f9b-aa34-cc1f9a9cd1ce
+    username: brownfish820
+    password: passmast
+    salt: EKQd0MUi
+    md5: ae859c9c8344b5b8964b865d74f1a63e
+    sha1: bfd7839d3572e2cb30f0a2b9d0f898509fe8974b
+    sha256: 5c8ee66cd48d098240cbf072d40483c97d569c11745ead296c36abc03db14757
+  dob:
+    date: '1987-05-26T07:15:32.898Z'
+    age: 34
+  registered:
+    date: '2003-08-22T12:38:18.094Z'
+    age: 18
+  phone: "(66) 5780-8933"
+  cell: "(96) 2225-9618"
+  id:
+    name: ''
+    value: 
+  picture:
+    large: https://randomuser.me/api/portraits/men/94.jpg
+    medium: https://randomuser.me/api/portraits/med/men/94.jpg
+    thumbnail: https://randomuser.me/api/portraits/thumb/men/94.jpg
+  nat: BR
+- gender: male
+  name:
+    title: Mr
+    first: Nathaniel
+    last: Gutierrez
+  location:
+    street:
+      number: 5445
+      name: St. John’S Road
+    city: City of London
+    state: Shropshire
+    country: United Kingdom
+    postcode: DS30 4WJ
+    coordinates:
+      latitude: '6.2109'
+      longitude: "-154.1226"
+    timezone:
+      offset: "+5:00"
+      description: Ekaterinburg, Islamabad, Karachi, Tashkent
+  email: nathaniel.gutierrez@example.com
+  login:
+    uuid: b5a8c3c5-e2fc-4829-b2ae-6fd9a9c12a83
+    username: redtiger438
+    password: buffy
+    salt: 5l7YFlK7
+    md5: fb81e24ffde6806b663f1f504f2f23c4
+    sha1: 212b3de19f0c1d899352ce08ecfeadcdc6b9a586
+    sha256: da4da7d81a70c8deb16f132b143fc6d85c00a437bd3e223d2ba09b1b6ca6cf54
+  dob:
+    date: '1998-03-11T11:28:54.408Z'
+    age: 23
+  registered:
+    date: '2017-04-18T00:23:19.146Z'
+    age: 4
+  phone: 0116104 242 7046
+  cell: 0731-936-794
+  id:
+    name: NINO
+    value: SN 30 46 49 C
+  picture:
+    large: https://randomuser.me/api/portraits/men/57.jpg
+    medium: https://randomuser.me/api/portraits/med/men/57.jpg
+    thumbnail: https://randomuser.me/api/portraits/thumb/men/57.jpg
+  nat: GB
+- gender: female
+  name:
+    title: Ms
+    first: Shelly
+    last: Ramos
+  location:
+    street:
+      number: 3770
+      name: Ranchview Dr
+    city: Rochmond
+    state: Washington
+    country: United States
+    postcode: 53470
+    coordinates:
+      latitude: '88.3576'
+      longitude: '68.6977'
+    timezone:
+      offset: "+11:00"
+      description: Magadan, Solomon Islands, New Caledonia
+  email: shelly.ramos@example.com
+  login:
+    uuid: dbdf6abe-7c30-440f-b8c0-a039918d2f80
+    username: angryostrich121
+    password: roland
+    salt: Xnbsc09I
+    md5: 03ec6d861f512430ea091fd82114fbf4
+    sha1: 63dc0947ed0f6ef22c4d0863a6278b6816870a79
+    sha256: 8b4ed28fe6527e9494c3c07ec26fa72465ffc6c2427c60ac5dbcad8fbb2efea5
+  dob:
+    date: '1955-05-20T19:18:37.849Z'
+    age: 66
+  registered:
+    date: '2013-01-14T15:05:32.790Z'
+    age: 8
+  phone: "(058)-195-0591"
+  cell: "(682)-754-8147"
+  id:
+    name: SSN
+    value: 993-46-9905
+  picture:
+    large: https://randomuser.me/api/portraits/women/55.jpg
+    medium: https://randomuser.me/api/portraits/med/women/55.jpg
+    thumbnail: https://randomuser.me/api/portraits/thumb/women/55.jpg
+  nat: US
+- gender: male
+  name:
+    title: Mr
+    first: Adam
+    last: Li
+  location:
+    street:
+      number: 3511
+      name: Main Street
+    city: Napier
+    state: Hawke'S Bay
+    country: New Zealand
+    postcode: 60449
+    coordinates:
+      latitude: '66.6575'
+      longitude: "-86.1557"
+    timezone:
+      offset: "-7:00"
+      description: Mountain Time (US & Canada)
+  email: adam.li@example.com
+  login:
+    uuid: '07357748-1806-4aaa-ae94-52ffa25c78cb'
+    username: organicfish389
+    password: tester
+    salt: fIbBNQN5
+    md5: e2b466dec8627bd4b95449a972cc4943
+    sha1: 3a428996794345fdb15c6f7792470ba5bbdbe7b2
+    sha256: dd89ed0514dcfadaeffda20563b5a028c3662ec291a068e6f5bf3d4aef1d6ed9
+  dob:
+    date: '1953-11-04T23:22:06.002Z'
+    age: 68
+  registered:
+    date: '2019-07-15T19:05:16.085Z'
+    age: 2
+  phone: "(613)-745-7788"
+  cell: "(585)-391-5199"
+  id:
+    name: ''
+    value: 
+  picture:
+    large: https://randomuser.me/api/portraits/men/96.jpg
+    medium: https://randomuser.me/api/portraits/med/men/96.jpg
+    thumbnail: https://randomuser.me/api/portraits/thumb/men/96.jpg
+  nat: NZ
+- gender: female
+  name:
+    title: Miss
+    first: Özsu
+    last: Tekelioğlu
+  location:
+    street:
+      number: 5451
+      name: Doktorlar Cd
+    city: Kastamonu
+    state: Elazığ
+    country: Turkey
+    postcode: 20784
+    coordinates:
+      latitude: '77.5137'
+      longitude: '17.0212'
+    timezone:
+      offset: "+2:00"
+      description: Kaliningrad, South Africa
+  email: ozsu.tekelioglu@example.com
+  login:
+    uuid: cc588274-1def-4046-93cf-b9cf67c9bf30
+    username: yellowpeacock637
+    password: salomon
+    salt: 347bqAgm
+    md5: c29ceeb77c5b4daa1ec83b327acfdea1
+    sha1: 78a7c5d734fdac71368c4b965fdd8e5c6e9e8e9b
+    sha256: a0efa2d182c8f2340eab69ee07c3ab56c59031b26e5854507e8d164d25d0bc9a
+  dob:
+    date: '1987-07-22T06:21:13.612Z'
+    age: 34
+  registered:
+    date: '2019-06-10T14:37:38.590Z'
+    age: 2
+  phone: "(475)-792-0796"
+  cell: "(355)-513-8862"
+  id:
+    name: ''
+    value: 
+  picture:
+    large: https://randomuser.me/api/portraits/women/38.jpg
+    medium: https://randomuser.me/api/portraits/med/women/38.jpg
+    thumbnail: https://randomuser.me/api/portraits/thumb/women/38.jpg
+  nat: TR
