@@ -7,16 +7,8 @@
   <h2>Next Lesson</h3>
   
   <div class="booking">
-  <%# if statement in block below controls what is displayed 
-  depending on if the user has booked a lesson or not
-  LOGIC BELOW STILL NEEDS WORK -- IT ONLY SHOWS THE FIRST BOOKING OF CURRENT_USER, NEEDA TO SHOW NEXT BOOKING%>
     <% if current_user.has_made_a_booking? %>
-      <%= current_date = Time.now %>
-        <%# <p><strong><%= current_user.bookings.first.lesson.user.first_name %>
-          <%# <%= current_user.bookings.first.lesson.user.last_name </strong></p> %>
-        <%# <p><%= current_user.bookings.first.lesson.industry.capitalize </p> %>
-        <%# <p><%= current_user.bookings.first.start_time</p> %>
-        
+      <p> <%= @upcoming_booking.user.first_name %> </p>
       <div class="videocall">
         <button><%= link_to "JOIN VIDEO", my_video_path  %></button>
       </div>
@@ -34,12 +26,14 @@
     <% if Time.now < booking.end_time %>
       <% if booking.lesson.user == current_user %>
         <div class="booking-card-coach">
+          <p>Lessons I'm Giving</p>
           <p><strong><%= booking.user.first_name %> <%= booking.user.last_name %></strong></p>
           <p><%= booking.lesson.industry %></p>
           <p><%= booking.start_time %></p>
         </div>
       <% else %>
         <div class="booking-card">
+          <p>Lessons I'm Taking</p>
           <p><strong><%= booking.lesson.user.first_name %> <%= booking.lesson.user.last_name %></strong></p>
           <p><%= booking.lesson.industry %></p>
           <p><%= booking.start_time %></p>
