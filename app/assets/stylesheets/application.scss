@@ -16,7 +16,6 @@
 
 body {
   background-color: #f2f2f2;
-  text-align: center;
 }
 
 .titles {
@@ -91,13 +90,13 @@ $color-white: #fff;
 }
 
 /* Reset */
-*,
-*::after,
-*::before {
- margin: 0;
- padding: 0;
- box-sizing: border-box;
-}
+// *,
+// *::after,
+// *::before {
+//  margin: 0;
+//  padding: 0;
+//  box-sizing: border-box;
+// }
 
 html {
  // 10px as 1rem.

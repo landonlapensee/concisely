@@ -4,10 +4,13 @@
   <p><strong>Coach: </strong><%= @report.booking.lesson.user.first_name  %> <%=  @report.booking.lesson.user.last_name  %></p>
   <p><strong>Date: </strong><%= @report.date %></p>
   <p><strong>Rating: </strong><%= @report.rating %> / 10</p>
-  <p><strong>Description: </strong><%= @report.content %></p>
+  <p><%= @report.content %></p>
+  <img style="border-radius:50%; height:50px; width:50px;" src="<%= @report.booking.lesson.user.image %>"/>
 </div>
 
+<div class="container text-center">
 <button><%= link_to "Back to Dashboard", my_dashboard_path %></button>
+</div>
 
 <div class="reports-card">
 <h3>Other Reports</h3>
