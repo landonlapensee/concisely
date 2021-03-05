@@ -1,4 +1,72 @@
-<h1>My Bookings</h1>
-
 <%# This is a the data that will be used for the dasboard "menu" navbar  %>
 <%= render 'my/menu' %>
+
+<h1>My Bookings</h1>
+
+<div class="bookings-card">
+  <h2>Next Lesson</h3>
+  
+  <div class="booking">
+    <% if current_user.has_made_a_booking? %>
+      <p> <%= @upcoming_booking.user.first_name %> </p>
+      <div class="videocall">
+        <button><%= link_to "JOIN VIDEO", my_video_path  %></button>
+      </div>
+      <% else %>
+        <p>You do not have any upcoming lessons</p>
+    <% end %>
+  </div>
+</div>
+
+<div class="bookings-card">
+  <h2>Your lessons</h3>
+
+  <h3>Upcoming Lessons</h3>
+  <% @my_bookings.each do |booking| %>
+    <% if Time.now < booking.end_time %>
+      <% if booking.lesson.user == current_user %>
+        <div class="booking-card-coach">
+          <p>Lessons I'm Giving</p>
+          <p><strong><%= booking.user.first_name %> <%= booking.user.last_name %></strong></p>
+          <p><%= booking.lesson.industry %></p>
+          <p><%= booking.start_time %></p>
+        </div>
+      <% else %>
+        <div class="booking-card">
+          <p>Lessons I'm Taking</p>
+          <p><strong><%= booking.lesson.user.first_name %> <%= booking.lesson.user.last_name %></strong></p>
+          <p><%= booking.lesson.industry %></p>
+          <p><%= booking.start_time %></p>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+  <h3>Past Lessons</h3>
+  <% @my_bookings.each do |booking| %>
+    <% if Time.now >= booking.end_time %>
+      <% if booking.lesson.user == current_user %>
+        <div class="booking-card-coach">
+          <p><%= booking.user.first_name %></p>
+          <p><%= booking.lesson.industry %></p>
+          <p><%= booking.start_time %></p>
+          <% if booking.report == nil %>
+            <button><%= link_to "Create Report", new_booking_report_path(booking) %></button>
+          <% else %>
+            <button><%= link_to "View Report", report_path(booking.report) %></button>
+          <% end %>
+        </div>
+      <% else %>
+        <div class="booking-card">
+          <p><%= booking.lesson.user.first_name %></p>
+          <p><%= booking.lesson.industry %></p>
+          <p><%= booking.start_time %></p>
+          <% if booking.report == nil %>
+            <button><%= "No Report" %></button>
+          <% else %>
+            <button><%= link_to "View Report", report_path(booking.report) %></button>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

@@ -28,7 +28,7 @@
               <ul class="navbar-nav mr-auto">
                 <% if user_signed_in? %>
                 <li class="nav-item">
-                  <%= link_to "My dashboard", my_dashboard_path, class: "nav-link" %>
+                  <%= link_to "My dashboard", my_bookings_path, class: "nav-link" %>
                 </li>
                   <li class="nav-item dropdown">
                     <%= image_tag "https://i.pinimg.com/originals/f5/1d/08/f51d08be05919290355ac004cdd5c2d6.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
