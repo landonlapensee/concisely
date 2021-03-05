@@ -8,25 +8,36 @@
   
   <div class="booking">
     <% if current_user.has_made_a_booking? %>
-      <p> <%= @upcoming_booking.user.first_name %> </p>
+      <div class="upcoming-bookings-profiles d-flex justify-content-between">
+        <div class="upcoming-booking-user">
+          <img class="avatar" src=<%= @upcoming_booking.user.image %>>
+          <p><strong><%= @upcoming_booking.user.first_name %> <%= @upcoming_booking.user.last_name %></strong></p>
+        </div>
+        <div class="upcoming-booking-user">
+          <img class="avatar" src=<%= @upcoming_booking.lesson.user.image %>>
+          <p><strong><%= @upcoming_booking.lesson.user.first_name %> <%= @upcoming_booking.lesson.user.last_name %></strong></p>
+        </div>
+      </div>
+      <div class="upcoming-booking-info">
+        <p><%= @upcoming_booking.lesson.industry %></p>
+        <p><%= @upcoming_booking.start_time %></p>
+      </div>
       <div class="videocall">
         <button><%= link_to "JOIN VIDEO", my_video_path  %></button>
       </div>
-      <% else %>
-        <p>You do not have any upcoming lessons</p>
+    <% else %>
+      <p>You do not have any upcoming lessons</p>
     <% end %>
   </div>
 </div>
 
 <div class="bookings-card">
-  <h2>Your lessons</h3>
-
   <h3>Upcoming Lessons</h3>
   <% @my_bookings.each do |booking| %>
     <% if Time.now < booking.end_time %>
       <% if booking.lesson.user == current_user %>
         <div class="booking-card-coach">
-          <p>Lessons I'm Giving</p>
+          <p class="coaching-indicator">Coaching</p>
           <p><strong><%= booking.user.first_name %> <%= booking.user.last_name %></strong></p>
           <p><%= booking.lesson.industry %></p>
           <p><%= booking.start_time %></p>
@@ -41,7 +52,7 @@
       <% end %>
     <% end %>
   <% end %>
-  <h3>Past Lessons</h3>
+  <h3 class="mt-4">Past Lessons</h3>
   <% @my_bookings.each do |booking| %>
     <% if Time.now >= booking.end_time %>
       <% if booking.lesson.user == current_user %>
@@ -70,3 +81,4 @@
     <% end %>
   <% end %>
 </div>
+ 
