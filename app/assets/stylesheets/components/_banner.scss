@@ -1,7 +1,24 @@
+.banner-container {
+  width: 100vw;
+  height: 100vh;
+}
+
 .banner {
-  background-size: cover;
+  outline: 2px solid black;
+  background-image: image-url('concisely_banner.jpg');
+  background-size: 70%;
   background-position: center;
-  padding: 150px 0;
+  padding: 350px;
+  background-repeat: no-repeat;
+}
+
+.banner-word {
+  display: inline-block;
+  max-width: 100%;
+  animation: bounceInDown;
+  animation-duration: 3s;
+  position: relative;
+  top: -400px;
 }
 
 .banner h1 {
