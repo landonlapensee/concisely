@@ -5,9 +5,9 @@
 
 .banner {
   background-image: image-url('concisely_banner.jpg');
-  background-size: 70%;
+  background-size: 60%;
   background-position: center;
-  padding: 350px;
+  padding: 250px;
   background-repeat: no-repeat;
 }
 
@@ -17,7 +17,7 @@
   animation: bounceInDown;
   animation-duration: 3s;
   position: relative;
-  top: -400px;
+  top: -350px;
 }
 
 .banner h1 {
