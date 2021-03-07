@@ -1,5 +1,19 @@
 <div class="banner">
   <div class="container-lg border border-primary">
     <%= image_tag "concisely", :class => "banner-word" %>
+  <% if user_signed_in? %>
+      <%#= link_to "Browse all lessons", lessons_path, class: "btn btn-flat" %>
+      <div class="dropdown">
+        <button class="btn btn-flat">Browse by industry</button>
+        <div class="dropdown-content">
+          <% Lesson::INDUSTRIES.each do |industry| %>
+            <%= link_to industry.titleize, lessons_path(industry: industry) %>
+          <% end %>
+        </div>
+      </div>
+    <% else %>
+      <%= link_to "Sign up", new_user_registration_path, class: "btn btn-flat" %>
+      <%= link_to "Log in", new_user_session_path, class: "btn btn-flat" %>
+    <% end %>
   </div>
 </div>
