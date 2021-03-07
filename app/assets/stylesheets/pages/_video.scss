@@ -1,9 +1,38 @@
-#videoContainer {
-  border: 5px solid pink;
-  height: 70vh;
-  width: 80vw;
+#video-container {
+  background-image: image-url("video_chat.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center top;
+  // border: 5px solid pink;
+  height: 75vh;
+  width: 75vw;
   position: fixed;
-  bottom: 50%;
+  bottom: 60%;
   left: 50%;
   transform: translate(-50%, 50%);
+  // display: flex;
+  // justify-content: center;
+  // align-items: flex-end;
+}
+
+#start-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 70vw;
+  position: fixed;
+  bottom: 15%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  padding: 20px;
+}
+
+// .video-start {
+//   position: relative;
+//   bottom: -100px;
+// }
+
+#dailyTrigger {
+  font-size: 2rem;
 }
