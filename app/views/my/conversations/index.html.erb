@@ -3,21 +3,26 @@
 <%# This is a the data that will be used for the dasboard "menu" navbar  %>
 <%= render 'my/menu' %>
 
-<ul>
-<% current_user.conversation_users.each do |user| %>
-  <li><%= link_to user.first_name, my_conversations_path(user_id: user.id) %></li>
-<% end %>
-</ul>
 
+<div class="conversations-container">
+  <div class="contacts">
+    <ul>
+      <% current_user.conversation_users.each do |user| %>
+        <li><%= link_to user.first_name, my_conversations_path(user_id: user.id) %></li>
+      <% end %>
+    </ul>
+  </div>
 
-<h2><%= @user.first_name %></h2>
+  <div class="message">
+    <h2><%= @user.first_name %></h2>
+      <ul>
+        <% @messages.each do |message| %>
+          <li><%= message.sender.first_name %> : <%= message.content %></li>
+        <% end %>
+      </ul>
 
-<ul>
-<% @messages.each do |message| %>
-  <li><%= message.sender.first_name %> : <%= message.content %></li>
-<% end %>
-</ul>
-
-<%= simple_form_for [@user, @message] do |f| %> 
-  <%= f.input :content, placeholder: "Type message ..." %>
-<% end %>
+    <%= simple_form_for [@user, @message] do |f| %> 
+      <%= f.input :content, placeholder: "Type message ..." %>
+    <% end %>
+  </div>
+</div>

@@ -5,20 +5,20 @@ class My::ConversationsController < ApplicationController
     @messages = @user.messages_with(current_user)
     @message = Message.new
   end
-  
+
   def create
     @user = User.find(params[:user_id])
     @message = Message.new(message_params)
-    @message.user = @user
-    @message.user = current_user
-    if @message.save 
-      redirect_to my_conversations_path(current_user)
+    @message.recipient = @user
+    @message.sender = current_user
+    if @message.save
+      redirect_to my_conversations_path(user_id: @user.id)
     else
       render "my/conversations"
     end
   end
 
-  private 
+  private
 
   def first_conversation_user
     current_user.conversation_users.first
@@ -28,4 +28,3 @@ class My::ConversationsController < ApplicationController
     params.require(:message).permit(:content)
   end
 end
-
