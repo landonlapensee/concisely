@@ -24,4 +24,10 @@ class Lesson < ApplicationRecord
   def price_display
     "$#{self.price}/#{self.duration} min"
   end
+
+  def unavailable_dates_params
+    bookings.pluck(:start_time, :end_time).map do |start_time, end_time|
+      { from: start_time, to: end_time }
+    end
+  end
 end
