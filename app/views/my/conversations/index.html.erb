@@ -12,6 +12,12 @@
 
 <h2><%= @user.first_name %></h2>
 
+<ul>
 <% @messages.each do |message| %>
-  <%= message.content %>
+  <li><%= message.sender.first_name %> : <%= message.content %></li>
+<% end %>
+</ul>
+
+<%= simple_form_for [@user, @message] do |f| %> 
+  <%= f.input :content, placeholder: "Type message ..." %>
 <% end %>
