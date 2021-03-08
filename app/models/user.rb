@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :lessons, dependent: :destroy
   has_many :bookings, dependent: :destroy
+  has_many :coach_listed_bookings, through: :lessons, source: :bookings
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -25,5 +26,9 @@ class User < ApplicationRecord
 
     def country_flag
       country_code.tr('A-Z', "\u{1F1E6}-\u{1F1FF}")
+    end
+
+    def next_meeting_booking
+      bookings.or(Booking.where(id: coach_listed_bookings)).where("end_time > ?", Time.current).order(end_time: :asc).first
     end
 end
