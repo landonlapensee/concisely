@@ -1,15 +1,18 @@
 .banner {
   width: 1000px;
-  // position: absolute;
+  padding-top: 100px;
+  position: relative;
+  z-index: -1;
+  filter: saturate(0.85);
+  margin-right: 100px;
 }
 
 .call-to-action {
-  font-size: 50px;
-  font-family: 'Merriweather', serif;
-  color: #2D4150;
+  font-size: 44px;
+  font-family: 'Saira Condensed', sans-serif;  color: #2D4150;
   padding-top: 80px;
-  padding-left: 160px;
-  margin-right: -240px;
+  padding-left: 360px;
+  margin-right: -200px;
 }
 
 .banner h1 {
