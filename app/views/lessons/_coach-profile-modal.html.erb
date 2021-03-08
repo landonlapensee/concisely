@@ -66,11 +66,14 @@
             <%# end %>
           </div> -->
           <div class="booking mt-3 mb-3">
+            <h2><strong>Availability</strong></h2>
+            <p>
             <h2><strong>Book a Lesson</strong></h2>
             <%= render partial: "booking-form-modal", locals: { lesson: lesson, booking: Booking.new } %>
+            <%= render partial: "lesson-availability", locals: { lesson: lesson, booking: Booking.new } %>
           </div>
           <div id="contact">
-            <h3><strong>Contact Coach</strong></h3>
+            <h3><strong>Message Coach</strong></h3>
           </div>
         </div>
       </div>
