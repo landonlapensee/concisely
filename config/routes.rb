@@ -12,6 +12,10 @@ Rails.application.routes.draw do
 
   resources :reports, only: [ :show ]
 
+  resources :users, only: [] do
+    resources :messages, only: :create
+  end
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
 

@@ -2,3 +2,16 @@
 
 <%# This is a the data that will be used for the dasboard "menu" navbar  %>
 <%= render 'my/menu' %>
+
+<ul>
+<% current_user.conversation_users.each do |user| %>
+  <li><%= link_to user.first_name, my_conversations_path(user_id: user.id) %></li>
+<% end %>
+</ul>
+
+
+<h2><%= @user.first_name %></h2>
+
+<% @messages.each do |message| %>
+  <%= message.content %>
+<% end %>
