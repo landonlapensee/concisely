@@ -2,83 +2,90 @@
 <%= render 'my/menu' %>
 
 <h1>My Bookings</h1>
+<div class="d-flex justify-content-end">
+  <div class="bookings-card">
+    <div class="text-center border-bottom pb-1 m-3">
+      <h2 class="pt-3">Next Lesson</h2>
+    </div>
+    <div class="booking">
+      <% if current_user.has_made_a_booking? && ( @upcoming_booking = Booking.last ) %>
+        <div class="upcoming-bookings-profiles d-flex justify-content-between border-bottom p-3 m-3"">
+          <div class="upcoming-booking-user text-center">
+            <img class="avatar" src=<%= @upcoming_booking.user.image %>>
+            <h5><strong><%= @upcoming_booking.user.first_name %></strong></h5>
+          </div>
+          <div class="booking-square"></div>
+          <div class="booking-square"></div>
+          <div class="booking-square"></div>
+          <div class="upcoming-booking-user text-center">
+            <%= image_tag "coach", :class => "booking-coach" %>
+            <img class="avatar" src=<%= @upcoming_booking.lesson.user.image %>>
+            <h5><strong><%= @upcoming_booking.lesson.user.first_name %></strong></h5>
+          </div>
+        </div>
+        <div class="upcoming-booking-info mt-5 mx-5 text-center">
+          <h3><%= @upcoming_booking.lesson.industry.capitalize %> Interview</h3>
+          <h5><%= @upcoming_booking.start_time.strftime("%B %d, %Y") %></h5>
+          <h4><%= @upcoming_booking.start_time.strftime("%I:%M %p") %></h4>
+        </div>
+        <div class="videocall text-center py-3">
+          <button class="btn btn-warning btn video-start"><%= link_to "JOIN VIDEO", my_video_path  %></button>
+        </div>
+      <% else %>
+        <p>You do not have any upcoming lessons</p>
+      <% end %>
+    </div>
+  </div>
 
-<div class="bookings-card">
-  <h2>Next Lesson</h3>
-  
-  <div class="booking">
-    <% if current_user.has_made_a_booking? && ( @upcoming_booking = Booking.last ) %>
-      <div class="upcoming-bookings-profiles d-flex justify-content-between">
-        <div class="upcoming-booking-user">
-          <img class="avatar" src=<%= @upcoming_booking.user.image %>>
-          <p><strong><%= @upcoming_booking.user.first_name %> <%= @upcoming_booking.user.last_name %></strong></p>
-        </div>
-        <div class="upcoming-booking-user">
-          <img class="avatar" src=<%= @upcoming_booking.lesson.user.image %>>
-          <p><strong><%= @upcoming_booking.lesson.user.first_name %> <%= @upcoming_booking.lesson.user.last_name %></strong></p>
-        </div>
-      </div>
-      <div class="upcoming-booking-info">
-        <p><%= @upcoming_booking.lesson.industry %></p>
-        <p><%= @upcoming_booking.start_time %></p>
-      </div>
-      <div class="videocall">
-        <button><%= link_to "JOIN VIDEO", my_video_path  %></button>
-      </div>
-    <% else %>
-      <p>You do not have any upcoming lessons</p>
+  <div class="bookings-card">
+    <h3>Upcoming Lessons</h3>
+    <% @my_bookings.each do |booking| %>
+      <% if Time.now < booking.end_time %>
+        <% if booking.lesson.user == current_user %>
+          <div class="booking-card-coach">
+            <p class="coaching-indicator">Coaching</p>
+            <p><strong><%= booking.user.first_name %></strong></p>
+            <p><%= booking.lesson.industry %></p>
+            <p><%= booking.start_time %></p>
+          </div>
+        <% else %>
+          <div class="booking-card">
+            <p>Lessons I'm Taking</p>
+            <p><strong><%= booking.lesson.user.first_name %> <%= booking.lesson.user.last_name %></strong></p>
+            <p><%= booking.lesson.industry %></p>
+            <p><%= booking.start_time %></p>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+    <h3 class="mt-4">Past Lessons</h3>
+    <% @my_bookings.each do |booking| %>
+      <% if Time.now >= booking.end_time %>
+        <% if booking.lesson.user == current_user %>
+          <div class="booking-card-coach">
+            <p><%= booking.user.first_name %></p>
+            <p><%= booking.lesson.industry %></p>
+            <p><%= booking.start_time %></p>
+            <% if booking.report == nil %>
+              <button><%= link_to "Create Report", new_booking_report_path(booking) %></button>
+            <% else %>
+              <button><%= link_to "View Report", report_path(booking.report) %></button>
+            <% end %>
+          </div>
+        <% else %>
+          <div class="booking-card">
+            <p><%= booking.lesson.user.first_name %></p>
+            <p><%= booking.lesson.industry %></p>
+            <p><%= booking.start_time %></p>
+            <% if booking.report == nil %>
+              <button><%= "No Report" %></button>
+            <% else %>
+              <button><%= link_to "View Report", report_path(booking.report) %></button>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
     <% end %>
   </div>
-</div>
-
-<div class="bookings-card">
-  <h3>Upcoming Lessons</h3>
-  <% @my_bookings.each do |booking| %>
-    <% if Time.now < booking.end_time %>
-      <% if booking.lesson.user == current_user %>
-        <div class="booking-card-coach">
-          <p class="coaching-indicator">Coaching</p>
-          <p><strong><%= booking.user.first_name %> <%= booking.user.last_name %></strong></p>
-          <p><%= booking.lesson.industry %></p>
-          <p><%= booking.start_time %></p>
-        </div>
-      <% else %>
-        <div class="booking-card">
-          <p>Lessons I'm Taking</p>
-          <p><strong><%= booking.lesson.user.first_name %> <%= booking.lesson.user.last_name %></strong></p>
-          <p><%= booking.lesson.industry %></p>
-          <p><%= booking.start_time %></p>
-        </div>
-      <% end %>
-    <% end %>
-  <% end %>
-  <h3 class="mt-4">Past Lessons</h3>
-  <% @my_bookings.each do |booking| %>
-    <% if Time.now >= booking.end_time %>
-      <% if booking.lesson.user == current_user %>
-        <div class="booking-card-coach">
-          <p><%= booking.user.first_name %></p>
-          <p><%= booking.lesson.industry %></p>
-          <p><%= booking.start_time %></p>
-          <% if booking.report == nil %>
-            <button><%= link_to "Create Report", new_booking_report_path(booking) %></button>
-          <% else %>
-            <button><%= link_to "View Report", report_path(booking.report) %></button>
-          <% end %>
-        </div>
-      <% else %>
-        <div class="booking-card">
-          <p><%= booking.lesson.user.first_name %></p>
-          <p><%= booking.lesson.industry %></p>
-          <p><%= booking.start_time %></p>
-          <% if booking.report == nil %>
-            <button><%= "No Report" %></button>
-          <% else %>
-            <button><%= link_to "View Report", report_path(booking.report) %></button>
-          <% end %>
-        </div>
-      <% end %>
-    <% end %>
-  <% end %>
 </div>
  
