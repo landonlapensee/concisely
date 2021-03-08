@@ -1,10 +1,12 @@
-<div class="banner"></div>
-<div class="container border border-primary text-center">
-  <%= image_tag "concisely.png", :class => "banner-word" %>
-</div>
-
-<div class="container border border-primary" id="home-search">
-  <% if user_signed_in? %>
+<div class="d-flex pt-2 position-relative">
+  <div class="call-to-action">
+    <p><strong>Interviews</strong> are stressful...<p>
+    <p>But they don't need to be!</p>
+    <p>Hire a <strong>Coach</strong>, and get</p>
+    <p>interviewed the</p>
+    <p><strong>right way.</strong>
+  <div class="container border border-primary" id="home-search">
+    <% if user_signed_in? %>
     <%#= link_to "Browse all lessons", lessons_path, class: "btn btn-flat" %>
     <div class="dropdown">
       <button class="btn btn-flat">Browse by industry</button>
@@ -18,4 +20,15 @@
     <%= link_to "Sign up", new_user_registration_path, class: "btn btn-flat" %>
     <%= link_to "Log in", new_user_session_path, class: "btn btn-flat" %>
   <% end %>
+</div>
+</div>
+
+  <%= image_tag "concisely_banner.jpg", :class => "banner" %>
+
+</div>
+
+<div class="d-flex w-75 justify-content-around home-cards">
+<div class="home-card"></div>
+<div class="home-card"></div>
+<div class="home-card"></div>
 </div>
