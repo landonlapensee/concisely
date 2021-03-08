@@ -1,20 +1,21 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://image.freepik.com/free-vector/online-job-interview_23-2148612926.jpg);">
-  <div class="container">
-    <h1>Book a lesson</h1>
-    <p>and nail your interview</p>
-    <% if user_signed_in? %>
-      <%#= link_to "Browse all lessons", lessons_path, class: "btn btn-flat" %>
-      <div class="dropdown">
-        <button class="btn btn-flat">Browse by industry</button>
-        <div class="dropdown-content">
-          <% Lesson::INDUSTRIES.each do |industry| %>
-            <%= link_to industry.titleize, lessons_path(industry: industry) %>
-          <% end %>
-        </div>
+<div class="banner"></div>
+<div class="container border border-primary text-center">
+  <%= image_tag "concisely", :class => "banner-word" %>
+</div>
+
+<div class="container border border-primary" id="home-search">
+  <% if user_signed_in? %>
+    <%#= link_to "Browse all lessons", lessons_path, class: "btn btn-flat" %>
+    <div class="dropdown">
+      <button class="btn btn-flat">Browse by industry</button>
+      <div class="dropdown-content">
+        <% Lesson::INDUSTRIES.each do |industry| %>
+          <%= link_to industry.titleize, lessons_path(industry: industry) %>
+        <% end %>
       </div>
-    <% else %>
-      <%= link_to "Sign up", new_user_registration_path, class: "btn btn-flat" %>
-      <%= link_to "Log in", new_user_session_path, class: "btn btn-flat" %>
-    <% end %>
-  </div>
+    </div>
+  <% else %>
+    <%= link_to "Sign up", new_user_registration_path, class: "btn btn-flat" %>
+    <%= link_to "Log in", new_user_session_path, class: "btn btn-flat" %>
+  <% end %>
 </div>

@@ -15,7 +15,7 @@
 
 
 body {
-  background-color: #f2f2f2;
+  background-color: white;
 }
 
 .titles {
@@ -28,7 +28,7 @@ body {
 }
 
 #content-wrap {
-  padding-bottom: 100px;
+  padding-bottom: 75px;
 }
 
 .description {
@@ -115,10 +115,10 @@ html {
  }
 }
 
-body {
- height: 100vh;
- background-color: $background-color;
-}
+// body {
+//  height: 100vh;
+//  background-color: $background-color;
+// }
 
 .artboard {
  display: flex;

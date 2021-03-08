@@ -1,7 +1,23 @@
 .banner {
-  background-size: cover;
+  background-image: image-url('concisely_banner.jpg');
+  background-size: 100%;
   background-position: center;
-  padding: 150px 0;
+  width: 60vw;
+  height: 60vh;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 3%;
+  background-repeat: no-repeat;
+}
+
+.banner-word {
+  max-width: 50%;
+  animation: bounceInDown;
+  animation-duration: 3s;
+  position: relative;
+  top: -100px;
+
 }
 
 .banner h1 {
@@ -17,4 +33,9 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+#home-search {
+  padding-top: 500px;
+  padding-bottom: 100px
 }
