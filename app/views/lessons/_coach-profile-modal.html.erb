@@ -70,10 +70,10 @@
             <p>
             <h2><strong>Book a Lesson</strong></h2>
             <%= render partial: "booking-form-modal", locals: { lesson: lesson, booking: Booking.new } %>
-            <%= render partial: "lesson-availability", locals: { lesson: lesson, booking: Booking.new } %>
           </div>
           <div id="contact">
             <h3><strong>Message Coach</strong></h3>
+            <%#= render partial: "messaging_section_modal", locals: { lesson: lesson, booking: Booking.new } %>
           </div>
         </div>
       </div>
