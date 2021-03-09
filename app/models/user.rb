@@ -47,4 +47,8 @@ class User < ApplicationRecord
     def messages_with(user)
       messages.where(recipient: user).or(messages.where(sender: user))
     end
+
+    def full_name
+      "#{first_name} #{last_name}"
+    end
 end

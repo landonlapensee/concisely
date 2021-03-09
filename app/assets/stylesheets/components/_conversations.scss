@@ -1,0 +1,42 @@
+.conversations-container {
+  display: flex;
+  border: solid 1px red;
+  justify-content: space-around;
+}
+
+.recipient-name {
+  padding: 10px;
+  margin: 20px;
+  text-align: center;
+
+}
+
+.contacts ul {
+  list-style-type: none;
+  padding: 10px;
+}
+
+.contacts li {
+  list-style-type: none;
+  padding: 10px;
+  border: solid 1px black;
+  border-radius: 20px;
+  width: 100px;
+  text-align: center;
+}
+
+.conversation ul {
+  border-top: solid 1px;
+  border-bottom: solid 1px;
+  padding: 20px;
+}
+
+.message {
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 4px;
+}
+
+.avatar-round {
+  border-radius: 50px;
+}
