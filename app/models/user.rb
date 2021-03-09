@@ -29,6 +29,6 @@ class User < ApplicationRecord
     end
 
     def next_meeting_booking
-      bookings.or(Booking.where(id: coach_listed_bookings)).where("end_time > ?", Time.current).order(end_time: :asc).first
+      bookings.or(Booking.where(id: coach_listed_bookings)).where("end_time >= ?", Time.current).order(end_time: :asc).first
     end
 end
