@@ -64,6 +64,24 @@ past_booking1 = Booking.create!(
   price: lesson.price
   )
 
+message1 = Message.create!(
+  sender: student,
+  recipient: coach,
+  content: "Hello"
+)
+
+message2 = Message.create!(
+  sender: coach,
+  recipient: student,
+  content: "Hi, how are you doing ?"
+)
+
+message2 = Message.create!(
+  sender: User.first,
+  recipient: student,
+  content: "Aloha!"
+)
+
 # past_booking2 = Booking.create!(
 #   user: student,
 #   start_time: DateTime.strptime("03/03/2021 17:00", "%d/%m/%Y %H:%M"),

@@ -4,6 +4,8 @@ class User < ApplicationRecord
   has_many :lessons, dependent: :destroy
   has_many :bookings, dependent: :destroy
   has_many :coach_listed_bookings, through: :lessons, source: :bookings
+  has_many :sent_messages, foreign_key: :sender_id, class_name: "Message"
+  has_many :received_messages, foreign_key: :recipient_id, class_name: "Message"
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -30,5 +32,17 @@ class User < ApplicationRecord
 
     def next_meeting_booking
       bookings.or(Booking.where(id: coach_listed_bookings)).where("end_time >= ?", Time.current).order(end_time: :asc).first
+    def conversation_users
+      ids = messages.pluck(:recipient_id, :sender_id).flatten.uniq
+      ids.delete(id)
+      User.find(ids)
+    end
+
+    def messages
+      sent_messages.or(received_messages)
+    end
+
+    def messages_with(user)
+      messages.where(recipient: user).or(messages.where(sender: user))
     end
 end
