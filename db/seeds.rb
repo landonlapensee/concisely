@@ -1,6 +1,7 @@
 require 'faker'
 
 puts "Cleaning database..."
+Message.destroy_all
 Report.destroy_all
 Booking.destroy_all
 Lesson.destroy_all
@@ -82,30 +83,13 @@ message2 = Message.create!(
   content: "Aloha!"
 )
 
-# past_booking2 = Booking.create!(
-#   user: student,
-#   start_time: DateTime.strptime("03/03/2021 17:00", "%d/%m/%Y %H:%M"),
-#   end_time: DateTime.strptime("03/03/2021 17:30", "%d/%m/%Y %H:%M"),
-#   lesson: lesson,
-#   price: lesson.price
-#   )
-  
-  #future bookings
-  # future_booking = Booking.create!(
-  #   user: student,
-  #   start_time: DateTime.strptime("09/03/2021 17:00", "%d/%m/%Y %H:%M"),
-  #   end_time: DateTime.strptime("09/03/2021 17:30", "%d/%m/%Y %H:%M"),
-  #   lesson: lesson,
-  #   price: lesson.price 
-    # )
-    
-  #reports
-  report1 = Report.create!(
-    date: DateTime.strptime("03/02/2021 17:35", "%d/%m/%Y %H:%M"),
-    booking: past_booking1,
-    content: "<div>Things That Went Well:<br><br></div><ol><li>&nbsp;You did this well</li><li>&nbsp;You did this well</li><li>&nbsp;You did this well</li></ol><div><br></div><div>Things To Work On:<br><br></div><ol><li>&nbsp;Work on this</li><li>&nbsp;Work on this</li><li>&nbsp;Work on this</li></ol><div><br></div><div>Resources:<br><br></div><ul><li><a href=\"https://www.myinterviewpractice.com/\">https://www.myinterviewpractice.com/</a> -&gt; practice this</li></ul><div><br></div><div>Additional Comments:<br><br></div><ul><li>Lets meet again next week</li></ul><div><br></div>",
-    rating: 5
-    )
+#reports
+report1 = Report.create!(
+  date: DateTime.strptime("03/02/2021 17:35", "%d/%m/%Y %H:%M"),
+  booking: past_booking1,
+  content: "<div>Things That Went Well:<br><br></div><ol><li>&nbsp;You did this well</li><li>&nbsp;You did this well</li><li>&nbsp;You did this well</li></ol><div><br></div><div>Things To Work On:<br><br></div><ol><li>&nbsp;Work on this</li><li>&nbsp;Work on this</li><li>&nbsp;Work on this</li></ol><div><br></div><div>Resources:<br><br></div><ul><li><a href=\"https://www.myinterviewpractice.com/\">https://www.myinterviewpractice.com/</a> -&gt; practice this</li></ul><div><br></div><div>Additional Comments:<br><br></div><ul><li>Lets meet again next week</li></ul><div><br></div>",
+  rating: 5
+  )
 
   # report2 = Report.create!(
   #   date: DateTime.strptime("16/01/2021 20:00", "%d/%m/%Y %H:%M"),
