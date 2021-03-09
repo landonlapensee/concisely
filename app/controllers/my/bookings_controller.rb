@@ -8,6 +8,7 @@ class My::BookingsController < ApplicationController
     else
       @my_bookings = current_user.bookings
     end
-    @upcoming_booking = current_user.next_meeting_booking
+    @upcoming_bookings = current_user.next_meeting_booking.flatten
+    @upcoming_booking = @upcoming_bookings.first
   end
 end
