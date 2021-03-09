@@ -6,9 +6,9 @@
   <div class="row">
     <% @lessons.each do |lesson| %>
       <div class="col-sm-6 col-md-4 ">
-        <%= render partial: "coach-profile-modal", locals: { lesson: lesson } %>
+        <%= render partial: "lesson", locals: { lesson: lesson } %>
+        <%= render partial: "modal", locals: { lesson: lesson } %>
       </div>
     <% end %>
   </div>
 </div>
-

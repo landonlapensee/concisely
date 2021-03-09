@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :lessons, only: [ :index, :new, :create, :edit, :update, :destroy ] do
     resources :bookings, only: [ :new, :create ]
+    resources :available_times, only: :index, controller: "lessons/available_times"
   end
   
   resources :bookings, only: [ :show, :edit, :update ] do

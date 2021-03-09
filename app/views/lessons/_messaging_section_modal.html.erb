@@ -1,0 +1,4 @@
+<%= simple_form_for [user, message] do |f| %> 
+  <%= f.input :content, label: false, placeholder: "Type message ..." %>
+  <%= f.submit "Send", class: "btn btn-outline-primary btn-lg btn-block" %>
+<% end %>

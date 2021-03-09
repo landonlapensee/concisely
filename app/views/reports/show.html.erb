@@ -1,25 +1,13 @@
-<h1>My Report</h1>
-
-<div class="reports-card">
+<div class="report-card">
   <p><strong>Coach: </strong><%= @report.booking.lesson.user.first_name  %> <%=  @report.booking.lesson.user.last_name  %></p>
   <p><strong>Date: </strong><%= @report.date %></p>
   <p><strong>Rating: </strong><%= @report.rating %> / 10</p>
   <p><%= @report.content %></p>
-  <img style="border-radius:50%; height:50px; width:50px;" src="<%= @report.booking.lesson.user.image %>"/>
+  <div class="report-card-image">
+    <img style="border-radius:75%; height:75px; width:75px;" src="<%= @report.booking.lesson.user.image %>"/>
+  </div>
 </div>
 
 <div class="container text-center">
 <button><%= link_to "Back to Dashboard", my_bookings_path %></button>
-</div>
-
-<div class="reports-card">
-<h3>Other Reports</h3>
-  <% @bookings.each do |booking| %>
-    <% unless booking.report == nil %>
-      <div class="container border border-dark">
-      <p><%= booking.report.date %></p> 
-      <button><%= link_to "View Report", report_path(booking.report) %></button>
-      </div>
-    <% end %>
-  <% end %>
 </div>

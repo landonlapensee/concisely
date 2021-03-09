@@ -29,6 +29,10 @@ import { dailyVideoChatTriggering } from '../plugins/daily.js';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
+// Date Picker
+import { initFlatpickr } from "../plugins/flatpickr";
+initFlatpickr();
+
 document.addEventListener('turbolinks:load', () => {
   const scrollBar = document.getElementById('messages-scrollbar')
   if(scrollBar) scrollBar.scrollTop = scrollBar.scrollHeight

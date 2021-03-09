@@ -9,6 +9,8 @@ class Booking < ApplicationRecord
   validates :start_time, presence: true
   validates :end_time, presence: true
 
+  scope :for, -> (date) { where("start_time BETWEEN ? AND ?", date.all_day.min, date.all_day.max) }
+
   def duration=(minutes)
     return nil if start_time.nil?
 
