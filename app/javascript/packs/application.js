@@ -34,6 +34,8 @@ import { initFlatpickr } from "../plugins/flatpickr";
 initFlatpickr();
 
 document.addEventListener('turbolinks:load', () => {
+  const scrollBar = document.getElementById('messages-scrollbar')
+  if(scrollBar) scrollBar.scrollTop = scrollBar.scrollHeight
   // Call your functions here, e.g:
   // initSelect2();
   dailyVideoChatTriggering();

@@ -42,10 +42,10 @@ coaches.each do |user|
 end
 
 #demo student
-student = User.create!(first_name: "Laurier", last_name: "Tsu", email: "s@s.s", password: "123456", image: "https://www.ldatschool.ca/wp-content/uploads/2015/03/Young-student.jpg")
+student = User.create!(first_name: "Laurier", last_name: "Tsu", email: "s@s.s", password: "123456", country_code: "CA", city: "Montréal", image: "https://www.ldatschool.ca/wp-content/uploads/2015/03/Young-student.jpg")
 
 #demo coach
-coach = User.create!(first_name: "Larry", last_name: "Lemon", email: "c@c.c", password: "123456", image: "https://www.pngitem.com/pimgs/m/176-1762843_professional-man-hd-png-download.png")
+coach = User.create!(first_name: "Larry", last_name: "Lemon", email: "c@c.c", password: "123456", country_code: "CA", city: "Montréal", image: "https://www.pngitem.com/pimgs/m/176-1762843_professional-man-hd-png-download.png")
 
 #demo lesson
 lesson = Lesson.create!(
