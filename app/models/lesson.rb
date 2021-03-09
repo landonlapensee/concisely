@@ -25,9 +25,38 @@ class Lesson < ApplicationRecord
     "$#{self.price}/#{self.duration} min"
   end
 
-  def unavailable_dates_params
-    bookings.pluck(:start_time, :end_time).map do |start_time, end_time|
-      { from: start_time, to: end_time }
+  def available_hours_for(date)
+    hours_for_booking.reject do |time|
+      booked_times_for(date).include?(time)
     end
+  end
+
+  def available_hours_params_for(date)
+    available_hours_for(date).map do |hour_options|
+      ["#{hour_options.strftime("%H:%M")}", hour_options]
+    end
+  end
+
+  private
+
+  def booked_times_for(date)
+    bookings
+      .for(date)
+      .pluck(:start_time)
+      .map(&:to_datetime)
+  end
+
+  def slots_count_possible_per_day
+    (12 * 60).minutes / duration.minutes
+  end
+
+  def hours_for_booking
+    slots_count_possible_per_day.floor.times.map do |n|
+      (beginning_of_work_day + (n * duration.minutes)).to_datetime
+    end
+  end
+
+  def beginning_of_work_day
+    Time.current.beginning_of_day + 9.hours
   end
 end
