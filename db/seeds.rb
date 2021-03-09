@@ -104,14 +104,14 @@ report1 = Report.create!(
   #   description: "Very good job !",
   #   rating: 5
   # )
-
-#future bookings
-# booking1 = Booking.create!(
-#   user: student,
-#   start_time: DateTime.strptime("09/03/2021 17:00", "%d/%m/%Y %H:%M"),
-#   end_time: DateTime.strptime("09/03/2021 17:30", "%d/%m/%Y %H:%M"),
-#   lesson: Lesson.all.sample
-# )
+  
+  #future bookings
+  booking1 = Booking.create!(
+    user: student,
+    start_time: DateTime.strptime("13/03/2021 17:00", "%d/%m/%Y %H:%M"),
+    end_time: DateTime.strptime("13/03/2021 17:30", "%d/%m/%Y %H:%M"),
+    lesson: Lesson.all.sample
+  )
 
 # booking2 = Booking.create!(
 #   user: student,

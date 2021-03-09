@@ -38,13 +38,24 @@
 }
 
 .report-card {
+  position: relative;
   border: solid 1px black;
   border-radius: 4px;
-  width: 200px;
+  width: 500px;
   justify-content: center;
   margin: 10px auto;
   padding: 10px;
   background-color: white;
+  margin-top: 100px;
+}
+
+.report-card-image {
+  position: absolute;
+  border-radius: 50%;
+  height: 75px;
+  width: 75px;
+  top: 10px;
+  right: 10px;
 }
 
 .upcoming-booking-info {
