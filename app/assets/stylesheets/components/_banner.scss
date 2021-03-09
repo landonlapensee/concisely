@@ -63,13 +63,32 @@
   // object-fit: cover;
 }
 
+.dropdown-customize {
 
-.scrollable{
-  overflow: auto;
-  width: 70px; /* adjust this width depending to amount of text to display */
-  height: 80px; /* adjust height depending on number of options to display */
-  border: 1px silver solid;
 }
-.scrollable select{
-  border: none;
+
+.hero-button-customize {
+  width: 250px;
+  text-align: left;
+  background-color: white;
+  color: orange;
+}
+
+.hero-button-customize:hover {
+  color: white!important;
+  background-color: orange!important;
+}
+
+.dropdown-menu-customize {
+  border: 4px solid orange;
+
+}
+
+.dropdown-item-customize {
+  border: 4px solid orange;
+
+}
+
+.dropdown-toggle::after {
+  display: none;
 }
