@@ -49,9 +49,12 @@ class User < ApplicationRecord
         Booking.where(id: booking_id).where("end_time <= ?", Time.now)
       end
 
-      filtered_bookings = bookings.select { |booking| booking.end_time >= Time.now }
+      filtered_bookings = bookings.select do |booking|
+        booking.end_time <= Time.now 
+      end
 
       past_bookings = (filtered_bookings + coach_bookings).sort { |booking| booking.end_time }
+      
     end
     def conversation_users
       ids = messages.pluck(:recipient_id, :sender_id).flatten.uniq
