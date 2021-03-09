@@ -30,7 +30,7 @@ class User < ApplicationRecord
       country_code.tr('A-Z', "\u{1F1E6}-\u{1F1FF}")
     end
 
-    def next_meeting_booking
+    def upcoming_bookings
       # Filter by end_time. Everything after NOW
       coach_bookings = coach_listed_booking_ids.map do |booking_id|
         Booking.where(id: booking_id).where("end_time >= ?", Time.now)
@@ -43,6 +43,16 @@ class User < ApplicationRecord
       # bookings.or(Booking.where(id: coach_listed_bookings)).where("end_time >= ?", Time.current).order(end_time: :asc).first
     end
 
+    def past_bookings
+      # Filter by end_time. Everything after NOW
+      coach_bookings = coach_listed_booking_ids.map do |booking_id|
+        Booking.where(id: booking_id).where("end_time <= ?", Time.now)
+      end
+
+      filtered_bookings = bookings.select { |booking| booking.end_time >= Time.now }
+
+      past_bookings = (filtered_bookings + coach_bookings).sort { |booking| booking.end_time }
+    end
     def conversation_users
       ids = messages.pluck(:recipient_id, :sender_id).flatten.uniq
       ids.delete(id)
