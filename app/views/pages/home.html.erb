@@ -8,18 +8,21 @@
   <div class="container border border-primary" id="home-search">
     <% if user_signed_in? %>
     <%#= link_to "Browse all lessons", lessons_path, class: "btn btn-flat" %>
-    <div class="dropdown">
-      <button class="btn btn-flat">Browse by industry</button>
-      <div class="dropdown-content">
-        <% Lesson::INDUSTRIES.each do |industry| %>
-          <%= link_to industry.titleize, lessons_path(industry: industry) %>
-        <% end %>
-      </div>
+    
+    <%#= f.select :lesson, ['option1', 'option2']%>
+    <%#= f.collection_select :provider_id, Provider.order(:name),:id,:name, include_blank: true %>
+    <div class="form-group">
+      <label>Search By Industry</label>
+      <select class="form-control" id="sel1">
+      <% Lesson::INDUSTRIES.each do |industry| %>
+        <option><%= link_to industry.titleize, lessons_path(industry: industry) %></option>
+      <% end %>
+      </select>
     </div>
-  <% else %>
-    <%= link_to "Sign up", new_user_registration_path, class: "btn btn-flat" %>
-    <%= link_to "Log in", new_user_session_path, class: "btn btn-flat" %>
-  <% end %>
+    <% else %>
+      <%= link_to "Sign up", new_user_registration_path, class: "btn btn-flat" %>
+      <%= link_to "Log in", new_user_session_path, class: "btn btn-flat" %>
+    <% end %>
 </div>
 </div>
 
@@ -28,7 +31,21 @@
 </div>
 
 <div class="d-flex w-75 justify-content-around home-cards">
-<div class="home-card"></div>
-<div class="home-card"></div>
-<div class="home-card"></div>
+  <div class="home-card"> 
+    <%= image_tag "home_why.jpg", :class => "home-card-img" %> 
+    <h1>WHY?</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero debitis consequuntur esse, amet quo adipisci? Quis doloribus asperiores, assumenda ea dolore itaque necessitatibus amet minima obcaecati nesciunt, quod tempore harum?</p> 
+  </div>
+  <div class="home-card">
+    <h1>WHO?</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero debitis consequuntur esse, amet quo adipisci? Quis doloribus asperiores, assumenda ea dolore itaque necessitatibus amet minima obcaecati nesciunt, quod tempore harum?</p> 
+    <%= image_tag "home_who.png", :class => "home-card-img" %> 
+  </div>
+  <div class="home-card">
+    <%= image_tag "home_how.png", :class => "home-card-img" %> 
+    <h1>HOW?</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero debitis consequuntur esse, amet quo adipisci? Quis doloribus asperiores, assumenda ea dolore itaque necessitatibus amet minima obcaecati nesciunt, quod tempore harum?</p> 
+  </div>
 </div>
+
+
