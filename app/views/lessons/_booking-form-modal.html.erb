@@ -1,5 +1,6 @@
 <%= simple_form_for [ lesson, booking ] do |f| %>
-  <%= f.input :start_time, label: "Start Time", html5: true, wrapper_html: { class: "w-5 inline_field_wrapper start_date" } %>
-  <%#= f.input :number_of_lessons, collection: (1..10).to_a, wrapper_html: { class: "w-5 inline_field_wrapper start_date" } %>
+  <%= label :date, nil %>
+  <%= text_field :date, nil, class: "datepicker", data: {url: lesson_available_times_path(lesson) } %>
+  <div class="times"></div>
   <%= f.submit "Book", class: "btn btn-primary" %>
 <% end %>
