@@ -30,6 +30,8 @@ import { dailyVideoChatTriggering } from '../plugins/daily.js';
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
+  const scrollBar = document.getElementById('messages-scrollbar')
+  if(scrollBar) scrollBar.scrollTop = scrollBar.scrollHeight
   // Call your functions here, e.g:
   // initSelect2();
   dailyVideoChatTriggering();
