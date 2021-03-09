@@ -8,17 +8,15 @@
       <h2 class="pt-3">Next Lesson</h2>
     </div>
     <div class="booking">
-      <% if current_user.has_made_a_booking? && ( @upcoming_booking = Booking.last ) %>
+      <% if @upcoming_booking %>
         <div class="upcoming-bookings-profiles d-flex justify-content-between border-bottom p-3 m-3"">
           <div class="upcoming-booking-user text-center">
             <img class="avatar" src=<%= @upcoming_booking.user.image %>>
             <h5><strong><%= @upcoming_booking.user.first_name %></strong></h5>
           </div>
           <div class="booking-square"></div>
-          <div class="booking-square"></div>
-          <div class="booking-square"></div>
           <div class="upcoming-booking-user text-center">
-            <%= image_tag "coach", :class => "booking-coach" %>
+            <%= image_tag "coach.png", :class => "booking-coach" %>
             <img class="avatar" src=<%= @upcoming_booking.lesson.user.image %>>
             <h5><strong><%= @upcoming_booking.lesson.user.first_name %></strong></h5>
           </div>
@@ -40,7 +38,7 @@
   <div class="bookings-card">
     <h3>Upcoming Lessons</h3>
     <% @my_bookings.each do |booking| %>
-      <% if Time.now < booking.end_time %>
+      <% if Time.current < booking.end_time %>
         <% if booking.lesson.user == current_user %>
           <div class="booking-card-coach">
             <p class="coaching-indicator">Coaching</p>
@@ -60,7 +58,7 @@
     <% end %>
     <h3 class="mt-4">Past Lessons</h3>
     <% @my_bookings.each do |booking| %>
-      <% if Time.now >= booking.end_time %>
+      <% if Time.current >= booking.end_time %>
         <% if booking.lesson.user == current_user %>
           <div class="booking-card-coach">
             <p><%= booking.user.first_name %></p>
