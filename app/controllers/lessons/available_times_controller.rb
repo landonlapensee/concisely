@@ -1,4 +1,5 @@
 class Lessons::AvailableTimesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index]
   def index
     lesson = Lesson.find(params[:lesson_id])
     date = Date.parse(params[:date])

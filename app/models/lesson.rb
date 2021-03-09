@@ -26,7 +26,7 @@ class Lesson < ApplicationRecord
   end
 
   def available_hours_for(date)
-    hours_for_booking.reject do |time|
+    hours_for_booking(date).reject do |time|
       booked_times_for(date).include?(time)
     end
   end
@@ -50,13 +50,13 @@ class Lesson < ApplicationRecord
     (12 * 60).minutes / duration.minutes
   end
 
-  def hours_for_booking
+  def hours_for_booking(date)
     slots_count_possible_per_day.floor.times.map do |n|
-      (beginning_of_work_day + (n * duration.minutes)).to_datetime
+      (beginning_of_work_day(date) + (n * duration.minutes)).to_datetime
     end
   end
 
-  def beginning_of_work_day
-    Time.current.beginning_of_day + 9.hours
+  def beginning_of_work_day(date)
+    date.beginning_of_day + 9.hours
   end
 end
