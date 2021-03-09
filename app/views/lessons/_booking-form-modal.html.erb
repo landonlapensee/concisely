@@ -1,6 +1,6 @@
 <%= simple_form_for [ lesson, booking ] do |f| %>
   <%= label :date, nil %>
-  <%= text_field :date, nil, class: "datepicker", data: {url: lesson_available_times_path(lesson) } %>
+  <%= text_field :date, nil, class: "datepicker d-none", data: {url: lesson_available_times_path(lesson) } %>
   <div class="times"></div>
   <%= f.submit "Book", class: "btn btn-primary" %>
 <% end %>
