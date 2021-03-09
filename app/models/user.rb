@@ -31,7 +31,16 @@ class User < ApplicationRecord
     end
 
     def next_meeting_booking
-      bookings.or(Booking.where(id: coach_listed_bookings)).where("end_time >= ?", Time.current).order(end_time: :asc).first
+      # Filter by end_time. Everything after NOW
+      coach_bookings = coach_listed_booking_ids.map do |booking_id|
+        Booking.where(id: booking_id).where("end_time >= ?", Time.now)
+      end
+
+      filtered_bookings = bookings.select { |booking| booking.end_time >= Time.now }
+
+      upcoming_bookings = (filtered_bookings + coach_bookings).sort { |booking| booking.end_time }
+      # reminder of Caio <3
+      # bookings.or(Booking.where(id: coach_listed_bookings)).where("end_time >= ?", Time.current).order(end_time: :asc).first
     end
 
     def conversation_users

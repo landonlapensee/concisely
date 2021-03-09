@@ -37,28 +37,26 @@
 
   <div class="bookings-card">
     <h3>Upcoming Lessons</h3>
-    <% @my_bookings.each do |booking| %>
-      <% if Time.current < booking.end_time %>
-        <% if booking.lesson.user == current_user %>
-          <div class="booking-card-coach">
-            <p class="coaching-indicator">Coaching</p>
-            <p><strong><%= booking.user.first_name %></strong></p>
-            <p><%= booking.lesson.industry %></p>
-            <p><%= booking.start_time %></p>
-          </div>
-        <% else %>
-          <div class="booking-card">
-            <p>Lessons I'm Taking</p>
-            <p><strong><%= booking.lesson.user.first_name %> <%= booking.lesson.user.last_name %></strong></p>
-            <p><%= booking.lesson.industry %></p>
-            <p><%= booking.start_time %></p>
-          </div>
-        <% end %>
+    <% @upcoming_bookings.each do |booking| %>
+      <% if booking.lesson.user == current_user %>
+        <div class="booking-card-coach">
+          <p class="coaching-indicator">Coaching</p>
+          <p><strong><%= booking.user.first_name %></strong></p>
+          <p><%= booking.lesson.industry %></p>
+          <p><%= booking.start_time %></p>
+        </div>
+      <% else %>
+        <div class="booking-card">
+          <p>Lessons I'm Taking</p>
+          <p><strong><%= booking.lesson.user.first_name %> <%= booking.lesson.user.last_name %></strong></p>
+          <p><%= booking.lesson.industry %></p>
+          <p><%= booking.start_time %></p>
+        </div>
       <% end %>
     <% end %>
     <h3 class="mt-4">Past Lessons</h3>
     <% @my_bookings.each do |booking| %>
-      <% if Time.current >= booking.end_time %>
+      <% if Time.current < booking.end_time %>
         <% if booking.lesson.user == current_user %>
           <div class="booking-card-coach">
             <p><%= booking.user.first_name %></p>
