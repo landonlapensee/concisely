@@ -110,15 +110,24 @@
             
           <% else %>
             <div class="booking-card m-3">
-              <p><%= booking.lesson.user.first_name %></p>
-              <p><%= booking.lesson.industry %></p>
-              <p><%= booking.start_time.strftime("%B %d, %Y") %></p>
-              <p><%= booking.start_time.strftime("%I:%M %p") %></p>
-              <% if booking.report == nil %>
-                <button><%= "No Report" %></button>
-              <% else %>
-                <button><%= link_to "View Report", report_path(booking.report) %></button>
-              <% end %>
+              <div class="d-flex justify-content-between">
+                <img class="avatar-next-lessons" src=<%= booking.lesson.user.image %>>
+                <div>
+                  <p><%= booking.lesson.user.first_name %></p>
+                  <p><%= booking.lesson.industry %></p>
+                </div>
+                <div>
+                  <p><%= booking.start_time.strftime("%B %d, %Y") %></p>
+                  <p><%= booking.start_time.strftime("%I:%M %p") %></p>
+                </div>
+              </div>
+              <div class="text-center">
+                <% if booking.report == nil %>
+                  <button><%= "No Report" %></button>
+                <% else %>
+                  <button><%= link_to "View Report", report_path(booking.report) %></button>
+                <% end %>
+              </div>
           </div>
         <% end %>
       <% end %>
