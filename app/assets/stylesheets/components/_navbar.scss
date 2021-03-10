@@ -1,7 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
-  // position: fixed;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,11 +11,7 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 240px;
-  
-  &:hover {
-    transform: scale(1.1);
-  }
+  width: 160px;
 }
 
 
@@ -26,6 +24,33 @@
 }
 
 .nav-link:hover{
-  background-color: orange!important;
+  background-color: $concisely-orange!important;
   color: white!important;
+}
+
+.navbar-lewagon .dropdown-item {
+  padding: 12px;
+  text-align: center;
+
+  &:hover {
+    border-radius: $concisely-border-radius;
+  }
+}
+
+.navbar-lewagon .dropdown-menu {
+  border-radius: $concisely-border-radius;
+  box-shadow: $concisely-box-shadow;
+  font-size: 16px;
+}
+
+.navbar-lewagon a {
+  text-decoration: none;
+  color: $concisely-grey;
+}
+
+.nav-item a {
+  margin-right: 20px;
+  font-size: 18px;
+  padding-top: 19px;
+  padding-bottom: 19px;
 }

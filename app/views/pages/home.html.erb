@@ -1,26 +1,28 @@
-<div class="container pt-5">
+<div class="container container-customize">
   <div class="d-flex position-relative justify-content-end">
     
     <div class="call-to-action">
-      <p><strong>Interviews</strong> are stressful...<p>
-      <p>But they don't need to be!</p>
-      <p>Hire a <strong>Coach</strong>, and get</p>
-      <p>interviewed the</p>
-      <p><strong>right way.</strong>
+      <p class="first-sentence"><strong>Interviews</strong> are stressful...
+      But they don't need to be!<p>
+      <h1 class="second-sentence">Hire a <span>Coach</span>, and get<br>
+      interviewed the<br>
+      <span>right way.</span></h1>
     
-      <div class="container border border-primary" id="home-search">
+      <div class="container" id="home-search">
 
       <% if user_signed_in? %>
 
         <div class="dropdown dropdown-customize">
           <button class="btn dropdown-toggle hero-button-customize" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Search By Industry
-          <i class="fa fa-heart"></i>
+          <strong style="font-size: 16px;">Search By Industry</strong>
+          <i class="fas fa-search-plus" style="font-size: 16px;"></i>
           </button>
 
           <div class="dropdown-menu dropdown-menu-customize" aria-labelledby="dropdownMenuButton">
             <% Lesson::INDUSTRIES.each do |industry| %>
-              <a class="dropdown-item dropdown-item-customize" href="#"><%= link_to industry.titleize, lessons_path(industry: industry) %></a>
+              <li class="dropdown-item dropdown-item-customize">
+              <%= link_to industry.titleize, lessons_path(industry: industry) %>
+              </li>
             <% end %>
           </div>
         </div>
