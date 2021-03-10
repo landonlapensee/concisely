@@ -1,8 +1,9 @@
 <div>
-  <h2><strong>Book a Lesson</strong></h2>
+  <h4><strong>Book a Lesson</strong></h4>
   <%= render partial: "lessons/booking-form-modal", locals: { lesson: lesson, booking: Booking.new } %>
 </div>
-<div class= "mt-3" id="contact">
-  <h3><strong>Ask Coach a Question</strong></h3>
+<div class= "mt-4 mb-3" id="contact">
+  <h4><strong>Ask Coach a Question</strong></h4>
   <%= render partial: "lessons/messaging_section_modal", locals: { user: lesson.user, message: Message.new } %>
 </div>
+
