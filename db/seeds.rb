@@ -55,7 +55,9 @@ coach = User.create!(first_name: "Larry", last_name: "Lemon", email: "c@c.c", pa
 #demo lesson
 lesson = Lesson.create!(
   description: "
- 
+  Enthusiastic Human Resources director for Gearify Inc. since 2015, I have a lot of interviewing experience in my bag.
+  I used to work as a Human Resources teacher at HEC Montréal from 2006 to 2011 after graduating in Marketing and HR bachelor, and HR Management M.Sc.
+  Since the beginning of the Covid-19 pandemic, I saw a lot of young graduates losing motivation towards the research of a job. Indeed, it seems like most companies became more severe and pickier during the interviews. This is the main reason why I decided to join Concisely as a coach in August 2020.
   ",
   user: coach,
   price: 50.00,

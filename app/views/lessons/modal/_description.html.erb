@@ -1,7 +1,16 @@
-<h2><strong>My Experience</strong></h2>
+<h2><strong>My Experience and what you can expect from me</strong></h2>
 <p> <%= lesson.description %> </p>
 <h2><strong>How It Works</strong></h2>
-<p>My lessons are 20 minutes which includes a 15 minute mock up interview and 5 minutes of feedback.</p>
+<p>
+  The classic duration of a lesson is <strong>30 minutes</strong>. <br>
+  This includes : <br>
+    <ul>
+      <li><strong>25 minutes</strong> of mockup interview, discussing basic interview subjects</li>
+      <li><strong>5 minutes</strong> of live feedback, quickly pointing out what went very well and things to work on before next lesson (if need)</li>
+      <li>A detailed report will be given to you after the lesson. Usually in the same day as the lesson.</li>
+    </ul>
+  The report will mainly contain what we discussed during the 5 minutes feedback, but with more details. I'll add resources to help you practice and improve your skills.
+</p>
 <h2><strong>Reviews</strong>(14)</h2>
 <span>
   <i class="fa fa-star" aria-hidden="true"></i>
@@ -10,7 +19,7 @@
   <i class="fa fa-star" aria-hidden="true"></i>
   <i class="fa fa-star-half" aria-hidden="true"></i>
 </span>
-<p>My coach has helped me so much in nailing the interview and getting my dream job. Thanks, coach!</p>
+<p> <%= lesson.user.first_name %> has helped me so much in nailing the interview and getting my dream job. Thanks, coach!</p>
 <span>
   <i class="fa fa-star" aria-hidden="true"></i>
   <i class="fa fa-star" aria-hidden="true"></i>
@@ -18,3 +27,19 @@
   <i class="fa fa-star" aria-hidden="true"></i>
   <i class="fa fa-star" aria-hidden="true"></i>
 </span>
+<p> <%= lesson.user.first_name %> was very attentive and helped me a lot. He pointed out everything that I needed to work on and gave me a lot of resources to help me work on them.</p>
+<span>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+</span>
+<p> <%= lesson.user.first_name %> takes a lot of his time to help you improve your interview skills. The report he sent me after our first leson was very detailed and everything that I needed was there.</p>
+<span>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+</span>
+<p> It's insane that in only two lessons, <%= lesson.user.first_name %> succeeded in helping get my dream job. He's awesome, I highly recommend him !</p>
