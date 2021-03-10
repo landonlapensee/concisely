@@ -46,34 +46,38 @@
         <% @upcoming_bookings.each do |booking| %>
           <% if booking.lesson.user == current_user %>
             <%# lessons I'm coaching %>
-            <div class="booking-card-coach">
-              <div>
-                <img class="avatar-next-lessons" src=<%= booking.lesson.user.image %>>
-              </div>
-              <div>
-                <p class="coaching-indicator">Coaching</p>
-                <p><strong><%= booking.user.first_name %></strong></p>
-                <p><%= booking.lesson.industry %></p>
-                <p><%= booking.start_time.strftime("%B %d, %Y") %></p>
-                <p><%= booking.start_time.strftime("%I:%M %p") %></p>
+            <div class="booking-card-coach m-3">
+              <p class="coaching-indicator">Coaching</p>
+              <div class="d-flex justify-content-between">
+                <img class="avatar-next-lessons" src=<%= booking.user.image %>>
+                <div>
+                  <p><strong><%= booking.user.first_name %></strong></p>
+                  <p><%= booking.lesson.industry %></p>
+                </div>
+                <div>
+                  <p><%= booking.start_time.strftime("%B %d, %Y") %></p>
+                  <p><%= booking.start_time.strftime("%I:%M %p") %></p>
+                </div>
+                </div>
               </div>
 
           <% else %>
-            <div class="booking-card p-2 m-3">
+            <div class="booking-card m-3 d-flex justify-content-between">
             <%# lessons I'm taking %>
-              <div>
-                <img class="avatar-next-lessons" src=<%= booking.lesson.user.image %>>
-              </div>
+              <img class="avatar-next-lessons" src=<%= booking.lesson.user.image %>>
               <div>
                 <p><strong><%= booking.lesson.user.first_name %> <%= booking.lesson.user.last_name %></strong></p>
                 <p><%= booking.lesson.industry.capitalize %></p>
-                <p><%= booking.start_time.strftime("%B %d, %Y") %>, <%= booking.start_time.strftime("%I:%M %p") %></p>
-                <p></p>
+              </div>
+              <div>
+                <p><%= booking.start_time.strftime("%B %d, %Y") %></p>
+                <p><%= booking.start_time.strftime("%I:%M %p") %></p>
               </div>
             </div>
           <% end %>
         <% end %>
       </div>
+
       <div class="bookings-card p-2 mb-4">
         <div class="text-center border-bottom pb-1">
           <h2 class="pt-3">Past Lessons</h2>
@@ -83,28 +87,47 @@
           <%#= render "bookings/past", booking: booking %>
 
           <% if booking.lesson.user == current_user %>
-            <div class="booking-card-coach">
-              <p><%= booking.user.first_name %></p>
-              <p><%= booking.lesson.industry %></p>
-              <p><%= booking.start_time.strftime("%B %d, %Y") %></p>
-              <p><%= booking.start_time.strftime("%I:%M %p") %></p>
-              <% if booking.report == nil %>
-                <button><%= link_to "Create Report", new_booking_report_path(booking) %></button>
-              <% else %>
-                <button><%= link_to "View Report", report_path(booking.report) %></button>
-              <% end %>
+            <div class="booking-card-coach m-3">
+              <div class="d-flex justify-content-between">
+                <img class="avatar-next-lessons" src=<%= booking.user.image %>>
+                <div>
+                  <p><%= booking.user.first_name %></p>
+                  <p><%= booking.lesson.industry %></p>
+                </div>
+                <div>
+                  <p><%= booking.start_time.strftime("%B %d, %Y") %></p>
+                  <p><%= booking.start_time.strftime("%I:%M %p") %></p>
+                </div>
+              </div>
+              <div class="text-center">
+                <% if booking.report == nil %>
+                  <p class="text-center"><%= link_to "Create Report", new_booking_report_path(booking) %></p>
+                <% else %>
+                  <p class="text-center"><%= link_to "View Report", my_reports_path(report_id: booking.report) %></p>
+                <% end %>
+              </div>
             </div>
+            
           <% else %>
-            <div class="booking-card p-2 m-3">
-              <p><%= booking.lesson.user.first_name %></p>
-              <p><%= booking.lesson.industry %></p>
-              <p><%= booking.start_time.strftime("%B %d, %Y") %></p>
-              <p><%= booking.start_time.strftime("%I:%M %p") %></p>
-              <% if booking.report == nil %>
-                <button><%= "No Report" %></button>
-              <% else %>
-                <button><%= link_to "View Report", report_path(booking.report) %></button>
-              <% end %>
+            <div class="booking-card m-3">
+              <div class="d-flex justify-content-between">
+                <img class="avatar-next-lessons" src=<%= booking.lesson.user.image %>>
+                <div>
+                  <p><%= booking.lesson.user.first_name %></p>
+                  <p><%= booking.lesson.industry %></p>
+                </div>
+                <div>
+                  <p><%= booking.start_time.strftime("%B %d, %Y") %></p>
+                  <p><%= booking.start_time.strftime("%I:%M %p") %></p>
+                </div>
+              </div>
+              <div class="text-center">
+                <% if booking.report == nil %>
+                  <p class="text-center"><%= "No Report" %></p>
+                <% else %>
+                  <p class="text-center"><%= link_to "View Report", my_reports_path(report_id: booking.report) %></p>
+                <% end %>
+              </div>
           </div>
         <% end %>
       <% end %>
