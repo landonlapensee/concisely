@@ -69,4 +69,12 @@ class User < ApplicationRecord
     def messages_with(user)
       messages.where(recipient: user).or(messages.where(sender: user))
     end
+
+    def all_reports
+      bookings.map do |booking|
+        unless booking.report.nil?
+          booking.report
+        end
+      end
+    end
 end
