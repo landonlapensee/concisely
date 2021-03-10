@@ -19,15 +19,6 @@
   grid-gap: 16px;
 }
 
-.bookings-card {
-  // border: solid 1px black;
-  border-radius: 4px;
-  width: 400px;
-  justify-content: center;
-  margin: 10px auto;
-  padding: 10px;
-}
-
 .reports-card {
   border: solid 1px black;
   border-radius: 4px;
@@ -67,10 +58,10 @@
 
 .bookings-card {
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.495);
-  padding: 4px;
-  border-radius: 10px;
-  margin-bottom: 4px;
   background-color: #F5F5F5;
+  width: 400px;
+  border-radius: 4px;
+  justify-content: center;
 }
 
 .booking-coach {

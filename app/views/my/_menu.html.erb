@@ -1,13 +1,5 @@
+<div class="container pt-3">
 
-<h1>Dashboard</h1>
-
-<%= link_to "Lessons", my_bookings_path %>
-<%= link_to "Reports", my_reports_path %>
-<%= link_to "Messages", my_conversations_path %>
-<%= link_to "Payments", my_payments_path %>
-<%= link_to "Coaching", my_lessons_path %>
-
-<div class="container">
   <ul class="nav nav-tabs">
     <li class="nav-item">
       <a class="nav-link active" href="#">Active</a>
@@ -20,6 +12,22 @@
     </li>
     <li class="nav-item">
       <a class="nav-link disabled" href="#">Disabled</a>
+    </li>
+  </ul>
+
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <%= link_to "Lessons", my_bookings_path, class: "nav-link active" %>
+      <%# <a class="nav-link active" href="#">Active</a> %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Reports", my_reports_path, class: "nav-link active" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Messages", my_conversations_path, class: "nav-link active" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Payments", my_payments_path, class: "nav-link active" %>
     </li>
   </ul>
 </div>
