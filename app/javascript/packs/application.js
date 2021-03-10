@@ -31,7 +31,6 @@ import { dailyVideoChatTriggering } from '../plugins/daily.js';
 
 // Date Picker
 import { initFlatpickr } from "../plugins/flatpickr";
-initFlatpickr();
 
 document.addEventListener('turbolinks:load', () => {
   const scrollBar = document.getElementById('messages-scrollbar')
@@ -39,6 +38,7 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   dailyVideoChatTriggering();
+  initFlatpickr();
 });
 
 require("trix")

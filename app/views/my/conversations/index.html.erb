@@ -36,9 +36,16 @@
     <div class="testing col-2">
       <%= link_to "Book another Lesson", "#", class: "btn btn-warning btn-lg mt-3 mb-3", 'data-toggle': "modal", 'data-target': "#myModal#{@user.lessons.last.id}" %>
       <%= render "lessons/modal", lesson: @user.lessons.last %>
-    </div>
-    <%# Upcoming Lessons %>
 
-    <%# Past Lessons %>
+      <%# Upcoming Lessons %>
+      <% current_user.bookings_with(@user).upcoming.each do |booking| %>
+        <p> <%= booking.end_time %></p>
+      <% end %>
+      
+      <%# Past Lessons %>
+      <% current_user.bookings_with(@user).past.each do |booking| %>
+        <p> <%= booking.end_time %></p>
+      <% end %>
+    </div>
   </div>
 </div>
