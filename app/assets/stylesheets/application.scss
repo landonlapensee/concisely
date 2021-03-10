@@ -51,26 +51,32 @@ body {
 
 h1 {
   font-size: 60px;
+  font-family: $headers-font;
 } 
 
 h2 {
   font-size: 34px;
+  font-family: $body-font;
 } 
 
 h3 {
   font-size: 28px;
+  font-family: $body-font;
 } 
 
 h4 {
   font-size: 24px;
+  font-family: $body-font;
 } 
 
 h5 {
   font-size: 20px;
+  font-family: $body-font;
 } 
 
 p {
   font-size: 16px;
+  font-family: $body-font;
 }
 
 // Mixins
