@@ -40,12 +40,14 @@
       <%# Upcoming Lessons %>
       <h3>Upcoming Lessons</h3>
       <% current_user.bookings_with(@user).upcoming.each do |booking| %>
+        <p> <%= booking.lesson.industry.capitalize %></p>
         <p> <%= booking.end_time %></p>
       <% end %>
       
       <%# Past Lessons %>
       <h3>Past Lessons</h3>
       <% current_user.bookings_with(@user).past.each do |booking| %>
+        <p> <%= booking.lesson.industry.capitalize %></p>
         <p> <%= booking.end_time %></p>
       <% end %>
     </div>
