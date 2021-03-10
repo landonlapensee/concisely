@@ -62,13 +62,15 @@
   width: 400px;
   border-radius: 4px;
   justify-content: center;
+  height: fit-content;
 }
 
 .booking-coach {
-  background-color: rgb(255, 153, 0);
-  position: fixed;
-  width: 80px;
-  transform: rotate(30deg);
+  background-color: #ff9900;
+  position: absolute;
+  width: 50px;
+  right: -5px;
+  transform: rotate(35deg);
 }
 
 .booking-card-coach {

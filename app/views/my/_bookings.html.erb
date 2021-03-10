@@ -2,18 +2,18 @@
   <div class="bookings-card">
 
     <div class="text-center border-bottom pb-1 m-3">
-      <h2 class="pt-3">Next Lesson</h2>
+      <h2 class="pt-3">Next Hello</h2>
     </div>
 
     <div class="booking">
       <% if @upcoming_booking %>
-        <div class="upcoming-bookings-profiles d-flex justify-content-between border-bottom p-3 m-3"">
-          <div class="upcoming-booking-user text-center">
+        <div class="upcoming-bookings-profiles d-flex justify-content-between border-bottom p-3 m-3 text-center">
+          <div>
             <img class="avatar" src=<%= @upcoming_booking.user.image %>>
             <h5><strong><%= @upcoming_booking.user.first_name %></strong></h5>
           </div>
 
-          <div class="upcoming-booking-user text-center">
+          <div>
             <%= image_tag "coach.png", :class => "booking-coach" %>
             <img class="avatar" src=<%= @upcoming_booking.lesson.user.image %>>
             <h5><strong><%= @upcoming_booking.lesson.user.first_name %></strong></h5>
