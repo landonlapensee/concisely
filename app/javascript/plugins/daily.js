@@ -1,6 +1,6 @@
 const resetDailyVideoChatTriggering = (button) => {
   button.innerText = 'Start Video Chat';
-  button.className = "btn btn-warning btn-lg video-start";
+  button.className = "btn btn-warning h-100 my-1 mr-2";
   dailyVideoChatTriggering();
 };
 
@@ -8,7 +8,7 @@ const showHideDailyVideoChat = (event) => {
   const button = event.currentTarget;
   button.removeEventListener('click', showHideDailyVideoChat);
   button.innerText = 'Stop Video Chat';
-  button.className = "btn btn-success btn-lg video-start";
+  button.className = "btn btn-success h-100 my-1 mr-2";
 
   const videoContainer = document.getElementById('video-container');
   // console.log(videoContainer);
