@@ -62,25 +62,32 @@
 }
 
 .upcoming-booking-info {
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.495);
+  border: 1px solid $concisely-orange;
   padding: 4px;
-  border-radius: 10px;
+  border-radius: $concisely-border-radius;
   margin-bottom: 4px;
 }
 
 .bookings-card {
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.495);
-  background-color: #F5F5F5;
+  box-shadow: $concisely-box-shadow;
+  background-color: white;
   width: 400px;
-  border-radius: 4px;
+  border-radius: $concisely-border-radius;
   justify-content: center;
   height: fit-content;
 }
 
 .booking-card {
-  display: flex;
-  border: 1px solid rgb(255, 192, 76);
-  border-radius: 8px;
+  padding: 8px;
+  border: 1px solid $concisely-orange;
+  border-radius: $concisely-border-radius;
+  justify-content: flex-start;
+}
+
+.booking-card-coach {
+  padding: 8px;
+  border: 1px solid $concisely-orange;
+  border-radius: $concisely-border-radius;
   justify-content: flex-start;
 }
 
