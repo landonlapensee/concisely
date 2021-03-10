@@ -5,12 +5,15 @@
   // width: auto;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 85%;
+  width: 100%;
   height: 80vh;
 }
 
-// #video-buttons {
-//   width: 15%;
-//   padding: 20px;
-// }
+.video-buttons {
+  max-width: 10%;
+}
+
+.video-button {
+  font-size: 1.5rem!important;
+}
 
