@@ -36,9 +36,17 @@ end
 
 
 coaches.each do |user|
+  descriptions = [
+    "I am an enthusiastic tutor with a lot of interviewing experience. I really want to help out young graduates that are having a hard time going through interviews in the search of a job. I started tutoring interviews on Concisely in the middle of the Covid-19 pandemic after losing my job due to the undetermined closure of the company I am working for. 
+    I love giving out the best tools and the best resources to people who are passionated with what they do and motivated to nail their interview to get their dream job. With me, you will be assimilating the best tips, from your verbal to your non-verbal, to have the best interview possible !",
+    "When I graduated, I really had a hardtime finding a job, because recruiters were very strict. I remember having a discussion with my grandfather, and he taught me a lot of stuff regarding interviews. As a coach on Concisely, I want to help you just like my grandfather helped me.
+    You'll learn how to behave during an interview, how to only talk about what's important and not beat around the bush.",
+    "I've been working as the HR director for big companies for years now, and I realized that many people, especially young graduates, were not prepared for interviews. As I have a lot of experience in that domain, I think I am well suited to help people improve their interview skills and nail their interview !
+    After the mock up interview, I will talk about everything that was good, and everything to work on. I'll put every small details in the report so you know exactly what to improve and what to keep as it is."
+  ]
   prices = [25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]
   Lesson.create!(
-    description: "Hi there I am enthusiastic professional with lots of interviewing experience. I can train you how to perform at your best under pressure! My lesson's are 20 minutes that includes a 15 minute mock up interview and 5 minutes of feedback.",
+    description: descriptions.sample,
     user: user,
     price: prices.sample,
     duration: 30,
@@ -47,10 +55,10 @@ coaches.each do |user|
 end
 
 #demo student
-student = User.create!(first_name: "Laurier", last_name: "Tsu", email: "s@s.s", password: "123456", country_code: "CA", city: "Montréal", image: "https://www.ldatschool.ca/wp-content/uploads/2015/03/Young-student.jpg")
+student = User.create!(bio: "I am a student.",first_name: "Laurier", last_name: "Tsu", email: "s@s.s", password: "123456", country_code: "CA", city: "Montréal", image: "https://www.ldatschool.ca/wp-content/uploads/2015/03/Young-student.jpg")
 
 #demo coach
-coach = User.create!( first_name: "Larry", last_name: "Lemon", email: "c@c.c", password: "123456", country_code: "CA", city: "Montréal", image: "https://www.pngitem.com/pimgs/m/176-1762843_professional-man-hd-png-download.png")
+coach = User.create!(bio: "I am an experienced professional.", first_name: "Larry", last_name: "Lemon", email: "c@c.c", password: "123456", country_code: "CA", city: "Montréal", image: "https://www.pngitem.com/pimgs/m/176-1762843_professional-man-hd-png-download.png")
 
 #demo lesson
 lesson = Lesson.create!(
