@@ -1,18 +1,21 @@
 .banner {
-  width: 1000px;
-  padding-top: 100px;
+  display: block;
+  width: 80%;
+  margin-right: -10%;
+  padding-top: 5%;
+  // padding-bottom: 5%;
   position: relative;
   z-index: -1;
   filter: saturate(0.85);
-  margin-right: 100px;
 }
 
 .call-to-action {
-  font-size: 44px;
-  font-family: 'Saira Condensed', sans-serif;  color: #2D4150;
-  padding-top: 80px;
-  padding-left: 360px;
-  margin-right: -200px;
+  font-size: 60px;
+    font-family: 'Saira Condensed', sans-serif;
+    color: #2D4150;
+    position: absolute;
+    left: 0;
+    width: 60%;
 }
 
 .banner h1 {

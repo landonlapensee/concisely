@@ -110,7 +110,7 @@ report1 = Report.create!(
     user: student,
     start_time: DateTime.strptime("13/03/2021 17:00", "%d/%m/%Y %H:%M"),
     end_time: DateTime.strptime("13/03/2021 17:30", "%d/%m/%Y %H:%M"),
-    lesson: Lesson.all.sample
+    lesson: lesson
   )
 
 # booking2 = Booking.create!(
