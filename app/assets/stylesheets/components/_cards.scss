@@ -75,6 +75,13 @@
   border-radius: $concisely-border-radius;
   justify-content: center;
   height: fit-content;
+  margin-bottom: 20px!important;
+  margin-left: 10px!important;
+  margin-right: 10px!important;
+}
+
+.bookings-card h2 {
+  font-family: $headers-font!important;
 }
 
 .booking-card {
