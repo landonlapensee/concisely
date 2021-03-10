@@ -18,24 +18,29 @@ users = YAML.load_file('db/support/users.yml')
 
 coaches = []
 
+
+
 users.each do |userhash|
+  cities = ["Montréal", "Vancouver", "Victoria", "Banff", "Québec", "Toronto", "Hamilton", "Calgary", "Gatineau", "Kingston", "Regina", "Halifax", "Edmonton", "Winnipeg", "Saskatoon", "Prince Rupert", "White Horse"]
   coaches << User.create!(
     first_name: userhash["name"]["first"],
     last_name: userhash["name"]["last"],
     email: userhash["email"],
     country_code: "CA",
-    city: "Vancouver",
+    city: cities.sample,
     bio: "I am an experienced professional.",
     password: "123456",
     image: userhash["picture"]["large"]
   )
 end
 
+
 coaches.each do |user|
+  prices = [25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]
   Lesson.create!(
     description: "Hi there I am enthusiastic professional with lots of interviewing experience. I can train you how to perform at your best under pressure! My lesson's are 20 minutes that includes a 15 minute mock up interview and 5 minutes of feedback.",
     user: user,
-    price: 40.00,
+    price: prices.sample,
     duration: 30,
     industry: "marketing"
   )
@@ -49,9 +54,11 @@ coach = User.create!(first_name: "Larry", last_name: "Lemon", email: "c@c.c", pa
 
 #demo lesson
 lesson = Lesson.create!(
-  description: "Hi there I am enthusiastic professional with lots of interviewing experience. I can train you how to perform at your best under pressure! My lesson's are 20 minutes that includes a 15 minute mock up interview and 5 minutes of feedback.",
+  description: "
+ 
+  ",
   user: coach,
-  price: 40.00,
+  price: 50.00,
   duration: 30,
   industry: "marketing"
   )
@@ -87,8 +94,49 @@ message2 = Message.create!(
 report1 = Report.create!(
   date: DateTime.strptime("03/02/2021 17:35", "%d/%m/%Y %H:%M"),
   booking: past_booking1,
-  content: "<div>Things That Went Well:<br><br></div><ol><li>&nbsp;You did this well</li><li>&nbsp;You did this well</li><li>&nbsp;You did this well</li></ol><div><br></div><div>Things To Work On:<br><br></div><ol><li>&nbsp;Work on this</li><li>&nbsp;Work on this</li><li>&nbsp;Work on this</li></ol><div><br></div><div>Resources:<br><br></div><ul><li><a href=\"https://www.myinterviewpractice.com/\">https://www.myinterviewpractice.com/</a> -&gt; practice this</li></ul><div><br></div><div>Additional Comments:<br><br></div><ul><li>Lets meet again next week</li></ul><div><br></div>",
-  rating: 5
+  content: "
+  <div>
+    Things That Went Well:<br><br>
+  </div>
+  <ol>
+    <li>&nbsp;You explained pretty well your motivation, and why you want to join the company. Keep it like that, recruiters want to hear that.</li>
+    <li>&nbsp;When you talk, I understood right away that were you passionated by Marketing. It's great, because it shows that you are not here by default.</li>
+    <li>&nbsp;Great explanation of your background. You went to the point, talked about what's important to say during an interview. You were not beating around the bush </li>
+  </ol>
+  <div>
+    <br>
+  </div>
+  <div>
+    Things To Work On:<br><br>
+  </div>
+  <ol>
+    <li>&nbsp;A lot of hesitation though, which is normal. You've said a lot of 'hmm', but no worries, you can easily work on that. What you can do is to watch the recorded interview that we had and be attentive to all the 'hmm' you said. Hearing yourself trying to fill silence will psychologically work on you.</li>
+    <li>&nbsp;Eye contact is very important, and many times you looked in different direction. Good eye contact in an interview shows how interested and appreciative of the recruiter's time. When you do not look the recruiter into the eyes, it can be taken as disrecpectful.</li>
+  </ol>
+  <div>
+    <br>
+  </div>
+  <div>
+    Resources:<br><br>
+  </div>
+  <ul>
+    <li>
+      <a href=\"https://www.myinterviewpractice.com/\">https://www.myinterviewpractice.com/</a> -&gt; practice this
+    </li>
+  </ul>
+  <div>
+    <br>
+  </div>
+  <div
+    >Additional Comments:<br><br>
+  </div>
+    <ul>
+      <li>I think it would be very important to meet again at least once. Please recontact me in about a week or two, so you have time to practice and work on things to improve. Do not hesitate to fake an interview in front of a miror. It might seem silly but trust me, it works !</li>
+    </ul>
+  <div>
+    <br>
+  </div>",
+  rating: 7
   )
 
   # report2 = Report.create!(
