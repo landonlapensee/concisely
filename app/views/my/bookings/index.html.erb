@@ -101,9 +101,9 @@
               </div>
               <div class="text-center">
                 <% if booking.report == nil %>
-                  <button><%= link_to "Create Report", new_booking_report_path(booking) %></button>
+                  <p class="text-center"><%= link_to "Create Report", new_booking_report_path(booking) %></p>
                 <% else %>
-                  <button><%= link_to "View Report", report_path(booking.report) %></button>
+                  <p class="text-center"><%= link_to "View Report", my_reports_path(report_id: booking.report) %></p>
                 <% end %>
               </div>
             </div>
@@ -123,9 +123,9 @@
               </div>
               <div class="text-center">
                 <% if booking.report == nil %>
-                  <button><%= "No Report" %></button>
+                  <p class="text-center"><%= "No Report" %></p>
                 <% else %>
-                  <button><%= link_to "View Report", report_path(booking.report) %></button>
+                  <p class="text-center"><%= link_to "View Report", my_reports_path(report_id: booking.report) %></p>
                 <% end %>
               </div>
           </div>
