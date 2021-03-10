@@ -81,4 +81,8 @@ class User < ApplicationRecord
     def full_name
       "#{first_name} #{last_name}"
     end
+
+    def bookings_with(coach)
+      bookings.joins(:lesson).where(lessons: {user: coach})
+    end
 end

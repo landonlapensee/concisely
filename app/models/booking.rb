@@ -11,6 +11,10 @@ class Booking < ApplicationRecord
 
   scope :for, -> (date) { where("start_time BETWEEN ? AND ?", date.all_day.min, date.all_day.max) }
 
+  scope :past, -> { where("end_time < ?", Time.current) }
+
+  scope :upcoming, -> { where("end_time > ?", Time.current) }
+
   def duration=(minutes)
     return nil if start_time.nil?
 
