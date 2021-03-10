@@ -12,10 +12,16 @@
         <p><%= report.rating %></p>
         <p><%= report.booking.lesson.user.full_name %></p>
       </div>
+      <ul>
+        <li><%= link_to report.booking.lesson.user.full_name, my_reports_path(report_id: report.id) %></li>
+      </ul>
     </div>
   <% end %>
 </div>
 
-<div class="report-info">
-  
+<div class="report-card">
+  <p>content</p>
+  <p><%= report.booking.lesson.user.full_name %></p>
+  <p><%= report.booking.lesson.user.full_name %></p>
+  <%= @report.description %>
 </div>
