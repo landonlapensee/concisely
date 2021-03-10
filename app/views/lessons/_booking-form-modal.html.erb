@@ -1,6 +1,7 @@
 <%= simple_form_for [ lesson, booking ] do |f| %>
   <%= label :date, nil %>
   <%= text_field :date, nil, class: "datepicker d-none", data: {url: lesson_available_times_path(lesson) } %>
-  <%# <div class="times mt-3"></div> %>
+  <%# The empty div is for the drop down menu of the available slots %>
+  <div class="times mt-3"></div>
   <%= f.submit "Book Lesson", class: "btn btn-outline-warning btn-block btn-lg mt-3 mb-3" %>
 <% end %>
