@@ -6,6 +6,7 @@
     <div class="flex-grow-1 mr-3 mt-3 ml-4">
       <h2><strong> <%= lesson.user.first_name %> <%= lesson.user.last_name %> </strong></h2>
       <h3> <%= lesson.industry.capitalize %> </h3>
+      <p> <%= lesson.user.bio.truncate(20) %> </p>
     </div>
   </div>
   <div class="card-product-infos mt-3">
