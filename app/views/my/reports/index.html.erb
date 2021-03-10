@@ -1,4 +1,21 @@
+<%= render 'my/menu' %>
+<%# This is a the data that will be used for the dasboard "menu" navbar  %>
+
 <h1>My Reports</h1>
 
-<%# This is a the data that will be used for the dasboard "menu" navbar  %>
-<%= render 'my/menu' %>
+<div class="reports-list">
+  <% @reports.each do |report| %>
+    <div class="report-link-card">
+      <img class="avatar-small" src=<%= report.booking.lesson.user.image %>>
+      <p><%= report.booking.lesson.industry %></p>
+      <div class="report-link-name-rating">
+        <p><%= report.rating %></p>
+        <p><%= report.booking.lesson.user.full_name %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="report-info">
+  
+</div>

@@ -1,4 +1,5 @@
 class My::ReportsController < ApplicationController
   def index
-  end 
+    @reports = current_user.all_reports
+  end
 end

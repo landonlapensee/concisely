@@ -70,6 +70,14 @@ class User < ApplicationRecord
       messages.where(recipient: user).or(messages.where(sender: user))
     end
 
+    def all_reports
+      bookings.map do |booking|
+        unless booking.report.nil?
+          booking.report
+        end
+      end
+    end
+    
     def full_name
       "#{first_name} #{last_name}"
     end
