@@ -33,13 +33,12 @@ class User < ApplicationRecord
     def upcoming_bookings
       # Filter by end_time. Everything after NOW
       filtered_bookings = bookings.select { |booking| booking.end_time >= Time.now }
-
-      upcoming_bookings = (filtered_bookings + coach_bookings).sort { |booking| booking.end_time }
+      upcoming_bookings = (filtered_bookings + coach_future_bookings).sort { |booking| booking.end_time }
       # reminder of Caio <3
       # bookings.or(Booking.where(id: coach_listed_bookings)).where("end_time >= ?", Time.current).order(end_time: :asc).first
     end
 
-    def coach_bookings
+    def coach_future_bookings
       coach_listed_booking_ids.map do |booking_id|
         Booking.where(id: booking_id).where("end_time >= ?", Time.now)
       end.flatten
@@ -47,14 +46,18 @@ class User < ApplicationRecord
 
     def past_bookings
       # Filter by end_time. Everything after NOW
-
       filtered_bookings = bookings.select do |booking|
-        booking.end_time <= Time.now 
+        booking.end_time < Time.now 
       end
-
-      past_bookings = (filtered_bookings + coach_bookings).sort { |booking| booking.end_time }
-      
+      past_bookings = (filtered_bookings + coach_past_bookings).sort { |booking| booking.end_time }
     end
+
+    def coach_past_bookings
+      coach_listed_booking_ids.map do |booking_id|
+        Booking.where(id: booking_id).where("end_time < ?", Time.now)
+      end.flatten
+    end
+    
     def conversation_users
       ids = messages.pluck(:recipient_id, :sender_id).flatten.uniq
       ids.delete(id)
@@ -69,12 +72,13 @@ class User < ApplicationRecord
       messages.where(recipient: user).or(messages.where(sender: user))
     end
 
+    #----- DO NOT TOUCH #all_reports WITHOUT CONSULTING LAURIER
     def all_reports
-      bookings.map do |booking|
-        unless booking.report.nil?
-          booking.report
-        end
+      reports = []
+      bookings.each do |booking|
+        reports << booking.report unless booking.report.nil?
       end
+      reports
     end
     
     def full_name

@@ -2,39 +2,43 @@
 <%# This is a the data that will be used for the dasboard "menu" navbar  %>
 <div class="container py-3">
   <h1>My Reports</h1>
+  <% if @report %>
 
-  <div class="d-flex">
-    <div class="reports-list">
-      <% @reports.each do |report| %>
-        <div class="report-link-card m-2">
-          <img class="avatar-small" src=<%= report.booking.lesson.user.image %>>
-          <div class="report-link-card-infos">
-            <div class="report-link-name-rating d-flex justify-content-between">
-              <p><strong><%= report.booking.lesson.industry.capitalize %></strong></p>
-              <p><%= report.rating %></p>
+    <div class="d-flex">
+      <div class="reports-list">
+        <% @reports.each do |report| %>
+          <div class="report-link-card m-2">
+            <img class="avatar-small" src=<%= report.booking.lesson.user.image %>>
+            <div class="report-link-card-infos">
+              <div class="report-link-name-rating d-flex justify-content-between">
+                <p><strong><%= report.booking.lesson.industry.capitalize %></strong></p>
+                <p><%= report.rating %></p>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p><%= report.booking.lesson.user.full_name %></p>
+                <p><%= report.date %></p>
+              </div>
             </div>
-            <div class="d-flex justify-content-between">
-              <p><%= report.booking.lesson.user.full_name %></p>
-              <p><%= report.date %></p>
-            </div>
+            <p class="text-aling-center"><%= link_to "View Report", my_reports_path(report_id: report.id) %></p>
           </div>
-          <p class="text-aling-center"><%= link_to "View Report", my_reports_path(report_id: report.id) %></p>
-        </div>
-      <% end %>
-    </div>
-
-    <div class="report-card">
-      <div class="report-infos">
-        <div class="d-flex justify-content-between">
-          <p><strong><%= @report.booking.lesson.industry.capitalize %></strong></p>
-          <p>Overall rating: <%= @report.rating %></p>
-        </div>
-        <div class="d-flex justify-content-between border-bottom mb-2">
-          <p><%= @report.booking.lesson.user.full_name %></p>
-          <p><%= @report.booking.user.full_name %></p>
-        </div>
+        <% end %>
       </div>
-        <p><%= @report.description %></p>
+
+      <div class="report-card">
+        <div class="report-infos">
+          <div class="d-flex justify-content-between">
+            <p><strong><%= @report.booking.lesson.industry.capitalize %></strong></p>
+            <p>Overall rating: <%= @report.rating %></p>
+          </div>
+          <div class="d-flex justify-content-between border-bottom mb-2">
+            <p><%= @report.booking.lesson.user.full_name %></p>
+            <p><%= @report.booking.user.full_name %></p>
+          </div>
+        </div>
+          <p><%= @report.description %></p>
+      </div>
     </div>
-  </div>
+  <% else %>
+    <h3>You do not have any reports yet</h3>
+  <% end %>
 </div>
