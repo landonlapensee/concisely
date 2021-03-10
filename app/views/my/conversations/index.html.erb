@@ -1,6 +1,6 @@
 <%= render 'my/menu' %>
 <div class="container py-3">
-  <h1>My Messages</h1>
+  <h3>My Messages</h3>
   <% if @user.lessons.any? %>
     <div class="container py-3">
       <div class="d-flex justify-content-around">
@@ -40,18 +40,22 @@
           <%= render "lessons/modal", lesson: @user.lessons.last %>
 
           <%# Upcoming Lessons %>
-          <h3>Upcoming Lessons</h3>
-          <% current_user.bookings_with(@user).upcoming.each do |booking| %>
-            <p> <%= booking.lesson.industry.capitalize %></p>
-            <p> <%= booking.end_time %></p>
-          <% end %>
+          <div>
+            <h5><strong>Upcoming Lessons</strong></h5>
+            <% current_user.bookings_with(@user).upcoming.each do |booking| %>
+              <p> <%= booking.lesson.industry.capitalize %></p>
+              <p> <%= booking.end_time %></p>
+            <% end %>
+          </div>
           
           <%# Past Lessons %>
-          <h3>Past Lessons</h3>
-          <% current_user.bookings_with(@user).past.each do |booking| %>
-            <p> <%= booking.lesson.industry.capitalize %></p>
-            <p> <%= booking.end_time %></p>
-          <% end %>
+          <div>
+            <h5><strong>Past Lessons</strong></h5>
+            <% current_user.bookings_with(@user).past.each do |booking| %>
+              <p> <%= booking.lesson.industry.capitalize %></p>
+              <p> <%= booking.end_time %></p>
+            <% end %>
+          </div>
         </div>
       </div>
     <% else %>
