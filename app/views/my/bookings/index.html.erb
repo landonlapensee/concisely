@@ -48,27 +48,27 @@
             <%# lessons I'm coaching %>
             <div class="booking-card-coach">
               <div>
+                <img class="avatar-next-lessons" src=<%= booking.lesson.user.image %>>
+              </div>
+              <div>
                 <p class="coaching-indicator">Coaching</p>
                 <p><strong><%= booking.user.first_name %></strong></p>
                 <p><%= booking.lesson.industry %></p>
                 <p><%= booking.start_time.strftime("%B %d, %Y") %></p>
                 <p><%= booking.start_time.strftime("%I:%M %p") %></p>
               </div>
-              <div>
-                <img class="avatar-next-lessons" src=<%= booking.lesson.user.image %>>
-              </div>
 
           <% else %>
             <div class="booking-card p-2 m-3">
             <%# lessons I'm taking %>
               <div>
-                <p><strong><%= booking.lesson.user.first_name %> <%= booking.lesson.user.last_name %></strong></p>
-                <p><%= booking.lesson.industry %></p>
-                <p><%= booking.start_time.strftime("%B %d, %Y") %></p>
-                <p><%= booking.start_time.strftime("%I:%M %p") %></p>
+                <img class="avatar-next-lessons" src=<%= booking.lesson.user.image %>>
               </div>
               <div>
-                <img class="avatar-next-lessons" src=<%= booking.lesson.user.image %>>
+                <p><strong><%= booking.lesson.user.first_name %> <%= booking.lesson.user.last_name %></strong></p>
+                <p><%= booking.lesson.industry.capitalize %></p>
+                <p><%= booking.start_time.strftime("%B %d, %Y") %>, <%= booking.start_time.strftime("%I:%M %p") %></p>
+                <p></p>
               </div>
             </div>
           <% end %>
