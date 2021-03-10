@@ -79,6 +79,32 @@ p {
   font-family: $body-font;
 }
 
+.container-customize {
+  padding-top: 200px!important;
+}
+
+.first-sentence {
+  font-size: 16px;
+  font-family: $decoration-font;
+}
+
+.second-sentence {
+  text-transform: uppercase	;
+}
+
+.second-sentence span {
+  display: inline;
+  padding-right: 10px;
+  padding-left: 10px;
+  background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 40%,
+        rgba(251, 116, 62, .7) 40% 75%,
+        rgba(0, 0, 0, 0) 75%
+      );
+
+}
+
 // Mixins
 @mixin absCenter {
   position: absolute;
