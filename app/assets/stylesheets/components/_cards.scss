@@ -114,6 +114,13 @@
   border: 4px solid rgb(255, 153, 0);
 }
 
+.report-link-card {
+  background-color: #E5E5E5;
+  width: 200px;
+  padding: 4px;
+  border-radius: 10px;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
