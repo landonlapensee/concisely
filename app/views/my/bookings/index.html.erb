@@ -28,7 +28,7 @@
           </div>
 
           <div class="videocall text-center py-3">
-            <button class="btn-flat"><%= link_to "Join Classroom", my_video_path  %></button>
+            <button class="btn-flat"><%= link_to "Join Classroom", my_video_path(booking_id: @upcoming_booking.id)  %></button>
           </div>
 
         <% else %>
@@ -80,6 +80,8 @@
         </div>
 
         <%@past_bookings.each do |booking| %>
+          <%#= render "bookings/past", booking: booking %>
+
           <% if booking.lesson.user == current_user %>
             <div class="booking-card-coach">
               <p><%= booking.user.first_name %></p>
