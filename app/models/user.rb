@@ -72,12 +72,13 @@ class User < ApplicationRecord
       messages.where(recipient: user).or(messages.where(sender: user))
     end
 
+    #----- DO NOT TOUCH #all_reports WITHOUT CONSULTING LAURIER
     def all_reports
-      bookings.map do |booking|
-        unless booking.report.nil?
-          booking.report
-        end
+      reports = []
+      bookings.each do |booking|
+        reports << booking.report unless booking.report.nil?
       end
+      reports
     end
     
     def full_name
