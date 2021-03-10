@@ -49,14 +49,35 @@ body {
 
 // ----
 
-// Colors
-$background-color: #ece0e8;
-$color-primary-light: #ca3782;
-$color-primary-dark: #1e0b36;
-$color-black: #000;
-$color-gray-dark: #aaa;
-$color-gray-light: #eee;
-$color-white: #fff;
+h1 {
+  font-size: 60px;
+  font-family: $headers-font;
+} 
+
+h2 {
+  font-size: 34px;
+  font-family: $body-font;
+} 
+
+h3 {
+  font-size: 28px;
+  font-family: $body-font;
+} 
+
+h4 {
+  font-size: 24px;
+  font-family: $body-font;
+} 
+
+h5 {
+  font-size: 20px;
+  font-family: $body-font;
+} 
+
+p {
+  font-size: 16px;
+  font-family: $body-font;
+}
 
 // Mixins
 @mixin absCenter {
@@ -138,178 +159,178 @@ html {
   }
 }
 
-.card {
-  flex: initial;
-  position: relative;
-  height: 52rem;
-  width: 48rem;
-  -moz-perspective: 200rem;
-  perspective: 200rem;
-  margin: 2rem;
+// .card {
+//   flex: initial;
+//   position: relative;
+//   height: 52rem;
+//   width: 48rem;
+//   -moz-perspective: 200rem;
+//   perspective: 200rem;
+//   margin: 2rem;
 
-  &__side {
-    height: 52rem;
-    transition: all 0.8s ease;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    -webkit-backface-visibility: hidden; /* We don't want to see the back part of the element. */
-    backface-visibility: hidden; /* We don't want to see the back part of the element. */
-    border-radius: 3px;
-    overflow: hidden; /* The image is overflowing the parent. */
-    box-shadow: 0 2rem 6rem rgba($color-black, 0.15);
+//   &__side {
+//     height: 52rem;
+//     transition: all 0.8s ease;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     -webkit-backface-visibility: hidden; /* We don't want to see the back part of the element. */
+//     backface-visibility: hidden; /* We don't want to see the back part of the element. */
+//     border-radius: 3px;
+//     overflow: hidden; /* The image is overflowing the parent. */
+//     box-shadow: 0 2rem 6rem rgba($color-black, 0.15);
 
-    &--front {
-      background-image: linear-gradient(
-          to right bottom,
-          rgba($color-primary-dark, 0.65),
-          rgba($color-primary-light, 0.7)
-        ),
-        url(https://cdn.spacetelescope.org/archives/images/screen/heic0406a.jpg);
-    }
+//     &--front {
+//       background-image: linear-gradient(
+//           to right bottom,
+//           rgba($color-primary-dark, 0.65),
+//           rgba($color-primary-light, 0.7)
+//         ),
+//         url(https://cdn.spacetelescope.org/archives/images/screen/heic0406a.jpg);
+//     }
 
-    &--back {
-      background-color: $color-white;
-      transform: rotateY(180deg);
-    }
-  }
+//     &--back {
+//       background-color: $color-white;
+//       transform: rotateY(180deg);
+//     }
+//   }
 
-  &:hover &__side--back {
-    transform: rotateY(0);
-  }
-  &:hover &__side--front {
-    transform: rotateY(-180deg);
-  }
+//   &:hover &__side--back {
+//     transform: rotateY(0);
+//   }
+//   &:hover &__side--front {
+//     transform: rotateY(-180deg);
+//   }
 
-  // Front side of the card
-  &__theme {
-    @include absCenter;
-    top: 54%;
-    width: 90%;
-    text-align: center;
-  }
+//   // Front side of the card
+//   &__theme {
+//     @include absCenter;
+//     top: 54%;
+//     width: 90%;
+//     text-align: center;
+//   }
 
-  &__theme-box {
-    color: $color-white;
-    margin-bottom: 8rem;
-  }
+//   &__theme-box {
+//     color: $color-white;
+//     margin-bottom: 8rem;
+//   }
 
-  &__subject {
-    font-family: 'Inconsolata', monospace;
-    letter-spacing: 0.8rem;
-    font-size: 1.6rem;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-  }
+//   &__subject {
+//     font-family: 'Inconsolata', monospace;
+//     letter-spacing: 0.8rem;
+//     font-size: 1.6rem;
+//     text-transform: uppercase;
+//     margin-bottom: 1rem;
+//   }
 
-  &__title {
-    font-family: 'VT323', monospace;
-    text-transform: uppercase;
-    font-size: 6rem;
-    font-weight: 100;
-  }
+//   &__title {
+//     font-family: 'VT323', monospace;
+//     text-transform: uppercase;
+//     font-size: 6rem;
+//     font-weight: 100;
+//   }
 
-  // Back side of the card
-  &__cover {
-    position: relative;
-    background-size: cover;
-    height: 14rem;
-    // background-blend-mode: screen;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    background-image: linear-gradient(
-        to top right,
-        rgba($color-primary-dark, 0.65),
-        rgba($color-primary-light, 0.65)
-      ),
-      url(https://cdn.spacetelescope.org/archives/images/screen/heic0406a.jpg);
-  }
+//   // Back side of the card
+//   &__cover {
+//     position: relative;
+//     background-size: cover;
+//     height: 14rem;
+//     // background-blend-mode: screen;
+//     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+//     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+//     border-top-left-radius: 3px;
+//     border-top-right-radius: 3px;
+//     background-image: linear-gradient(
+//         to top right,
+//         rgba($color-primary-dark, 0.65),
+//         rgba($color-primary-light, 0.65)
+//       ),
+//       url(https://cdn.spacetelescope.org/archives/images/screen/heic0406a.jpg);
+//   }
 
-  &__heading {
-    text-align: center;
-    color: $color-white;
-    @include absCenter;
-    width: 75%;
-  }
+//   &__heading {
+//     text-align: center;
+//     color: $color-white;
+//     @include absCenter;
+//     width: 75%;
+//   }
 
-  &__heading-span {
-    font-family: 'VT323', monospace;
-    font-size: 4.2rem;
-    font-weight: 300;
-    text-transform: uppercase;
-    padding: 1rem 1.5rem;
-    color: $color-white;
-  }
+//   &__heading-span {
+//     font-family: 'VT323', monospace;
+//     font-size: 4.2rem;
+//     font-weight: 300;
+//     text-transform: uppercase;
+//     padding: 1rem 1.5rem;
+//     color: $color-white;
+//   }
 
-  &__details {
-    font-family: 'Inconsolata', monospace;
-    padding: 4rem 2rem;
-    ul {
-      list-style: none;
-      width: 80%;
-      margin: 0 auto;
+//   &__details {
+//     font-family: 'Inconsolata', monospace;
+//     padding: 4rem 2rem;
+//     ul {
+//       list-style: none;
+//       width: 80%;
+//       margin: 0 auto;
 
-      li {
-        text-align: center;
-        font-size: 1.8rem;
-        padding: 1rem;
+//       li {
+//         text-align: center;
+//         font-size: 1.8rem;
+//         padding: 1rem;
 
-        &:not(:last-child) {
-          border-bottom: 1px solid $color-gray-light;
-        }
-      }
-    }
-  }
+//         &:not(:last-child) {
+//           border-bottom: 1px solid $color-gray-light;
+//         }
+//       }
+//     }
+//   }
 
-  // Responsivity
-  @media only screen and (max-width: 37.5em), only screen and (hover: none) {
-    height: auto;
-    border-radius: 3px;
-    background-color: $color-white;
-    box-shadow: 0 2rem 6rem rgba($color-black, 0.15);
+//   // Responsivity
+//   @media only screen and (max-width: 37.5em), only screen and (hover: none) {
+//     height: auto;
+//     border-radius: 3px;
+//     background-color: $color-white;
+//     box-shadow: 0 2rem 6rem rgba($color-black, 0.15);
 
-    &__side {
-      height: auto;
-      position: relative;
-      box-shadow: none;
+//     &__side {
+//       height: auto;
+//       position: relative;
+//       box-shadow: none;
 
-      &--front {
-        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
-      }
+//       &--front {
+//         clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+//       }
 
-      &--back {
-        transform: rotateY(0);
-      }
-    }
+//       &--back {
+//         transform: rotateY(0);
+//       }
+//     }
 
-    &:hover &__side--front {
-      transform: rotateY(0);
-    }
+//     &:hover &__side--front {
+//       transform: rotateY(0);
+//     }
 
-    &__details {
-      padding: 3rem 2rem;
-    }
+//     &__details {
+//       padding: 3rem 2rem;
+//     }
 
-    // Front side responsive styling
-    &__theme {
-      position: relative;
-      top: 0;
-      left: 0;
-      transform: translate(0);
-      width: 100%;
-      padding: 5rem 4rem 1.5rem 4rem;
-      text-align: right;
-    }
+//     // Front side responsive styling
+//     &__theme {
+//       position: relative;
+//       top: 0;
+//       left: 0;
+//       transform: translate(0);
+//       width: 100%;
+//       padding: 5rem 4rem 1.5rem 4rem;
+//       text-align: right;
+//     }
 
-    &__theme-box {
-      margin-bottom: 1.5rem;
-    }
+//     &__theme-box {
+//       margin-bottom: 1.5rem;
+//     }
 
-    &__title {
-      font-size: 4rem;
-    }
-  }
-}
+//     &__title {
+//       font-size: 4rem;
+//     }
+//   }
+// }
