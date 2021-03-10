@@ -1,0 +1,17 @@
+<div class="d-flex w-100">
+  <div>
+    <img class="avatar" style="height:100px; width:100px;" src="<%= lesson.user.image %>">
+  </div>
+
+  <div class="coach-infos flex-grow-1 mr-3 mt-4 ml-3">
+    <h2><strong> <%= lesson.user.first_name %> <%= lesson.user.   last_name %> </strong></h2>
+    <h3> <%= lesson.industry.capitalize %> </h3>
+  </div>
+
+  <div class="lesson-infos mr-3 mt-4">
+    <div class="price"><strong><%= lesson.price_display %></strong>
+    </div>
+    <div class="location"><%= lesson.user.city %>, <%= lesson.user.country_name %>
+    </div>
+  </div>
+</div>
