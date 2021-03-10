@@ -1,4 +1,10 @@
 <%#= collection_radio_buttons("booking", "start_time", @available_times, :last, :first) %>
 
  <%# Another way of displaying the available slots: %>
-<%= select("booking", "start_time", @available_times) %>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect01">Available Slots</label>
+  </div>
+  <%= select("booking", "start_time", @available_times, {}, class: "custom-select") %>
+</div>

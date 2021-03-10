@@ -52,27 +52,27 @@ body {
 h1 {
   font-size: 60px;
   font-family: $headers-font;
-} 
+}
 
 h2 {
   font-size: 34px;
   font-family: $body-font;
-} 
+}
 
 h3 {
   font-size: 28px;
   font-family: $body-font;
-} 
+}
 
 h4 {
   font-size: 24px;
   font-family: $body-font;
-} 
+}
 
 h5 {
   font-size: 20px;
   font-family: $body-font;
-} 
+}
 
 p {
   font-size: 16px;
@@ -125,22 +125,22 @@ p {
 //  box-sizing: border-box;
 // }
 
-html {
-  // 10px as 1rem.
-  font-size: 62.5%;
+// html {
+//   // 10px as 1rem.
+//   font-size: 62.5%;
 
-  @include respond(tab-land) {
-    // width < 1200?
-    font-size: 56.25%; // 1rem = 9px, 9/16 = 56.25
-  }
-  @include respond(tab-port) {
-    // width < 900?
-    font-size: 50%; // 1rem = 8px, 8/16 = 50
-  }
-  @include respond(big-desktop) {
-    font-size: 75%; // 1 rem = 12px, 12/16 = 75
-  }
-}
+//   @include respond(tab-land) {
+//     // width < 1200?
+//     font-size: 56.25%; // 1rem = 9px, 9/16 = 56.25
+//   }
+//   @include respond(tab-port) {
+//     // width < 900?
+//     font-size: 50%; // 1rem = 8px, 8/16 = 50
+//   }
+//   @include respond(big-desktop) {
+//     font-size: 75%; // 1 rem = 12px, 12/16 = 75
+//   }
+// }
 
 // body {
 //  height: 100vh;
