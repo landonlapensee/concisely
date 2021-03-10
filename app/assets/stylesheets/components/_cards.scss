@@ -102,16 +102,17 @@
 }
 
 .card-customize {
-  background-color: #E5E5E5;
-  border: 4px solid rgb(226, 226, 226);
-  border-radius: 10px;
+  background-color: white;
+  box-shadow: $concisely-box-shadow;
+  // border: 4px solid rgb(226, 226, 226);
+  border-radius: $concisely-border-radius;
   margin-top: 20px;
   padding: 4px;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .card-customize:hover {
-  border: 4px solid rgb(255, 153, 0);
+  box-shadow: $concisely-box-shadow-hover;
 }
 
 .report-link-card {
