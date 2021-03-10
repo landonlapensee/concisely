@@ -31,7 +31,7 @@
 .report-card {
   position: relative;
   border-radius: $concisely-border-radius;
-  width: 500px;
+  width: 700px;
   margin: 10px auto;
   padding: 10px;
   background-color: white;
@@ -55,7 +55,6 @@
 }
 
 .report-link-card {
-  margin: 4px auto;
   padding: 8px;
   border-radius: $concisely-border-radius;
   border: 1px solid $concisely-orange;
@@ -75,6 +74,13 @@
   border-radius: $concisely-border-radius;
   justify-content: center;
   height: fit-content;
+  margin-bottom: 20px!important;
+  margin-left: 10px!important;
+  margin-right: 10px!important;
+}
+
+.bookings-card h2 {
+  font-family: $headers-font!important;
 }
 
 .booking-card {
