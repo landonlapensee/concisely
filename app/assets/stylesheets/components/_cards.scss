@@ -98,7 +98,7 @@
 }
 
 .booking-coach {
-  background-color: #ff9900;
+  background-color: $concisely-orange;
   position: absolute;
   width: 50px;
   right: -5px;
@@ -116,12 +116,12 @@
   width: 10px;
   height: 10px;
   transform: rotate(45deg);
-  background-color: rgb(255, 153, 0);
+  background-color: $concisely-orange;
   margin-top: 50px;
 }
 
 .coaching-indicator {
-  background-color: rgb(255, 153, 0);
+  background-color: $concisely-orange;
   padding: 4px 8px;
   border-radius: 10px;
 }
