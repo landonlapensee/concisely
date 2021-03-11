@@ -4,27 +4,27 @@
   <div class="d-flex justify-content-center">
     <div class="bookings-card p-2">
       <div class="text-center border-bottom pb-1 mb-4">
-        <h2 class="pt-3">Next Lesson</h2>
+        <h4 class="pt-3">Next Lesson</h4>
       </div>
       <div class="booking">
         <% if @upcoming_booking %>
           <div class="d-flex justify-content-between border-bottom p-3 text-center">
             <div class="ml-3">
               <img class="avatar-next-lesson mb-2" src=<%= @upcoming_booking.user.image %>>
-              <h4><strong><%= @upcoming_booking.user.first_name %></strong></h4>
+              <h5><%= @upcoming_booking.user.first_name %></h5>
             </div>
 
             <div class="text-center mr-3 position-relative">
               <%= image_tag "coach.png", :class => "booking-coach" %>
               <img class="avatar-next-lesson" src=<%= @upcoming_booking.lesson.user.image %>>
-              <h4><strong><%= @upcoming_booking.lesson.user.first_name %></strong></h4>
+              <h5><%= @upcoming_booking.lesson.user.first_name %></h5>
             </div>
           </div>
 
           <div class="upcoming-booking-info mt-5 mx-5 text-center">
-            <h3><%= @upcoming_booking.lesson.industry.capitalize %> Interview</h3>
+            <h4><%= @upcoming_booking.lesson.industry.capitalize %> Interview</h4>
             <h5><%= @upcoming_booking.start_time.strftime("%B %d, %Y") %></h5>
-            <h4><%= @upcoming_booking.start_time.strftime("%I:%M %p") %></h4>
+            <h5><%= @upcoming_booking.start_time.strftime("%I:%M %p") %></h5>
           </div>
 
           <div class="videocall text-center py-3">
@@ -40,7 +40,7 @@
     <div>
       <div class="bookings-card p-2 mb-4">
         <div class="text-center border-bottom pb-1 pt-3">
-          <h2 class="">Upcoming Lessons</h2>
+          <h4 class="">Upcoming Lessons</h4>
         </div>
         
         <% @upcoming_bookings.each do |booking| %>
@@ -80,7 +80,7 @@
 
       <div class="bookings-card p-2 mb-4">
         <div class="text-center border-bottom pb-1">
-          <h2 class="pt-3">Past Lessons</h2>
+          <h4 class="pt-3">Past Lessons</h4>
         </div>
 
         <%@past_bookings.each do |booking| %>
