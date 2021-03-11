@@ -50,8 +50,7 @@
 	text-transform: uppercase;
 	font-family: "Lato";
 	font-size: 14px;
-	padding: 12px 8px;
-	width: 150px;
+	padding: 12px 28px;
 	border-radius: 12px;
 	overflow: hidden;
 	transition: all 0.3s linear 0s;
@@ -77,7 +76,7 @@
 	background-color: white;
 	color: $concisely-orange;
 	text-decoration: underline;
-  border: none!important;
+  border-color: transparent;
 }
 .btn:hover:before {
 	opacity: 1;
@@ -136,8 +135,7 @@
 	text-transform: uppercase;
 	font-family: "Lato";
 	font-size: 14px;
-	padding: 12px 8px;
-	width: 150px;
+	padding: 12px 28px;
 	border-radius: 12px;
 	overflow: hidden;
 	transition: all 0.3s linear 0s;
@@ -163,7 +161,7 @@
 	background-color: white;
 	color: $concisely-blue;
 	text-decoration: underline;
-  border: none!important;
+  border-color: transparent;
 }
 .btn-secondary:hover:before {
 	opacity: 1;
