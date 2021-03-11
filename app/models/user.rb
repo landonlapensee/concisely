@@ -33,7 +33,7 @@ class User < ApplicationRecord
     def upcoming_bookings
       # Filter by end_time. Everything after NOW
       filtered_bookings = bookings.select { |booking| booking.end_time >= Time.now }
-      upcoming_bookings = (filtered_bookings + coach_future_bookings).sort { |booking| booking.end_time }
+      upcoming_bookings = (filtered_bookings + coach_future_bookings).sort { |booking| booking.end_time }.reverse
       # reminder of Caio <3
       # bookings.or(Booking.where(id: coach_listed_bookings)).where("end_time >= ?", Time.current).order(end_time: :asc).first
     end
@@ -49,7 +49,7 @@ class User < ApplicationRecord
       filtered_bookings = bookings.select do |booking|
         booking.end_time < Time.now 
       end
-      past_bookings = (filtered_bookings + coach_past_bookings).sort { |booking| booking.end_time }
+      past_bookings = (filtered_bookings + coach_past_bookings).sort { |booking| booking.end_time }.reverse
     end
 
     def coach_past_bookings
