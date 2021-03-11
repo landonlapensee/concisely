@@ -1,11 +1,13 @@
 .testing {
-  border-left: solid 1px rgb(255, 255, 255);
+  position: relative;
+  background-color: white; 
+  border-radius: 20px 0 0 20px;
+  margin-left: 10px;
 }
 
 .contacts {
   position: relative;
   background-color: white;
-  box-shadow: $concisely-box-shadow;
   border-radius: 0 20px 20px 0;
   margin-right: 10px;
   padding-top: 10px;
@@ -126,12 +128,4 @@
   width: fit-content;
   background-color: white;
   box-shadow: $concisely-box-shadow;
-}
-
-.testing {
-  position: relative;
-  background-color: white;
-  box-shadow: $concisely-box-shadow;
-  border-radius: 20px 0 0 20px;
-  margin-left: 10px;
 }
