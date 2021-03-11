@@ -4,15 +4,15 @@
   <% if @user.lessons.any? %>
     <div class="container py-3">
       <div class="d-flex justify-content-around">
-        <div class="contacts col-2">
+        <div class="contacts pt-3 col-2">
           <ul>
             <% current_user.conversation_users.each do |user| %>
-              <li><img class="message-avatar" style="height:40px; width:40px;" src="<%= user.image %>"/><%= link_to user.first_name, my_conversations_path(user_id: user.id) %><%= @message.content %></li>
+              <li><p><%= link_to user.first_name, my_conversations_path(user_id: user.id) %><%= @message.content %></p></li>
             <% end %>
           </ul>
         </div>
 
-        <div class="conversation col-8">
+        <div class="conversation col-7">
           <div class="recipient-card">
             <img class="meesage-avatar" style="height:80px; width:80px;" src="<%= @user.image %>"/>
             <div class="recipient-card-infos">
@@ -35,25 +35,23 @@
         </div>
 
         <%# Book another Lesson Section %>
-        <div class="testing col-2">
+        <div class="testing col-3">
           <%= link_to "Book a Lesson", "#", class: "btn btn-warning btn-lg mt-3 mb-3", 'data-toggle': "modal", 'data-target': "#myModal#{@user.lessons.last.id}" %>
           <%= render "lessons/modal", lesson: @user.lessons.last %>
 
           <%# Upcoming Lessons %>
-          <div>
-            <h5><strong>Upcoming Lessons</strong></h5>
+          <div class="booked-lessons mt-2 mb-4">
+            <h5 class="mb-3"><strong>Upcoming Lessons</strong></h5>
             <% current_user.bookings_with(@user).upcoming.each do |booking| %>
-              <p> <%= booking.lesson.industry.capitalize %></p>
-              <p> <%= booking.end_time %></p>
+              <p> <%= booking.lesson.industry.capitalize %> | <%= booking.end_time %></p>
             <% end %>
           </div>
           
           <%# Past Lessons %>
-          <div>
-            <h5><strong>Past Lessons</strong></h5>
+          <div class="booked-lessons">
+            <h5 class="mb-3"><strong>Past Lessons</strong></h5>
             <% current_user.bookings_with(@user).past.each do |booking| %>
-              <p> <%= booking.lesson.industry.capitalize %></p>
-              <p> <%= booking.end_time %></p>
+              <p> <%= booking.lesson.industry.capitalize %> | <%= booking.end_time %></p>
             <% end %>
           </div>
         </div>
