@@ -48,6 +48,14 @@
   color: $concisely-grey;
 }
 
+.nav-link {
+  // text-decoration: none;
+  color: $concisely-grey!important;
+}
+
+.nav-tabs {
+  padding-top: 120px;
+}
 .nav-item a {
   margin-right: 20px;
   font-size: 18px;
