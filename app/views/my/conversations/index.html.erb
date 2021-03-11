@@ -1,6 +1,5 @@
 <%= render 'my/menu' %>
 <div class="container py-3">
-  <h3>My Messages</h3>
   <% if @user.lessons.any? %>
     <div class="container py-3">
       <div class="d-flex justify-content-around">
@@ -14,7 +13,7 @@
 
         <div class="conversation col-7">
           <div class="recipient-card">
-            <img class="meesage-avatar" style="height:80px; width:80px;" src="<%= @user.image %>"/>
+            <img class="avatar-square" style="height:80px; width:80px;" src="<%= @user.image %>"/>
             <div class="recipient-card-infos">
               <h2><%=@user.full_name %></h2>
               <p><%= @user.city %>, <%= @user.country_code %></p>
@@ -36,8 +35,10 @@
 
         <%# Book another Lesson Section %>
         <div class="testing col-3">
-          <%= link_to "Book a Lesson", "#", class: "btn btn-warning btn-lg mt-3 mb-3", 'data-toggle': "modal", 'data-target': "#myModal#{@user.lessons.last.id}" %>
-          <%= render "lessons/modal", lesson: @user.lessons.last %>
+          <div class="d-flex justify-content-center">
+            <%= link_to "Book a Lesson", "#", class: "btn btn-warning btn-lg mt-3 mb-3", 'data-toggle': "modal", 'data-target': "#myModal#{@user.lessons.last.id}" %>
+            <%= render "lessons/modal", lesson: @user.lessons.last %>
+          </div>
 
           <%# Upcoming Lessons %>
           <div class="booked-lessons mt-2 mb-4">

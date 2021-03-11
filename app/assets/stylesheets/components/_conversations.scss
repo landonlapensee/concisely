@@ -4,7 +4,8 @@
 
 .contacts {
   position: relative;
-  background-color: rgba(240, 240, 240, 0.445);
+  background-color: white;
+  box-shadow: $concisely-box-shadow;
   border-radius: 0 20px 20px 0;
   margin-right: 10px;
   padding-top: 10px;
@@ -57,7 +58,8 @@
 
 .conversation {
   position: relative;
-  background-color: rgba(240, 240, 240, 0.445);
+  background-color: white;
+  box-shadow: $concisely-box-shadow;
   border-radius: 20px;
 }
 
@@ -128,7 +130,8 @@
 
 .testing {
   position: relative;
-  background-color: rgba(240, 240, 240, 0.445);
+  background-color: white;
+  box-shadow: $concisely-box-shadow;
   border-radius: 20px 0 0 20px;
   margin-left: 10px;
 }
