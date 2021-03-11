@@ -28,7 +28,7 @@ users.each do |userhash|
     email: userhash["email"],
     country_code: "CA",
     city: cities.sample,
-    bio: "I am an experienced professional.",
+    bio: "I am an experienced professional who loves helping out people by giving advices.",
     password: "123456",
     image: userhash["picture"]["large"]
   )

@@ -1,0 +1,19 @@
+.modal-description {
+  margin-left: 14px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: $concisely-border-radius;
+  box-shadow: $concisely-box-shadow;
+  max-width: 65%;
+}
+
+.modal-content {
+  border-radius: $concisely-border-radius;
+  box-shadow: $concisely-box-shadow;
+}
+
+.modal-availability {
+  margin-left: 20px;
+}

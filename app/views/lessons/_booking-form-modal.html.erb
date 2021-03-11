@@ -1,5 +1,5 @@
 <%= simple_form_for [ lesson, booking ] do |f| %>
-  <div class="mb-3">
+  <div class="modal-availability mb-3">
     <%= text_field :date, nil, class: "datepicker d-none", data: {url: lesson_available_times_path(lesson) } %>
   </div>
   <%# The empty div is for the drop down menu of the available slots %>
