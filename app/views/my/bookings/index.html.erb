@@ -52,7 +52,7 @@
                 <img class="avatar-next-lessons" src=<%= booking.user.image %>>
                 <div>
                   <p><strong><%= booking.user.full_name %></strong></p>
-                  <p><%= booking.lesson.industry %></p>
+                  <p><%= booking.lesson.industry.capitalize %></p>
                 </div>
                 <div>
                   <p><%= booking.start_time.strftime("%B %d, %Y") %></p>
@@ -92,7 +92,7 @@
                 <img class="avatar-next-lessons" src=<%= booking.user.image %>>
                 <div>
                   <p><strong><%= booking.user.full_name %></strong></p>
-                  <p><%= booking.lesson.industry %></p>
+                  <p><%= booking.lesson.industry.capitalize %></p>
                 </div>
                 <div>
                   <p><%= booking.start_time.strftime("%B %d, %Y") %></p>
@@ -114,7 +114,7 @@
                 <img class="avatar-next-lessons" src=<%= booking.lesson.user.image %>>
                 <div>
                   <p><strong><%= booking.lesson.user.full_name %></strong></p>
-                  <p><%= booking.lesson.industry %></p>
+                  <p><%= booking.lesson.industry.capitalize %></p>
                 </div>
                 <div>
                   <p><%= booking.start_time.strftime("%B %d, %Y") %></p>
