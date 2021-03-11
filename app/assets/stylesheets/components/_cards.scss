@@ -8,9 +8,9 @@
   color: white;
   font-size: 24px;
   font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .cards {
@@ -61,7 +61,7 @@
 }
 
 .upcoming-booking-info {
-  border: 1px solid $concisely-orange;
+  box-shadow: $concisely-box-shadow;
   padding: 4px;
   border-radius: $concisely-border-radius;
   margin-bottom: 4px;
@@ -74,18 +74,18 @@
   border-radius: $concisely-border-radius;
   justify-content: center;
   height: fit-content;
-  margin-bottom: 20px!important;
-  margin-left: 10px!important;
-  margin-right: 10px!important;
+  margin-bottom: 20px !important;
+  margin-left: 10px !important;
+  margin-right: 10px !important;
 }
 
 .bookings-card h2 {
-  font-family: $headers-font!important;
+  font-family: $headers-font !important;
 }
 
 .booking-card {
   padding: 8px;
-  border: 1px solid $concisely-orange;
+  box-shadow: $concisely-box-shadow;
   border-radius: $concisely-border-radius;
   justify-content: flex-start;
 }
@@ -133,7 +133,8 @@
   border-radius: $concisely-border-radius;
   margin-top: 20px;
   padding: 4px;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   height: 340px;
 }
 
