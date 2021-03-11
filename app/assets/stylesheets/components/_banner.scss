@@ -57,23 +57,24 @@
 
 .home-card-img {
   // height: 300px;
-  border: 4px solid $concisely-orange;
+  border: 2px solid $concisely-orange;
   border-radius: 12px;
   width: 100%;
   height: auto;
   margin-bottom: 10px;
+  box-shadow: $concisely-box-shadow;
   // position: relative;
   // object-fit: cover;
 }
 
 .hero-button-customize {
-  position: absolute;
-  width: 400px;
-  text-align: left;
-  background-color: white;
-  color: $concisely-orange;
-  border-radius: $concisely-border-radius;
-  font-style: 10px;
+  position: absolute!important;
+  width: 400px!important;
+  text-align: left!important;
+  background-color: white!important;
+  color: $concisely-orange!important;
+  border-radius: $concisely-border-radius!important;
+  font-style: 10px!important;
 }
 
 .btn:focus {
@@ -89,7 +90,11 @@
 .hero-button-customize i {
   position: absolute;
   right: 10px;
-  top: 8px;
+  top: 15px;
+}
+
+.hero-button-customize strong {
+  text-decoration: none;
 }
 
 .dropdown-menu-customize {
@@ -108,10 +113,29 @@
   white-space: pre-line;
 }
 
-.dropdown-item-customize {
-  // border: 1px solid orange;
+.dropdown-item-customize:hover {
+  border-radius: $concisely-border-radius;
 }
 
 .dropdown-toggle::after {
   display: none;
+}
+
+.catch-phrase {
+  text-align: center;
+  font-family: $headers-font;
+  text-transform: uppercase;
+}
+
+.catch-phrase span {
+  display: inline;
+  padding-right: 10px;
+  padding-left: 10px;
+  background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 40%,
+        rgba(251, 116, 62, .7) 40% 75%,
+        rgba(0, 0, 0, 0) 75%
+      );
+
 }
