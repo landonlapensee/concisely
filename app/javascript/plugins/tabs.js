@@ -1,23 +1,19 @@
-import { Tab } from "bootstrap";
+const setActiveTab = () => { 
+  const conversationTab = document.getElementById('conversation-id');
+  const bookingTab = document.getElementById('booking-id');
+  const reportTab = document.getElementById('report-id');
+  const paymentTab = document.getElementById('payment-id');
+  const path = window.location.pathname;
 
-
-const getTab = () => {
-  
-  const tabs = document.querySelectorAll('.nav-link');
-  
-  tabs.forEach((tab) => {
-    tab.addEventListener('click', (event) => {
-      console.log(event.currentTarget.classList);
-      event.currentTarget.className = 'nav-link active';
-    });
-  });
+  if (path === "/my/conversations") {
+    conversationTab.classList.add("active");
+  } else if (path === "/my/bookings") {
+    bookingTab.classList.add("active");
+  } else if (path === "/my/reports") {
+    reportTab.classList.add("active");
+  } else if (path === "/my/payments") {
+    paymentTab.classList.add("active");
+  }
 };
 
-// tab.addEventListener('click', ())
-
-// $('#myTab a').on('click', function (e) {
-//   e.preventDefault()
-//   $(this).tab('show')
-// })
-
-export { getTab };
+export { setActiveTab };

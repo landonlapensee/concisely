@@ -33,7 +33,7 @@ import { dailyVideoChatTriggering } from '../plugins/daily.js';
 import { initFlatpickr } from "../plugins/flatpickr";
 
 // Tab selector
-import { getTab } from "../plugins/tabs";
+import { setActiveTab } from "../plugins/tabs";
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -43,7 +43,7 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   dailyVideoChatTriggering();
   initFlatpickr();
-  getTab();
+  setActiveTab();
 });
 
 require("trix")
