@@ -96,7 +96,7 @@
                 </div>
                 <div>
                   <p><%= booking.start_time.strftime("%B %d, %Y") %></p>
-                  <p><%= booking.report&.rating %></p>
+                  <p>Rating: <strong><%= booking.report&.rating %></strong> / 10</p>
                 </div>
               </div>
               <div class="text-center">
@@ -105,6 +105,7 @@
                 <% else %>
                   <p class="text-center"><%= link_to "View Report", my_reports_path(report_id: booking.report) %></p>
                 <% end %>
+                <%=  %>
               </div>
             </div>
             
@@ -118,7 +119,7 @@
                 </div>
                 <div>
                   <p><%= booking.start_time.strftime("%B %d, %Y") %></p>
-                  <p><%= booking.report&.rating %></p>
+                  <p>Rating: <strong><%= booking.report&.rating || "-" %></strong> / 10</p>
                 </div>
               </div>
               <div class="text-center">
