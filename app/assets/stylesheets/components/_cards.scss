@@ -134,6 +134,7 @@
   margin-top: 20px;
   padding: 4px;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  height: 340px;
 }
 
 .card-customize:hover {
@@ -173,4 +174,29 @@
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+
+.profile-view {
+  position: absolute;
+  bottom: 10px;
+  left: 90px;
+  width: 200px;
+}
+
+.card-product-infos-stars {
+  position: absolute;
+  bottom: 110px;
+  left: 138.81px;
+}
+
+.card-product-infos-price {
+  position: absolute;
+  bottom: 65px;
+  left: 30px;
+}
+
+.card-product-infos-location {
+  position: absolute;
+  bottom: 65px;
+  right: 30px;
 }
