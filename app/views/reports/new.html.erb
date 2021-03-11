@@ -1,10 +1,12 @@
-<h1>New Report</h1>
 
-<div class="container w-50">
-  <%= simple_form_for [ @booking, @report ] do |f| %>
-    <%= f.input :date, as: :date, html5: true, :input_html => { :class => 'w-25' } %>
-    <%= f.input :rating, label: "Rating / 10", :input_html => { :class => 'w-25' } %>
-    <%= f.input :content, as: :rich_text_area, :input_html => { :class => "h-50" } %>
-    <%= f.submit "Create Report", class: "btn btn-primary" %>
-  <% end %>
+<div class="container w-80">
+<h3 class="pt-5">New report for <b><i><%= @booking.user.full_name %></i></b></h3><br>
+  <div class="report-form">
+    <%= simple_form_for [ @booking, @report ] do |f| %>
+      <%= f.input :date, as: :date, html5: true, :input_html => { :class => 'w-25' } %>
+      <%= f.input :rating, label: "Rating", :input_html => { :class => 'w-25', min: '0', max: '10' }, placeholder: "from 0 to 10" %>
+      <%= f.rich_text_area :content, :input_html => { :class => "report-input h-50" } %>
+      <%= f.submit "Create Report", class: "create-report btn" %>
+    <% end %>
+  </div>
 </div>
