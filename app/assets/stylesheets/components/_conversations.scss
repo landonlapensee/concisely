@@ -83,7 +83,7 @@
   border-radius: $concisely-border-radius;
   width: fit-content;
   background-color: white;
-  box-shadow: $concisely-box-shadow;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.1);
 }
 
 .message-avatar {
