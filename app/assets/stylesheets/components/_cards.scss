@@ -33,7 +33,7 @@
   border-radius: $concisely-border-radius;
   width: 700px;
   margin: 10px auto;
-  padding: 10px;
+  padding: 20px;
   background-color: white;
   box-shadow: $concisely-box-shadow;
 }
@@ -48,16 +48,13 @@
 }
 
 .reports-list {
-  box-shadow: $concisely-box-shadow;
-  background-color: white;
-  border-radius: $concisely-border-radius;
   width: 300px;
 }
 
 .report-link-card {
+  box-shadow: $concisely-box-shadow;
   padding: 8px;
   border-radius: $concisely-border-radius;
-  border: 1px solid $concisely-orange;
 }
 
 .upcoming-booking-info {
@@ -92,9 +89,11 @@
 
 .booking-card-coach {
   padding: 8px;
-  border: 1px solid $concisely-orange;
+  box-shadow: $concisely-box-shadow;
   border-radius: $concisely-border-radius;
   justify-content: flex-start;
+  padding: 4px;
+  margin-bottom: 4px;
 }
 
 .booking-coach {
@@ -103,13 +102,6 @@
   width: 50px;
   right: -5px;
   transform: rotate(35deg);
-}
-
-.booking-card-coach {
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.495);
-  padding: 4px;
-  border-radius: 10px;
-  margin-bottom: 4px;
 }
 
 .booking-square {
