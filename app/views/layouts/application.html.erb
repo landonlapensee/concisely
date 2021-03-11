@@ -19,13 +19,14 @@
 
   <body>
     <div id="page-container">
+      <%= render "layouts/navbar" %>
+        <%# <div style="height:80px; width:100%"></div> %>
+      <p class="notice description"><%= notice %></p>
+      <p class="alert description"><%= alert %></p>
       <div id="content-wrap">
-        <%= render "layouts/navbar" %>
+      <%= yield %>
       </div>
+      <%= render "layouts/footer" %>
     </div>
-    <p class="notice description"><%= notice %></p>
-    <p class="alert description"><%= alert %></p>
-    <%= yield %>
-        <%= render "layouts/footer" %>
   </body>
 </html>

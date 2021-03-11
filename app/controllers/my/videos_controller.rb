@@ -1,8 +1,9 @@
 class My::VideosController < ApplicationController
   def show
+    @bookings = Booking.all
+    @booking = @bookings.where(id: params[:booking_id])
     if current_user.is_a_coach?
-      @upcoming_booking = @upcoming_bookings.first
-    raise 
-    end 
+      @coach = true;
+    end
   end 
 end

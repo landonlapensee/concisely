@@ -52,46 +52,90 @@
 
 .home-text {
   width: 300px;
-  border: 4px solid orange;
+  border: 4px solid $concisely-orange;
 }
 
 .home-card-img {
   // height: 300px;
-  border: 4px solid orange;
+  border: 2px solid $concisely-orange;
   border-radius: 12px;
   width: 100%;
   height: auto;
   margin-bottom: 10px;
+  box-shadow: $concisely-box-shadow;
   // position: relative;
   // object-fit: cover;
 }
 
-.dropdown-customize {
-
+.hero-button-customize {
+  position: absolute!important;
+  width: 400px!important;
+  text-align: left!important;
+  background-color: white!important;
+  color: $concisely-orange!important;
+  border-radius: $concisely-border-radius!important;
+  font-style: 10px!important;
 }
 
-.hero-button-customize {
-  width: 250px;
-  text-align: left;
-  background-color: white;
-  color: orange;
+.btn:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 .hero-button-customize:hover {
   color: white!important;
-  background-color: orange!important;
+  background-color: $concisely-orange!important;
+}
+
+.hero-button-customize i {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+}
+
+.hero-button-customize strong {
+  text-decoration: none;
 }
 
 .dropdown-menu-customize {
-  border: 4px solid orange;
-
+  border: 1px solid $concisely-orange;
+  width: 400px;
+  height: auto;
+  columns: 3;
+  border-radius: $concisely-border-radius;
+  box-shadow: $concisely-box-shadow;
 }
 
-.dropdown-item-customize {
-  border: 4px solid orange;
+.dropdown-menu-customize a {
+  font-size: 16px;
+  text-decoration: none;
+  color: $concisely-orange;
+  white-space: pre-line;
+}
 
+.dropdown-item-customize:hover {
+  border-radius: $concisely-border-radius;
 }
 
 .dropdown-toggle::after {
   display: none;
+}
+
+.catch-phrase {
+  text-align: center;
+  font-family: $headers-font;
+  text-transform: uppercase;
+}
+
+.catch-phrase span {
+  display: inline;
+  padding-right: 10px;
+  padding-left: 10px;
+  background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 40%,
+        rgba(251, 116, 62, .7) 40% 75%,
+        rgba(0, 0, 0, 0) 75%
+      );
+
 }

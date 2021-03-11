@@ -32,6 +32,10 @@ import { dailyVideoChatTriggering } from '../plugins/daily.js';
 // Date Picker
 import { initFlatpickr } from "../plugins/flatpickr";
 
+// Tab selector
+import { setActiveTab } from "../plugins/tabs";
+
+
 document.addEventListener('turbolinks:load', () => {
   const scrollBar = document.getElementById('messages-scrollbar')
   if(scrollBar) scrollBar.scrollTop = scrollBar.scrollHeight
@@ -39,6 +43,7 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   dailyVideoChatTriggering();
   initFlatpickr();
+  setActiveTab();
 });
 
 require("trix")

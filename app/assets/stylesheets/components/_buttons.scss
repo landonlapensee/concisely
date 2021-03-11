@@ -16,7 +16,7 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #eeb416;
+  background: $concisely-orange;
   transition: background 0.3s ease;
 }
 
@@ -38,4 +38,132 @@
 .btn-gradient:hover {
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
+}
+
+.btn {
+	background-color: $concisely-orange;
+	text-align: center;
+	display: inline-block;
+	position: relative;
+	text-decoration: none;
+	color: whitesmoke;
+	text-transform: uppercase;
+	font-family: "Lato";
+	font-size: 14px;
+	padding: 12px 28px;
+	border-radius: 12px;
+	overflow: hidden;
+	transition: all 0.3s linear 0s;
+}
+
+.btn:before {
+	content: ">";
+	font-size: 18px;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	right: 0;
+	top: 0;
+	opacity: 0;
+	height: 100%;
+	width: 40px;
+	transition: all 0.3s linear 0s;
+}
+
+.btn:hover {
+	text-indent: 0px;
+	background-color: white;
+	color: $concisely-orange;
+	text-decoration: underline;
+  border-color: transparent;
+}
+.btn:hover:before {
+	opacity: 1;
+	text-indent: 0px;
+}
+
+.btn-secondary-ghost {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-secondary-ghost:hover {
+  opacity: 1;
+}
+
+.btn-secondary-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $concisely-blue;
+  transition: background 0.3s ease;
+}
+
+.btn-secondary-flat:hover {
+  background: #fff8e9;
+  color: black;
+}
+
+.btn-secondary-gradient {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: linear-gradient(#167FFB, #0F60C4);
+  transition: background 0.3s ease;
+  border: 1px solid #0F60C4;
+}
+
+.btn-secondary-gradient:hover {
+  background: linear-gradient(#147EFF, #0F67DA);
+  color: white;
+}
+
+.btn-secondary {
+	background-color: $concisely-blue;
+	text-align: center;
+	display: inline-block;
+	position: relative;
+	text-decoration: none;
+	color: whitesmoke;
+	text-transform: uppercase;
+	font-family: "Lato";
+	font-size: 14px;
+	padding: 12px 28px;
+	border-radius: 12px;
+	overflow: hidden;
+	transition: all 0.3s linear 0s;
+}
+
+.btn-secondary:before {
+	content: ">";
+	font-size: 18px;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	right: 0;
+	top: 0;
+	opacity: 0;
+	height: 100%;
+	width: 40px;
+	transition: all 0.3s linear 0s;
+}
+
+.btn-secondary:hover {
+	text-indent: 0px;
+	background-color: white;
+	color: $concisely-blue;
+	text-decoration: underline;
+  border-color: transparent;
+}
+.btn-secondary:hover:before {
+	opacity: 1;
+	text-indent: 0px;
 }

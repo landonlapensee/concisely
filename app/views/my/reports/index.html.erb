@@ -1,25 +1,25 @@
 <%= render 'my/menu' %>
 <%# This is a the data that will be used for the dasboard "menu" navbar  %>
 <div class="container py-3">
-  <h1>My Reports</h1>
   <% if @report %>
-
     <div class="d-flex">
       <div class="reports-list">
         <% @reports.each do |report| %>
           <div class="report-link-card m-2">
-            <img class="avatar-small" src=<%= report.booking.lesson.user.image %>>
-            <div class="report-link-card-infos">
-              <div class="report-link-name-rating d-flex justify-content-between">
+            <div class="report-link-card-infos d-flex justify-content-between">
+              <img class="avatar-small" src=<%= report.booking.lesson.user.image %>>
+              <div class="report-link-name-industry">
                 <p><strong><%= report.booking.lesson.industry.capitalize %></strong></p>
-                <p><%= report.rating %></p>
-              </div>
-              <div class="d-flex justify-content-between">
                 <p><%= report.booking.lesson.user.full_name %></p>
+              </div>
+              <div class="text-right">
+                <p><%= report.rating %></p>
                 <p><%= report.date %></p>
               </div>
             </div>
-            <p class="text-aling-center"><%= link_to "View Report", my_reports_path(report_id: report.id) %></p>
+            <div class="text-center">
+              <%= link_to "View Report", my_reports_path(report_id: report.id), :class => 'btn-secondary' %>
+            </div>
           </div>
         <% end %>
       </div>
@@ -35,7 +35,7 @@
             <p><%= @report.booking.user.full_name %></p>
           </div>
         </div>
-          <p><%= @report.description %></p>
+          <p><%= @report.content %></p>
       </div>
     </div>
   <% else %>
