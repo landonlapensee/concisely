@@ -106,7 +106,16 @@ p {
         rgba(251, 116, 62, .7) 40% 75%,
         rgba(0, 0, 0, 0) 75%
       );
+}
 
+.report-form {
+  border-radius: $concisely-border-radius;
+  box-shadow: $concisely-box-shadow;
+  padding: 20px;
+}
+
+.container .w-50 h3 {
+  padding-top: 48px;
 }
 
 // Mixins
