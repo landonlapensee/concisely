@@ -80,6 +80,10 @@
   font-family: $headers-font !important;
 }
 
+.bookings-card p {
+  padding-left: 10px;
+}
+
 .booking-card {
   padding: 8px;
   box-shadow: $concisely-box-shadow;
@@ -192,4 +196,8 @@
   position: absolute;
   bottom: 65px;
   right: 30px;
+}
+
+.upcoming-lessons-cards {
+  padding-left: 10px;
 }

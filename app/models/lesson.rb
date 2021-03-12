@@ -5,21 +5,21 @@ class Lesson < ApplicationRecord
   validates :industry, presence: true
 
   INDUSTRIES = [
-    "engineering",
-    "marketing",
-    "web development",
-    "banking & finance",
-    "accounting & legal",
-    "sports",
-    "software development",
-    "information technology",
-    "education",
-    "healthcare",
-    "retail",
-    "government",
-    "construction & maintenance",
-    "manufacturing",
-    "other"
+    "Engineering",
+    "Marketing",
+    "Web Development",
+    "Banking & Finance",
+    "Accounting & Legal",
+    "Sports",
+    "Software Development",
+    "Information Technology",
+    "Education",
+    "Healthcare",
+    "Retail",
+    "Government",
+    "Construction & Maintenance",
+    "Manufacturing",
+    "Other"
   ]
 
   def price_display

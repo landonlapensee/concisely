@@ -9,7 +9,7 @@
             <div class="report-link-card-infos d-flex justify-content-between">
               <img class="avatar-small" src=<%= report.booking.lesson.user.image %>>
               <div class="report-link-name-industry">
-                <p><strong><%= report.booking.lesson.industry.capitalize %></strong></p>
+                <p><strong><%= report.booking.lesson.industry %></strong></p>
                 <p><%= report.booking.lesson.user.full_name %></p>
               </div>
               <div class="text-right">
@@ -27,7 +27,7 @@
       <div class="report-card">
         <div class="report-infos">
           <div class="d-flex justify-content-between">
-            <p><strong><%= @report.booking.lesson.industry.capitalize %></strong></p>
+            <p><strong><%= @report.booking.lesson.industry %></strong></p>
             <p>Overall rating: <%= @report.rating %></p>
           </div>
           <div class="d-flex justify-content-between border-bottom mb-2">
