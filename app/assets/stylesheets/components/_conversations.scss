@@ -63,11 +63,13 @@
   background-color: white;
   box-shadow: $concisely-box-shadow;
   border-radius: 20px;
+  .btn {
+    border-radius: 0 0 12px 0;
+  }
 }
 
 .conversation ul {
   border-top: solid 1px rgb(221, 221, 221);
-  border-bottom: solid 1px rgb(221, 221, 221);
   padding: 20px;
   list-style-type: none;
   height: 540px;
@@ -79,7 +81,7 @@
 }
 
 .messages {
-  margin-bottom: 70px;
+  margin-bottom: 0;
 }
 
 .message p {
@@ -98,13 +100,16 @@
 }
 
 .message-form {
-  position: absolute;
   bottom: 0;
   width: calc(100% - 30px);
 }
 
+.message-form-wrapper {
+  margin: 0 -16px;
+}
+
 .form-control {
-  border-radius: 12px;
+  border-radius: 0 0 0 12px;
   height: 50px !important;
 }
 
