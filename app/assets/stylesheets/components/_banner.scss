@@ -67,34 +67,9 @@
   // object-fit: cover;
 }
 
-.hero-button-customize {
-  position: absolute!important;
-  width: 400px!important;
-  text-align: left!important;
-  background-color: white!important;
-  color: $concisely-orange!important;
-  border-radius: $concisely-border-radius!important;
-  font-style: 10px!important;
-}
-
 .btn:focus {
   outline: none;
   box-shadow: none;
-}
-
-.hero-button-customize:hover {
-  color: white!important;
-  background-color: $concisely-orange!important;
-}
-
-.hero-button-customize i {
-  position: absolute;
-  right: 10px;
-  top: 15px;
-}
-
-.hero-button-customize strong {
-  text-decoration: none;
 }
 
 .dropdown-menu-customize {
