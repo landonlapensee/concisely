@@ -5,9 +5,9 @@
   object-fit: cover;
 }
 .avatar-small {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
   object-fit: cover;
 }
 .avatar-large {
@@ -29,13 +29,13 @@
 .avatar-next-lesson {
   width: 100px;
   height: 100px;
-  border-radius: 50%;
+  border-radius: $concisely-border-radius;
   object-fit: cover;
 }
 
 .avatar-next-lessons {
-  height: 60px;
-  width: 60px;
-  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+  border-radius: $concisely-border-radius;
   object-fit: cover;
 }
