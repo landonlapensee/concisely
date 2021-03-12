@@ -78,7 +78,7 @@ class User < ApplicationRecord
       bookings.each do |booking|
         reports << booking.report unless booking.report.nil?
       end
-      reports
+      reports.reverse
     end
     
     def full_name
