@@ -26,9 +26,10 @@
             <% end %>
           </ul>
 
-          <div class="message-form">
-            <%= simple_form_for [@user, @message] do |f| %> 
-              <%= f.input :content, placeholder: "Type message ...", label: false %>
+          <div class="message-form-wrapper">
+            <%= simple_form_for [@user, @message], { html: {class: "message-form d-flex w-100"} } do |f| %> 
+              <%= f.input :content, placeholder: "Type message ...", label: false, wrapper_html: {class: "mb-0 flex-grow-1"} %>
+              <%= f.submit :>, :class => "btn"%>
             <% end %>
           </div>
         </div>
