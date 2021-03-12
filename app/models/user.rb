@@ -49,7 +49,7 @@ class User < ApplicationRecord
       filtered_bookings = bookings.select do |booking|
         booking.end_time < Time.now 
       end
-      past_bookings = (filtered_bookings + coach_past_bookings).sort { |booking| booking.end_time }.reverse
+      past_bookings = (filtered_bookings + coach_past_bookings).sort { |booking| booking.end_time }
     end
 
     def coach_past_bookings
