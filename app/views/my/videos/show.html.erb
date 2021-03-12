@@ -1,9 +1,9 @@
 <div class="container video-container">
   <div class="d-flex">
-    <div class="d-flex flex-column justify-content-around video-buttons">
-      <button class="btn h-100 my- mr-2 video-button-video" id="dailyTrigger">Start Video Chat</button>
+    <div class="d-flex flex-column mr-1 video-buttons">
+      <button class="btn video-button-video" id="dailyTrigger">Start Video Chat</button>
       <% if @coach %>
-        <button class="btn-secondary h-100 my-3 mr-2 video-button-report"><%= link_to "Create Report", new_booking_report_path(params[:booking_id]) %></button>
+        <%= link_to "Create Report", new_booking_report_path(params[:booking_id]), :class => "btn-secondary video-button-report" %>
       <% end %>
     </div>
     <div id="video-container"></div>

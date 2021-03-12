@@ -10,21 +10,18 @@
 }
 
 .video-buttons {
-  position: absolute;
   height: 200px!important;
 }
 
 .video-button-video {
   max-width: 100%!important;
-  left: -200px;
   top: 200px;
   height: 100px!important
 }
 
 .video-button-report {
   max-width: 100%!important;
-  left: -200px;
-  top: 376px;
+  top: 230px;
   height: 100px!important
 }
 
@@ -34,6 +31,4 @@
 
 #dailyTrigger {
   max-width: 100%!important;
-  left: -200px;
-  top: 200px;
 }
