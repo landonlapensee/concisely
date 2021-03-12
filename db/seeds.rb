@@ -64,7 +64,7 @@ coaches.each do |user|
 end
 
 #demo student
-student = User.create!(bio: "I am a student.", first_name: "Landon", last_name: "Thethinking", email: "s@s.s", password: "123456", country_code: "CA", city: "Victoria", image: "landon.jpg")
+student = User.create!(bio: "I am a student.", first_name: "Landon", last_name: "Lapensee", email: "s@s.s", password: "123456", country_code: "CA", city: "Victoria", image: "landon.jpg")
 
 #demo coach
 coach = User.create!(bio: "I am an experienced professional.", first_name: "Helen", last_name: "Green", email: "c@c.c", password: "123456", country_code: "CA", city: "Banff", image: "https://www.superprof.com/images/teachers/teacher-home-architectural-tutor-offering-design-studio-consultation-experience-teaching-studios-the-university-auckland-and-running-the.jpg")
