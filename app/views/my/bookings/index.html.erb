@@ -48,7 +48,7 @@
             <div class="booking-card-coach m-3">
               <p class="coaching-indicator">Coaching</p>
               <div class="d-flex justify-content-between">
-                <img class="avatar-next-lessons" src=<%= booking.user.image %>>
+                <%= image_tag booking.user.image, class: "avatar-next-lessons" %>
                 <div>
                   <p><strong><%= booking.user.full_name %></strong></p>
                   <p><%= booking.lesson.industry %></p>
@@ -88,7 +88,7 @@
           <% if booking.lesson.user == current_user %>
             <div class="booking-card-coach m-3">
               <div class="d-flex justify-content-between">
-                <img class="avatar-next-lessons" src=<%= booking.user.image %>>
+                <%= image_tag booking.user.image, class: "avatar-next-lessons" %>
                 <div>
                   <p><strong><%= booking.user.full_name %></strong></p>
                   <p><%= booking.lesson.industry %></p>
