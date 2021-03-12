@@ -43,18 +43,22 @@
 
           <%# Upcoming Lessons %>
           <div class="booked-lessons mt-2 mb-4">
-            <h5 class="mb-3"><strong>Upcoming Lessons</strong></h5>
-            <% current_user.bookings_with(@user).upcoming.each do |booking| %>
-              <p> <%= booking.lesson.industry.capitalize %> | <%= booking.end_time %></p>
-            <% end %>
+            <h5 class="mb-3 text-center"><strong>Upcoming Lessons</strong></h5>
+              <% current_user.bookings_with(@user).upcoming.each do |booking| %>
+            <div class="bookings-conversations">
+                <p> <%= booking.lesson.industry %> | <%= booking.end_time %></p>
+            </div>
+              <% end %>
           </div>
           
           <%# Past Lessons %>
           <div class="booked-lessons">
-            <h5 class="mb-3"><strong>Past Lessons</strong></h5>
-            <% current_user.bookings_with(@user).past.each do |booking| %>
-              <p> <%= booking.lesson.industry.capitalize %> | <%= booking.end_time %></p>
-            <% end %>
+            <h5 class="mb-3 text-center"><strong>Past Lessons</strong></h5>
+                <% current_user.bookings_with(@user).past.each do |booking| %>
+              <div class="bookings-conversations">
+                  <p> <%= booking.lesson.industry %> | <%= booking.end_time %></p>
+              </div>
+                <% end %>
           </div>
         </div>
       </div>

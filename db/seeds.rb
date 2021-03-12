@@ -59,12 +59,12 @@ coaches.each do |user|
     user: user,
     price: prices.sample,
     duration: 30,
-    industry: "web development"
+    industry: "Web Development"
   )
 end
 
 #demo student
-student = User.create!(bio: "I am a student.", first_name: "Landon", last_name: "Thethinking", email: "s@s.s", password: "123456", country_code: "CA", city: "Victoria", image: "https://avatars.githubusercontent.com/u/62778839?v=4")
+student = User.create!(bio: "I am a student.", first_name: "Landon", last_name: "Thethinking", email: "s@s.s", password: "123456", country_code: "CA", city: "Victoria", image: "landon.jpg")
 
 #demo coach
 coach = User.create!(bio: "I am an experienced professional.", first_name: "Helen", last_name: "Green", email: "c@c.c", password: "123456", country_code: "CA", city: "Banff", image: "https://www.superprof.com/images/teachers/teacher-home-architectural-tutor-offering-design-studio-consultation-experience-teaching-studios-the-university-auckland-and-running-the.jpg")
@@ -79,7 +79,7 @@ lesson = Lesson.create!(
   user: coach,
   price: 50.00,
   duration: 30,
-  industry: "web development"
+  industry: "Web Development"
   )
 
   
@@ -98,13 +98,13 @@ message2 = Message.create!(
 message3 = Message.create!(
   sender: student,
   recipient: coach,
-  content: "Thank you Jade, checking it right now ! I'll be back to you when I chose the date."
+  content: "Thank you Helen, checking it right now ! I'll be back to you when I chose the date."
 )
 
 message4 = Message.create!(
   sender: student,
   recipient: coach,
-  content: "Alright, I picked the date for January 28th! See you soon Jade!"
+  content: "Alright, I picked the date for January 28th! See you soon Helen!"
 )
 
 message5 = Message.create!(
@@ -158,13 +158,13 @@ message12 = Message.create!(
 message13 = Message.create!(
   sender: student,
   recipient: coach,
-  content: "Hello Helen ! It's been more than a week now since the last lesson, and after practicing a lot, I feel ready to take another lesson and see how I improved. I would love to take a lesson on March 15th, is that alright for you ?"
+  content: "Hello Helen ! It's been more than a week now since the last lesson, and after practicing a lot, I feel ready to take another lesson and see how I improved. I would love to take a lesson on March 13th, is that alright for you ?"
 )
 
 message11 = Message.create!(
   sender: coach,
   recipient: student,
-  content: "Yes it is ! You can book it now and I'll see you on the 15th !"
+  content: "Yes it is ! You can book it now and I'll see you on the 13th !"
 )
 
   #demo bookings
