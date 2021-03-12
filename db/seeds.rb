@@ -22,13 +22,22 @@ coaches = []
 
 users.each do |userhash|
   cities = ["Montréal", "Vancouver", "Victoria", "Banff", "Québec", "Toronto", "Hamilton", "Calgary", "Gatineau", "Kingston", "Regina", "Halifax", "Edmonton", "Winnipeg", "Saskatoon", "Prince Rupert", "White Horse"]
+  biographies = [
+    "I am an experienced professional who loves helping out people by giving advices.",
+    "Hello, I am here to help you improve your skills and nail your interview !",
+    "Do not stress for your future interviews, I am here to help you.",
+    "I might not be Batman, but I'm here to save your life !",
+    "I always do my best to help young graduates seeking to succeed in interviews.",
+    "Roses are red, violets are blue, thanks to me you'll nail this interview!",
+    "Thanks to me, recruiters will love you ! "
+  ]
   coaches << User.create!(
     first_name: userhash["name"]["first"],
     last_name: userhash["name"]["last"],
     email: userhash["email"],
     country_code: "CA",
     city: cities.sample,
-    bio: "I am an experienced professional who loves helping out people by giving advices.",
+    bio: biographies.sample,
     password: "123456",
     image: userhash["picture"]["large"]
   )
@@ -50,15 +59,15 @@ coaches.each do |user|
     user: user,
     price: prices.sample,
     duration: 30,
-    industry: "marketing"
+    industry: "web development"
   )
 end
 
 #demo student
-student = User.create!(bio: "I am a student.",first_name: "Laurier", last_name: "Tsu", email: "s@s.s", password: "123456", country_code: "CA", city: "Montréal", image: "https://www.ldatschool.ca/wp-content/uploads/2015/03/Young-student.jpg")
+student = User.create!(bio: "I am a student.", first_name: "Landon", last_name: "Thethinking", email: "s@s.s", password: "123456", country_code: "CA", city: "Victoria", image: "https://avatars.githubusercontent.com/u/62778839?v=4")
 
 #demo coach
-coach = User.create!(bio: "I am an experienced professional.", first_name: "Larry", last_name: "Lemon", email: "c@c.c", password: "123456", country_code: "CA", city: "Montréal", image: "https://www.pngitem.com/pimgs/m/176-1762843_professional-man-hd-png-download.png")
+coach = User.create!(bio: "I am an experienced professional.", first_name: "Helen", last_name: "Green", email: "c@c.c", password: "123456", country_code: "CA", city: "Banff", image: "https://www.superprof.com/images/teachers/teacher-home-architectural-tutor-offering-design-studio-consultation-experience-teaching-studios-the-university-auckland-and-running-the.jpg")
 
 #demo lesson
 lesson = Lesson.create!(
@@ -70,40 +79,163 @@ lesson = Lesson.create!(
   user: coach,
   price: 50.00,
   duration: 30,
-  industry: "marketing"
+  industry: "web development"
   )
 
-  #demo bookings
-past_booking1 = Booking.create!(
-  user: student,
-  start_time: DateTime.strptime("03/02/2021 17:00", "%d/%m/%Y %H:%M"),
-  end_time: DateTime.strptime("03/02/2021 17:30", "%d/%m/%Y %H:%M"),
-  lesson: lesson,
-  price: lesson.price
-  )
-
+  
 message1 = Message.create!(
   sender: student,
   recipient: coach,
-  content: "Hello"
+  content: "Hello, I'm a young graduate from Le Wagon Web Dev bootcamp and I would like to take a lesson with you to improve my interview skills. I read the description of your lesson and I think you would be the perfect coach for me."
 )
 
 message2 = Message.create!(
   sender: coach,
   recipient: student,
-  content: "Hi, how are you doing ?"
+  content: "Hi Landon, hope you are doing fine. Congratulations for your degree! I would love to help you nail your interviews. For my availabilities, you can check the calendar on the lesson description and pick the perfect date for our lesson."
 )
 
-message2 = Message.create!(
-  sender: User.first,
+message3 = Message.create!(
+  sender: student,
+  recipient: coach,
+  content: "Thank you Jade, checking it right now ! I'll be back to you when I chose the date."
+)
+
+message4 = Message.create!(
+  sender: student,
+  recipient: coach,
+  content: "Alright, I picked the date for January 28th! See you soon Jade!"
+)
+
+message5 = Message.create!(
+  sender: coach,
   recipient: student,
-  content: "Aloha!"
+  content: "See you Landon !"
+)
+
+message6 = Message.create!(
+  sender: student,
+  recipient: coach,
+  content: "Thank you very much Helen, the lesson was great. Can't wait for the next lesson to see how I improved."
+)
+
+message7 = Message.create!(
+  sender: coach,
+  recipient: student,
+  content: "You are welcome Landon, I'm sending you the report as soon as possible. Stay tuned !"
+)
+
+message8 = Message.create!(
+  sender: student,
+  recipient: coach,
+  content: "Hi Helen, the last lesson we had was a week ago. I worked on the things you told me to practice on and I think I am ready for another lesson. Is there a specific date and time that suits you best ?"
+)
+
+message9 = Message.create!(
+  sender: coach,
+  recipient: student,
+  content: "Whatever is fine with you Landon, I'll adapt my schedule."
+)
+
+message10 = Message.create!(
+  sender: student,
+  recipient: coach,
+  content: "Alright, March 3rd it is ! See you then Helen."
+)
+
+message11 = Message.create!(
+  sender: coach,
+  recipient: student,
+  content: "You did a lot of improvement Landon, there a still some stuff to work on, but you are pretty close to something great. Sending your report in a few. Don't hesitate to book another lesson if needed."
+)
+
+message12 = Message.create!(
+  sender: student,
+  recipient: coach,
+  content: "Thank you very much Helen, you are the reason of my improvement. I'll talk to you when I feel ready !"
+)
+
+message13 = Message.create!(
+  sender: student,
+  recipient: coach,
+  content: "Hello Helen ! It's been more than a week now since the last lesson, and after practicing a lot, I feel ready to take another lesson and see how I improved. I would love to take a lesson on March 15th, is that alright for you ?"
+)
+
+message11 = Message.create!(
+  sender: coach,
+  recipient: student,
+  content: "Yes it is ! You can book it now and I'll see you on the 15th !"
+)
+
+  #demo bookings
+past_booking1 = Booking.create!(
+  user: student,
+  start_time: DateTime.strptime("21/02/2021 17:00", "%d/%m/%Y %H:%M"),
+  end_time: DateTime.strptime("21/02/2021 17:30", "%d/%m/%Y %H:%M"),
+  lesson: lesson,
+  price: lesson.price
+  )
+
+past_booking2 = Booking.create!(
+user: student,
+start_time: DateTime.strptime("03/03/2021 17:00", "%d/%m/%Y %H:%M"),
+end_time: DateTime.strptime("03/03/2021 17:30", "%d/%m/%Y %H:%M"),
+lesson: lesson,
+price: lesson.price
 )
 
 #reports
 report1 = Report.create!(
-  date: DateTime.strptime("03/02/2021 17:35", "%d/%m/%Y %H:%M"),
+  date: DateTime.strptime("21/02/2021 17:35", "%d/%m/%Y %H:%M"),
   booking: past_booking1,
+  content: "
+  <div>
+    Things That Went Well:<br><br>
+  </div>
+  <ol>
+    <li>&nbsp;You explained pretty well your motivation, and why you want to join the company. Keep it like that, recruiters want to hear that.</li>
+    <li>&nbsp;When you talk, I understood right away that were you passionated by Marketing. It's great, because it shows that you are not here by default.</li>
+    <li>&nbsp;Great explanation of your background. You went to the point, talked about what's important to say during an interview. You were not beating around the bush </li>
+  </ol>
+  <div>
+    <br>
+  </div>
+  <div>
+    Things To Work On:<br><br>
+  </div>
+  <ol>
+    <li>&nbsp;A lot of hesitation though, which is normal. You've said a lot of 'hmm', but no worries, you can easily work on that. What you can do is to watch the recorded interview that we had and be attentive to all the 'hmm' you said. Hearing yourself trying to fill silence will psychologically work on you.</li>
+    <li>&nbsp;Eye contact is very important, and many times you looked in different direction. Good eye contact in an interview shows how interested and appreciative of the recruiter's time. When you do not look the recruiter into the eyes, it can be taken as disrecpectful.</li>
+  </ol>
+  <div>
+    <br>
+  </div>
+  <div>
+    Resources:<br><br>
+  </div>
+  <ul>
+    <li>
+      <a href=\"https://www.myinterviewpractice.com/\">https://www.myinterviewpractice.com/</a> -&gt; practice this
+    </li>
+  </ul>
+  <div>
+    <br>
+  </div>
+  <div
+    >Additional Comments:<br><br>
+  </div>
+    <ul>
+      <li>I think it would be very important to meet again at least once. Please recontact me in about a week or two, so you have time to practice and work on things to improve. Do not hesitate to fake an interview in front of a miror. It might seem silly but trust me, it works !</li>
+    </ul>
+  <div>
+    <br>
+  </div>",
+  rating: 5
+  )
+
+  report2 = Report.create!(
+  date: DateTime.strptime("03/03/2021 17:35", "%d/%m/%Y %H:%M"),
+  booking: past_booking2,
   content: "
   <div>
     Things That Went Well:<br><br>
@@ -148,75 +280,3 @@ report1 = Report.create!(
   </div>",
   rating: 7
   )
-
-  # report2 = Report.create!(
-  #   date: DateTime.strptime("16/01/2021 20:00", "%d/%m/%Y %H:%M"),
-  #   booking: booking2,
-  #   description: "Very good job !",
-  #   rating: 5
-  # )
-
-  # report3 = Report.create!(
-  #   date: DateTime.strptime("23/01/2021 20:00", "%d/%m/%Y %H:%M"),
-  #   booking: booking3,
-  #   description: "Very good job !",
-  #   rating: 5
-  # )
-  
-  #future bookings
-  booking1 = Booking.create!(
-    user: student,
-    start_time: DateTime.strptime("13/03/2021 17:00", "%d/%m/%Y %H:%M"),
-    end_time: DateTime.strptime("13/03/2021 17:30", "%d/%m/%Y %H:%M"),
-    lesson: lesson
-  )
-
-# booking2 = Booking.create!(
-#   user: student,
-#   start_time: DateTime.strptime("16/03/2021 17:00", "%d/%m/%Y %H:%M"),
-#   end_time: DateTime.strptime("16/03/2021 18:00", "%d/%m/%Y %H:%M"),
-#   lesson: Lesson.all.sample
-# )
-
-# booking3 = Booking.create!(
-#   user: student,
-#   start_time: DateTime.strptime("23/03/2021 17:00", "%d/%m/%Y %H:%M"),
-#   end_time: DateTime.strptime("23/03/2021 18:00", "%d/%m/%Y %H:%M"),
-#   lesson: Lesson.all.sample
-# )
-
-# #past bookings
-# booking4 = Booking.create!(
-#   user: student,
-#   start_time: DateTime.strptime("09/01/2021 17:00", "%d/%m/%Y %H:%M"),
-#   end_time: DateTime.strptime("09/01/2021 18:00", "%d/%m/%Y %H:%M"),
-#   lesson: Lesson.all.sample
-# )
-
-# booking5 = Booking.create!(
-#   user: student,
-#   start_time: DateTime.strptime("16/01/2021 17:00", "%d/%m/%Y %H:%M"),
-#   end_time: DateTime.strptime("16/01/2021 18:00", "%d/%m/%Y %H:%M"),
-#   lesson: Lesson.all.sample
-# )
-
-# booking6 = Booking.create!(
-#   user: student,
-#   start_time: DateTime.strptime("23/01/2021 17:00", "%d/%m/%Y %H:%M"),
-#   end_time: DateTime.strptime("23/01/2021 18:00", "%d/%m/%Y %H:%M"),
-#   lesson: Lesson.all.sample
-# )
-
-#Coaches
-# coaches = []
-# emails = ["a@a.a", "b@b.b", "c@c.c", "d@d.d", "e@e.e", "f@f.f", "g@g.g", "h@h.h", "i@i.i"]
-# emails.each do |email|
-#   coaches << User.create!(
-#     first_name: Faker::Name.first_name,
-#     last_name: Faker::Name.last_name,
-#     email: email,
-#     password: "123456",
-#     image: "https://randomuser.me/api/portraits/men/34.jpg"
-#   )
-# end
-

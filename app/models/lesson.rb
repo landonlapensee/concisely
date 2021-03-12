@@ -7,6 +7,7 @@ class Lesson < ApplicationRecord
   INDUSTRIES = [
     "engineering",
     "marketing",
+    "web development",
     "banking & finance",
     "accounting & legal",
     "sports",
@@ -22,7 +23,7 @@ class Lesson < ApplicationRecord
   ]
 
   def price_display
-    "$#{self.price}/#{self.duration} min"
+    "$#{self.price} / lesson"
   end
 
   def available_hours_for(date)
